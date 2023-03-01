@@ -1,6 +1,6 @@
 ---
 title: "Starter Notebook"
-author: "You, Scientist"
+author: "Saran Ousseini"
 format: html
 execute:
   keep-md: true
