@@ -1,5 +1,5 @@
 ---
-title: "Starter Notebook"
+title: "Group 3 project"
 author: "Saran Ousseini"
 format: html
 execute:
