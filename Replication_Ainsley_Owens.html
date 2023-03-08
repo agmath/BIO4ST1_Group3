@@ -149,14 +149,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span> genome, <span class="at">replace=</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "T" "A" "A" "G" "A" "C" "T" "C" "A" "A" "A" "A" "A" "C" "G"</code></pre>
+<pre><code> [1] "T" "A" "G" "G" "C" "G" "T" "G" "C" "G" "A" "T" "C" "A" "T"</code></pre>
 </div>
 </div>
 <p>Now, I will <code>collapse()</code> the genome to create a single string and make it easier to read.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span> (randGenome, <span class="at">collapse=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TAAGACTCAAAAACG"</code></pre>
+<pre><code>[1] "TAGGCGTGCGATCAT"</code></pre>
 </div>
 </div>
 </section>
@@ -168,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span> genome, <span class="at">replace=</span> <span class="cn">TRUE</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span> (randGenome, <span class="at">collapse=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "CAGGAATTATCTGGACGTTCAACGTGATCACTGAGAGAGTTGACGCTCCAAGGCGAACACTAAGTAATTTCCACAATCACCACCGCGCCGGGAGCGCCACCAAGGCTCGGACTTAGCCTAAATTGCCAACACCGCCATTCTAGCTTACGCTGTTATGCAACCTTCGTCGGGCGTCGACGACAATATGATGGGACCTGTTTGAGAGTATGGGAGAGTCATCGGGATCTCCCGTGTGAGGAAAGGCAACAGCATTCCCGATCTATAGCCGTCCAGAGATACGGTGGAGCCCCTATAGGGTCTTCGTGTCCATGGGACCTAGGCTAAGTAGGTGCTTTGCAGCCCGCGATAAAGGAGGGGACCCACCAGCACGTAGACGTTATAGGATTGCTCGAACAAAGGAGAGAAGGTACACGGTGTGCTGCTAGGCTTACGACTTATACGTCACCGCCTGTCGTGTTGGAGTTGACGTGATGACATCTGATGGACGTCCTCTTGTCTATCTACACACTCCCGTCCGTTTCTCCGTGCATTGTTTCACGTCAGTCTGCACCGGCATCCATCGTGCGGCACATGCTCTTTAGACCCGCTTTTCAAACGTCAATAGGAATCCCGAACCGAGCGCCGGGATCCGAATATATAAGTCACAGCCAAACCACCTAAGCCTTCATCTCGGAACGGATGGTCGTAATCGCTCTACAAGGCGGAGGGGAGCCGTGGACATTGGCGGAACCAGTGCTACAGAGCGTCGTCCTAGCTGCGCGGGATTTATGAACCCCCACCCCAGATTCATGCGATGGGCGTCAACGCTCTGCGAGGATACCAATACCGCATATTCAAAGTAGAGGGAGCGGGAAAAAGAGTATGGGGGGTGCAATCGACCCCCAGTCGGTCTCGATTGGGTCAGCGCTGTTTATAATGTAGGTCAGTGGGCCCGGACCCGCGGGTACCACCTCTCTTTACGGGCGCTGCCCGCTCGCACGCAAGTAAGAGTGTAAGCCCGAACGTGAAATGCAACATTGGGCTTTTTTCCCGCTAATTTCTGTCGTCTACCACCGTACCCCGCCTTGGCAGGAACTCGTGGAAAACGAATTGTGTTACAAAGATCGGTGCAAGATTGAACCATCCTGACTAGGTCGCATTCGCCACGCTGTGAGCTTTTTTGTCTTAGAAATCCTTGCCGGCCGATATAACCTCTTAAAAGGTCTTTAGCGAAACTATACGTTTGTATGCACTGCGGTGTGTCTACCAAAGTATCGGATTTGGTATTCCGAATTCTCTGTAATAAACAGCCCTCCGTCCAGGCCAAGCTGCGGTGCAATCAAATAGGAGTGGTGCGAACCCTGAAGGGCTTTCTGAAGCGCGTACTACGGGGCAATCTGGCGTTAGGCTAATACTTCTGCAGTAGGATTCAACAGTCGTCTCTTTTCATTGGTATCATGATCATAACATGGCTTAATGCTGGATTCAAGCGGAACCAACTTACATTTCAAGCGCCTGCTG"</code></pre>
+<pre><code>[1] "GGTGTCAGTCGCCCTAATACACGAGAGGCGTGATCCTTAACGGTCTAATGCTACAGCTGATCTATATGAAACGGTACTTAACGGCTCCTACGGATTACTGCTTAAAACTTACGAGCCCAAATCAAGGTTTATAAAGACAAAATTACGTGAGACACCTGGCTTTAATTTACATTTACGAGAACTCGATCGCCTCGCGTCAAGACTGGTAGGTTGGAAGCTGCGGTTAGAATGGTTATCCAAATTATTTGTCTACTGGTCAGGGCTCGGCAGGAGGTGTCATTATGGCGAACCGCCCTATATGTTCTTTCGTCCCCAAAAGTTCGTATAATGCAGCACTGAACAAGGTACGGTGCATGCCGCGGGAGATTACATTCGGGGAGAGCATGCAGCCCACACGGTTAGATCTCAAAAGAGATCAGTGAGAAAACTATGGGAGAAGCTGTAGGCAGCGCTTACCACGCCCCGGTCCCTCTAGCTCGAACGCGGCGGCGCGAGTTACCACACACAGGATGTAGTCAAAACGGAAAGTCTAGGGTAATTTGCAGTGGGAACAAGGGTGCGGTTACCGCTCCTAAAGCCCGATGCACGTCGTGCTGGACTTACGGGTGCAGACACTGGCCAAATGTAATCAGAAGCACCGCGACCGAGTAGATTTGGGGAAAGACCAACTTGTACTTCATAGTTGCCGCATGGGCCCCAAACTCAACTTACGAACGAGTCACGAAGCCGAGTAATAGATACGTGCTGTAATCTAATCTACGGCTGGGGCGTTACTTAGCCTAAAATCTCAGGTTTAACCTCAAAGTGATTCATGCAAAATCATCATTGGTACCCGCGGCTGACTTGCCGTCAAGATTGGACAGTACACCCATATGCGTTTTCGGCATGCCAAGGATTTCTCGATGCCTATACGACGGAGCTCCAAAGTTTTACGTCTTCAAAACCATTATACAGCCTACTCTGATCAAATCAATCCACGGCACGGTAGGATGTGCTATTCCATACCACTCGGACCACTTACGAACGTTCCAGTCTCACCCGGCATAAGACATGCCCTGACGAATAGGAATTCACACTCGTCTGCGCTAAACCTTCTGTGACATTCCGGCGATCAAGTGTGCCGGATATGGAACAAAGCGCTCTTCTGTCCGAGTTTGTACGTCCTGGGAATCAGAATCCGCCTTTCGATCAAGTGGGGTGTGAATCGCCATGCTCCCGGAAGTTGCGCAAGAAGATCTGCCGCTGGGCTCTTGTGCGACGGACCAAGACTCCCAACTTCGTCCGTGTCCTGATACGACCTTTCCACGTCCGCCGACTTGCCTGAGAATGCATTCGAGCTGAGGAGAGTTCGTAGCAAGTGACAAGCGACCTGCTTCCTTGGCAAACACGGTTTAGCCTCTGATCAGTTGTGTGGATGTTGGGTCATCAAAGGACTCCCGAAAGGGGCTATCTCGGGCAAGAGAACTGCTTTGAAATTAATCGATCCCTCTCAACATTGTA"</code></pre>
 </div>
 </div>
 <p>Here, I am using <code>set.seed(215)</code> to initialize the random number generation with the seed 215, using the <code>paste()</code> function to collapse the list into one string.</p>
@@ -261,14 +261,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="challenge-7" class="level3">
 <h3 class="anchored" data-anchor-id="challenge-7">Challenge 7</h3>
+<p>Here, I adapted the for loop used in Challenge 6 to count the number of occurrences of Adenine in the string. I did this by creating the adenineCount variable, set to 0. I then removed the <code>print()</code> function previously used and replaced it with adenineCount, increasing the value by 1 every time there is an Adenine in the string, <code>adenineCount &lt;-adenineCount +1</code>, then reinserted the <code>print()</code> function to print the count of Adenine occurrences.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>adenineCount <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"A"</span>){</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    (<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i))</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    adenineCount <span class="ot">&lt;-</span> adenineCount <span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(adenineCount)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2</code></pre>
 </div>
+</div>
+</section>
+<section id="challenge-8" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-8">Challenge 8</h3>
 </section>
 
 </main>

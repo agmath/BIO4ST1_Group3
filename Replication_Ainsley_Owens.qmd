@@ -108,12 +108,17 @@ for(j in 1:nchar(randGenome)){
 
 ### Challenge 7
 
+Here, I adapted the for loop used in Challenge 6 to count the number of occurrences of Adenine in the string. I did this by creating the adenineCount variable, set to 0. I then removed the `print()` function previously used and replaced it with adenineCount, increasing the value by 1 every time there is an Adenine in the string, `adenineCount <-adenineCount +1`, then reinserted the `print()` function to print the count of Adenine occurrences.
+
 ```{r}
 adenineCount <- 0
 for(i in 1:nchar(randGenome)){
   if(str_sub(randGenome, start = i, end = i) == "A"){
-    (str_sub(randGenome, start = i, end = i))
-   }
+    adenineCount <- adenineCount +1
+    print(adenineCount)
+  }
 }
 
 ```
+
+### Challenge 8
