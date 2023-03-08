@@ -22,7 +22,7 @@ You'll quickly see the value of including text to explain your code chunks, and 
 
 Now, remove this *Getting Started* text and you'll be ready to start sciencing.
 
-# Challenge 1 
+# Challenge 1
 
 ```{r}
 # Challenge 1
@@ -32,7 +32,9 @@ nucleotides
 
 ```
 
-# Challenge 2 
+Challenge 1 involved creating a list of the four nucleotides- A, C, G, and T.
+
+# Challenge 2
 
 ```{r}
 # Challenge 2
@@ -51,9 +53,9 @@ randGenome
 
 ```
 
-When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
+In challenge 2 I used code to create a random string of 15 nucleotides. Additional code (paste) was used to collapse the genome of nucleotides into a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
 
-# Challenge 3 
+# Challenge 3
 
 ```{r}
 # Challenge 3
@@ -76,6 +78,8 @@ randGenome <- sample(nucleotides, size = genomeLength, replace = TRUE)
 randGenome <- paste(randGenome, collapse = "")
 randGenome
 ```
+
+Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the `paste()` method in code to collapse it from a list down to a single string.
 
 # Challenge 4
 
@@ -101,7 +105,7 @@ for(i in 1:10){
 }
 ```
 
-# Challenge 5 
+# Challenge 5
 
 ```{r}
 # Challenge 5 
@@ -115,3 +119,21 @@ for(j in 1:15){
 ```
 
 # Challenge 6
+
+```{r}
+# Challenge 6
+
+Genome <- 10
+randGenome <- sample(nucleotides, size = Genome, replace = TRUE)
+randGenome <- paste(randGenome, collapse = "")
+randGenome
+
+```
+
+```{r}
+myProduct <- 1
+for(j in 1:15){
+  myProduct <- myProduct * j
+  print(myProduct)
+}
+```
