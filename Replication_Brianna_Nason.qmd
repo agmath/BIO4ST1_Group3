@@ -136,3 +136,53 @@ for(i in 1:nchar(randGenome)){
 
 
 ```
+
+## Challenge 8
+
+```{r}
+Nucleotides <- c("A", "C", "G", "T")
+Genome_size <- 10
+
+randGenome <- paste(
+  sample(Nucleotides, size = Genome_size, replace = TRUE),
+                   collapse = "")
+print(randGenome)
+
+Adenine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "A")
+    Adenine_count <- Adenine_count + 1
+    
+    print(Adenine_count)
+}
+
+Cytosine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "C")
+    Cytosine_count <- Cytosine_count + 1
+    
+    print(Cytosine_count)
+}
+
+Guanine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "G")
+    Guanine_count <- Guanine_count + 1
+    
+    print(Guanine_count)
+}
+
+Thymine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "T")
+    Thymine_count <- Thymine_count + 1
+    
+    print(Thymine_count)
+  }
+```
+
+## Challenge 9
+
+```{r}
+vib_c <- scan("C:/Users/agilb/Desktop/Bioinformatics Data/VibrioCholerae.txt", what = "character", sep = NULL) 
+```
