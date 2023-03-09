@@ -115,10 +115,116 @@ adenineCount <- 0
 for(i in 1:nchar(randGenome)){
   if(str_sub(randGenome, start = i, end = i) == "A"){
     adenineCount <- adenineCount +1
-    print(adenineCount)
   }
 }
-
+ print(adenineCount)
 ```
 
 ### Challenge 8
+
+Now that I have created a for loop to count the number of occurrences of Adenine in the string, I will adapt the loop to count the frequencies of each of the four nucleotides.
+
+```{r}
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "T"){
+   thymineCount <- thymineCount +1
+  
+  }
+   if(str_sub(randGenome, start = i, end = i) == "A"){
+   adenineCount <- adenineCount +1
+   }
+   
+  if(str_sub(randGenome, start = i, end = i) == "C"){
+   cytosineCount <- cytosineCount +1
+  
+  }
+  if(str_sub(randGenome, start = i, end = i) == "G"){
+   guanineCount <- guanineCount +1
+  
+  }
+}
+print(thymineCount)
+print(adenineCount)
+print(guanineCount)
+print(cytosineCount)
+```
+
+Here, I read in the Vibrio Cholerae genome, composed of 1,108,250 nucleotides.
+
+```{r}
+vib_c <- scan("C:/Users/owens/OneDrive/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
+```
+
+### Challenge 9
+
+Now I can use the for loop I created to count all of the occurrences of the individual nucleotides in the cholera genome.
+
+```{r}
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "T"){
+   thymineCount <- thymineCount +1
+  
+  }
+   if(str_sub(vib_c, start = i, end = i) == "A"){
+   adenineCount <- adenineCount +1
+   }
+   
+  if(str_sub(vib_c, start = i, end = i) == "C"){
+   cytosineCount <- cytosineCount +1
+  
+  }
+  if(str_sub(vib_c, start = i, end = i) == "G"){
+   guanineCount <- guanineCount +1
+  
+  }
+}
+print(thymineCount)
+print(adenineCount)
+print(guanineCount)
+print(cytosineCount)
+
+```
+
+### Challenge 10
+
+```{r}
+rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna.txt", what = "character", sep = NULL)
+```
+
+```{r}
+
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(rosalindSequence)){
+  if(str_sub(rosalindSequence, start = i, end = i) == "T"){
+   thymineCount <- adenineCount +1
+  
+  }
+   if(str_sub(rosalindSequence, start = i, end = i) == "A"){
+   adenineCount <- cytosineCount +1
+   }
+   
+  if(str_sub(rosalindSequence, start = i, end = i) == "C"){
+   cytosineCount <- guanineCount +1
+  
+  }
+  if(str_sub(rosalindSequence, start = i, end = i) == "G"){
+   guanineCount <- thymineCount +1
+  
+  }
+}
+print(adenineCount)
+print(cytosineCount)
+print(guanineCount)
+print(thymineCount)
+```
