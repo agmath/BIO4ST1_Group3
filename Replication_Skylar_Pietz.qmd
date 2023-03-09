@@ -149,4 +149,70 @@ for(j in 1:nchar(randGenome)){
 
 Challenge 6 involved generating a random genome substring consisting of 10 nucleotides and using the `paste()` method to collapse the genome to a single string rather than a list. Next, I wrote a `for` loop to print out each individual nucleotide instead of the entire thing. Next, I added the `1:nchar()` function to run the for loop through all nucleotides in the string. The `str_sub()` function was used to extract individual nucleotides. By using `str_sub()` and using `j` as both the start and end for subsetting, I was able to have the for loop extract each individual nucleotide.
 
-# Challenge 7 
+# Challenge 7
+
+```{r}
+nucleotides <- c("A", "C", "G", "T")
+genomeLength <- 10
+
+randGenome <- paste(
+  sample(nucleotides, size = genomeLength, replace = TRUE),
+                   collapse = "")
+print(randGenome)
+```
+
+```{r}
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "A"){
+    print(str_sub(randGenome, start = i, end = i))
+  }
+}
+```
+
+```{r}
+countA <- 0 
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "A"){
+    countA <- countA + 1
+    print(countA)
+  }
+}
+```
+
+# Challenge 8
+
+```{r}
+countG <- 0 
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "G"){
+    countG <- countG + 1
+    print(countG)
+  }
+}
+```
+
+```{r}
+countC <- 0 
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "C"){
+    countC <- countC + 1
+    print(countC)
+  }
+}
+```
+
+```{r}
+countT <- 0 
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "T"){
+    countT <- countT + 1
+    print(countT)
+  }
+}
+```
+
+## Vibrio Cholerae Chromosome DNA
+
+```{r}
+vib_c <- scan("VibrioCholerae.txt", what = "character", sep = NULL)
+```
