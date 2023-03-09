@@ -38,7 +38,7 @@ nucleotides
 :::
 
 
-Challenge 1 involved creating a list of the four nucleotides- A, C, G, and T.
+Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the c() function.
 
 # Challenge 2
 
@@ -55,7 +55,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "G" "G" "A" "A" "A" "T" "A" "A" "G" "T" "G" "A" "C" "C" "T"
+ [1] "C" "C" "G" "A" "C" "G" "T" "T" "T" "A" "T" "T" "G" "C" "C"
 ```
 :::
 :::
@@ -69,13 +69,13 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "GGAAATAAGTGACCT"
+[1] "CCGACGTTTATTGCC"
 ```
 :::
 :::
 
 
-In challenge 2 I used code to create a random string of 15 nucleotides. Additional code (paste) was used to collapse the genome of nucleotides into a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
+In challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The `paste()` method was used to collapse the genome of nucleotides down to a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
 
 # Challenge 3
 
@@ -93,7 +93,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "ACTTTTCTCGCGTAAACCGTTGGCCGCAATGTGAACTGTACTACATGCCTTCGAATTACGAATGCGCAGAGCAGCGGTTCCAAGCTGCAATCGGCCTACGCCGTAGGTCTTACCATATTGGGACTTTGTTTCAGAGAGACAGTCTTCTGAGGGAATACAAGGATAGGGCAGTATTACGTCGTGCGGCGTCCCTATAATACATCCATGATGATCGAGGGTTGTAATGACAAATACCACCCCCCATGTCACGAGCCGGATTATGCCCGGGAGTTAAGTTTCGACAATAGGGGCCAGTAGACCACTACCGGTCATAAGCCACAGAGGCAAGTATACGCAATCAATAGCAATTACTCCGTGAGTAGTTAAGAGATTCAACGCAAGTCGTGGGATGCTCTATACTAAAAGGTGTCGTCTTGAAAAGCTGGTAAATAAGGTTCCCGACGGAGGGGAGTGTATATATAAAGGGCAGTGCTATGGTAGCAATGCCCCTACCGATAAACTCAGACAGTGCAGGGACTATAAGTAGAGGTGTTCACTCCTGGCTCACAGGTACAGGGTCGAGTGCGGATCATTACTTGAGAGTCCGTACCCCGCTATGTGACTTACTGTACCACAGACCTGACATTGCCCTTAGGAAGGGAGCGTGGGCGTAACTAAGGAATGTATGTCCTACTTATCCATTATTACACGTCTGCTATATGGAGCCCAGCTAATCTCATATAAAGCAATTTTGACCTGCCTAGGGTAAACCGTGCAATCAGCTGTTGGATGCATCCGCCGAGGCGGTGCTCGCAGACATCAGACCAACGTATCATTCCTGCCAGTGGACGGCTTGCATATGTGTGGGACTATGGATCATTTCCTCTAGTCCTCTATAGCTACAGAGTCTCGTCCGTATATAACGTTCCGACGGAATTGTTGCACTGAGCCATTGTCGACTAACCTCAGCCTAGTGCCAAAAGCCGGCGGTCTACGAATTGACTGAATTAGACATTGGTGTCTGGGCAGGTAATATTAGAGCCCCATAGTCCCTACGAAGGCGTTCCTCTAATCGCGTTAGTCCAGGCATATCCAGCTCTTGTCGTTCCCGAACTTCTTCCATTCACGTACCTTTCGGCCTACCCCCGTAATATTAGCAACCTGCTTGGTAAACCATGGGCGTAGCTCCCCCGCTCATATCAAGCCCACGCTTAGTTAACTTGCAGAGTTTGTCAGTAGAGACGTCACCGCGGAACACGACACATTCTACTGCTTCAGAGACTCTCGTGGACGACAGATTGACAGCTCATTTGTATGGGTACCGTAAGGCGAAGTAAACGATTTGAGCTCCCCACAATGCGGCTGGTCACCACTCCCTACCACCAGATATGGTCCCGATATTGTCAATTCCTTCGCTAATGAACTGGATTGTGAAAGCCGGTGACAGTAGCGGAAACCTAATGATGGAATAGGGTACACGTGAGCCCGCCATTTGTGTGCTCCACTAAAGCGAATCATGGG"
+[1] "GATATGCGCACGACGACATCGCCTATTACATCACCGGGTATTGAGACCACGCACCATGCCCGGACTCAAGGCACAGAATCAAACCTTAGGACCCGTAGAATTTTGGCGTGACGCGCTCCCCTGTTCGCAACCGGGATATACCAGACTGGCATGAACCGACGCATGTAAGCGGCAGCTCACTGGGTAGGAGCGTAGGATTGACCCTTTGTAAATTGAAGGCTCGTGCAACACAACCACTTTATGCGCGGTAACGGGGATTGGGTAGTCTCTTGCTCGGCGGGAAACTCCGTGTAGTTTGTTTTGAGGATCGTTCAAAACACCGGGCCTCCAGTGGAGTGCAGCGATGCGGATAAAACGCTTGATGAGTAACCAAGGGAGAAAGGGGGGGCGTGTCATCTTTTACTAATTATACGCATTGTCCCATTTTGCACGTTTCACTCAGACTAGGGCCTATATTGGGAAAGGCTTCCACGCGCTTGCTCTTCATATAATGAAAAGCAACCTTTGGCGTGTAAACAAATCGCACCATCTAGACTCTATGAGGCTTGTAGACGTAGCAGTGGACTAGACCTAACTATAATTCCCTTAGATTTCCGCTTCTGAGATTTCGACTAAGCGTGATACAATGTGAAACAAACACTAAGGCCGGGTGCCATTCCAATATGTTGAGCAAATAGGTGAATGTATTCCGCTCATAATATGCTTACGCCCGCAGTCTCGTGTCTAGTGTCGGAACCCAAACCACTGCGATGCTGCCAGAGAAGGTACCTTAGGCAGTTGGGAAATAGCGGTGTGTGACCCTAATAAGTTACCGTCAGTACTATTACGTGACTTTTTTTCACATAGATAATATGTATGTTCCGATTCCGCCACTCATGAAGGAGCGCGGGGATATAAAGACTTCAAACTTTAAATAACCTCCACTCAGTCATACGTCATTTCTGCACCTGTGGGCTTACGACGCGAGTTTGAAAATGTAGCCGTGAAGCTACGTAAAGTGACTATGACAGAACGGTCAAGGTGCTTGTCCCATACAGACTGCCGCCATGCTACTTCGGTACAAGTTTGCCTGCCCTGAAGGCACTCAAGCATCACGGTCAAGGCCGGTCAATTTACGCAAACAAATGGGTGGATTACCCAGAATCTTATGTTTCGCCCGGAACGCCGAGGGGGAGCCGAAGAAATGGAATCGCCTTGGTCACGAGCCCAAATGGCTAGAACACTAACGGACAAGATGTTCATAATGTATTGAGGGTACGTACGGCTTGCAAATAGAGCAAGGCAAATTCAGTGCGAGGGATCTTAGTTACCTTGCGGGAGGAGTAATAGTTCCGTGCTAGGCTTTATCTAAATACCTGGGCTATATCTTGACTACTCGTCTTCAGGGCCGGTGTCCTCTAGCCTCCCTGGCACGTTTCGCAACCTAACGCTAAGATAGTTTCCCGAAGGGGACTTAATACGGAGCGTCTACTAACCTGCGGCCGTGGACACTTTGGATCA"
 ```
 :::
 :::
@@ -120,7 +120,7 @@ randGenome
 :::
 
 
-Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the `paste()` method in code to collapse it from a list down to a single string.
+Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the `paste()` method in code to collapse it from a list down to a single string. I also added another line, using set.seed(215) to initialize a random number generator with the seed 215. And once again, the `paste()` function was used to collapse the list down to one single string.
 
 # Challenge 4
 
@@ -145,7 +145,9 @@ randGenome
 :::
 
 
-The frequency of Adenine (A) in the resulting "genome" above is 23.
+Here, I used `set.seed(215)` to generate a random genome (`randGenome`) consisting of 100 nucleotides, collapsed down to a single string with the `paste()` function. I counted the frequency of Adenine (A) in the resulting "genome" above and got 23.
+
+## **`for`** Loops
 
 
 ::: {.cell}
@@ -175,6 +177,8 @@ for(i in 1:10){
 :::
 :::
 
+
+Before starting challenge 5, I began learning different ways to run a new programming technique called the `for` loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.
 
 # Challenge 5
 
@@ -213,6 +217,8 @@ for(j in 1:15){
 :::
 
 
+In Challenge 5, I wrote and executed my own for loop in order to analyze a genome.
+
 # Challenge 6
 
 
@@ -221,6 +227,7 @@ for(j in 1:15){
 ```{.r .cell-code}
 # Challenge 6
 
+set.seed(215)
 Genome <- 10
 randGenome <- sample(nucleotides, size = Genome, replace = TRUE)
 randGenome <- paste(randGenome, collapse = "")
@@ -229,7 +236,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "CTGTGGACAG"
+[1] "TGGAATCTTT"
 ```
 :::
 :::
@@ -237,30 +244,30 @@ randGenome
 ::: {.cell}
 
 ```{.r .cell-code}
-myProduct <- 1
-for(j in 1:15){
-  myProduct <- myProduct * j
-  print(myProduct)
+for(j in 1:nchar(randGenome)){
+  print(str_sub(randGenome, start = j, end = j))
 }
 ```
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 1
-[1] 2
-[1] 6
-[1] 24
-[1] 120
-[1] 720
-[1] 5040
-[1] 40320
-[1] 362880
-[1] 3628800
-[1] 39916800
-[1] 479001600
-[1] 6227020800
-[1] 87178291200
-[1] 1.307674e+12
+[1] "T"
+[1] "G"
+[1] "G"
+[1] "A"
+[1] "A"
+[1] "T"
+[1] "C"
+[1] "T"
+[1] "T"
+[1] "T"
 ```
 :::
 :::
+
+
+## Flow Control
+
+Challenge 6 involved generating a random genome substring consisting of 10 nucleotides and using the `paste()` method to collapse the genome to a single string rather than a list. Next, I wrote a `for` loop to print out each individual nucleotide instead of the entire thing. Next, I added the `1:nchar()` function to run the for loop through all nucleotides in the string. The `str_sub()` function was used to extract individual nucleotides. By using `str_sub()` and using `j` as both the start and end for subsetting, I was able to have the for loop extract each individual nucleotide.
+
+# Challenge 7 

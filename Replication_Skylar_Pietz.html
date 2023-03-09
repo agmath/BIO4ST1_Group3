@@ -147,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] "A" "C" "G" "T"</code></pre>
 </div>
 </div>
-<p>Challenge 1 involved creating a list of the four nucleotides- A, C, G, and T.</p>
+<p>Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the c() function.</p>
 </section>
 <section id="challenge-2" class="level1">
 <h1>Challenge 2</h1>
@@ -158,17 +158,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "G" "G" "A" "A" "A" "T" "A" "A" "G" "T" "G" "A" "C" "C" "T"</code></pre>
+<pre><code> [1] "C" "C" "G" "A" "C" "G" "T" "T" "T" "A" "T" "T" "G" "C" "C"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "GGAAATAAGTGACCT"</code></pre>
+<pre><code>[1] "CCGACGTTTATTGCC"</code></pre>
 </div>
 </div>
-<p>In challenge 2 I used code to create a random string of 15 nucleotides. Additional code (paste) was used to collapse the genome of nucleotides into a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
+<p>In challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
 </section>
 <section id="challenge-3" class="level1">
 <h1>Challenge 3</h1>
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span> )</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "ACTTTTCTCGCGTAAACCGTTGGCCGCAATGTGAACTGTACTACATGCCTTCGAATTACGAATGCGCAGAGCAGCGGTTCCAAGCTGCAATCGGCCTACGCCGTAGGTCTTACCATATTGGGACTTTGTTTCAGAGAGACAGTCTTCTGAGGGAATACAAGGATAGGGCAGTATTACGTCGTGCGGCGTCCCTATAATACATCCATGATGATCGAGGGTTGTAATGACAAATACCACCCCCCATGTCACGAGCCGGATTATGCCCGGGAGTTAAGTTTCGACAATAGGGGCCAGTAGACCACTACCGGTCATAAGCCACAGAGGCAAGTATACGCAATCAATAGCAATTACTCCGTGAGTAGTTAAGAGATTCAACGCAAGTCGTGGGATGCTCTATACTAAAAGGTGTCGTCTTGAAAAGCTGGTAAATAAGGTTCCCGACGGAGGGGAGTGTATATATAAAGGGCAGTGCTATGGTAGCAATGCCCCTACCGATAAACTCAGACAGTGCAGGGACTATAAGTAGAGGTGTTCACTCCTGGCTCACAGGTACAGGGTCGAGTGCGGATCATTACTTGAGAGTCCGTACCCCGCTATGTGACTTACTGTACCACAGACCTGACATTGCCCTTAGGAAGGGAGCGTGGGCGTAACTAAGGAATGTATGTCCTACTTATCCATTATTACACGTCTGCTATATGGAGCCCAGCTAATCTCATATAAAGCAATTTTGACCTGCCTAGGGTAAACCGTGCAATCAGCTGTTGGATGCATCCGCCGAGGCGGTGCTCGCAGACATCAGACCAACGTATCATTCCTGCCAGTGGACGGCTTGCATATGTGTGGGACTATGGATCATTTCCTCTAGTCCTCTATAGCTACAGAGTCTCGTCCGTATATAACGTTCCGACGGAATTGTTGCACTGAGCCATTGTCGACTAACCTCAGCCTAGTGCCAAAAGCCGGCGGTCTACGAATTGACTGAATTAGACATTGGTGTCTGGGCAGGTAATATTAGAGCCCCATAGTCCCTACGAAGGCGTTCCTCTAATCGCGTTAGTCCAGGCATATCCAGCTCTTGTCGTTCCCGAACTTCTTCCATTCACGTACCTTTCGGCCTACCCCCGTAATATTAGCAACCTGCTTGGTAAACCATGGGCGTAGCTCCCCCGCTCATATCAAGCCCACGCTTAGTTAACTTGCAGAGTTTGTCAGTAGAGACGTCACCGCGGAACACGACACATTCTACTGCTTCAGAGACTCTCGTGGACGACAGATTGACAGCTCATTTGTATGGGTACCGTAAGGCGAAGTAAACGATTTGAGCTCCCCACAATGCGGCTGGTCACCACTCCCTACCACCAGATATGGTCCCGATATTGTCAATTCCTTCGCTAATGAACTGGATTGTGAAAGCCGGTGACAGTAGCGGAAACCTAATGATGGAATAGGGTACACGTGAGCCCGCCATTTGTGTGCTCCACTAAAGCGAATCATGGG"</code></pre>
+<pre><code>[1] "GATATGCGCACGACGACATCGCCTATTACATCACCGGGTATTGAGACCACGCACCATGCCCGGACTCAAGGCACAGAATCAAACCTTAGGACCCGTAGAATTTTGGCGTGACGCGCTCCCCTGTTCGCAACCGGGATATACCAGACTGGCATGAACCGACGCATGTAAGCGGCAGCTCACTGGGTAGGAGCGTAGGATTGACCCTTTGTAAATTGAAGGCTCGTGCAACACAACCACTTTATGCGCGGTAACGGGGATTGGGTAGTCTCTTGCTCGGCGGGAAACTCCGTGTAGTTTGTTTTGAGGATCGTTCAAAACACCGGGCCTCCAGTGGAGTGCAGCGATGCGGATAAAACGCTTGATGAGTAACCAAGGGAGAAAGGGGGGGCGTGTCATCTTTTACTAATTATACGCATTGTCCCATTTTGCACGTTTCACTCAGACTAGGGCCTATATTGGGAAAGGCTTCCACGCGCTTGCTCTTCATATAATGAAAAGCAACCTTTGGCGTGTAAACAAATCGCACCATCTAGACTCTATGAGGCTTGTAGACGTAGCAGTGGACTAGACCTAACTATAATTCCCTTAGATTTCCGCTTCTGAGATTTCGACTAAGCGTGATACAATGTGAAACAAACACTAAGGCCGGGTGCCATTCCAATATGTTGAGCAAATAGGTGAATGTATTCCGCTCATAATATGCTTACGCCCGCAGTCTCGTGTCTAGTGTCGGAACCCAAACCACTGCGATGCTGCCAGAGAAGGTACCTTAGGCAGTTGGGAAATAGCGGTGTGTGACCCTAATAAGTTACCGTCAGTACTATTACGTGACTTTTTTTCACATAGATAATATGTATGTTCCGATTCCGCCACTCATGAAGGAGCGCGGGGATATAAAGACTTCAAACTTTAAATAACCTCCACTCAGTCATACGTCATTTCTGCACCTGTGGGCTTACGACGCGAGTTTGAAAATGTAGCCGTGAAGCTACGTAAAGTGACTATGACAGAACGGTCAAGGTGCTTGTCCCATACAGACTGCCGCCATGCTACTTCGGTACAAGTTTGCCTGCCCTGAAGGCACTCAAGCATCACGGTCAAGGCCGGTCAATTTACGCAAACAAATGGGTGGATTACCCAGAATCTTATGTTTCGCCCGGAACGCCGAGGGGGAGCCGAAGAAATGGAATCGCCTTGGTCACGAGCCCAAATGGCTAGAACACTAACGGACAAGATGTTCATAATGTATTGAGGGTACGTACGGCTTGCAAATAGAGCAAGGCAAATTCAGTGCGAGGGATCTTAGTTACCTTGCGGGAGGAGTAATAGTTCCGTGCTAGGCTTTATCTAAATACCTGGGCTATATCTTGACTACTCGTCTTCAGGGCCGGTGTCCTCTAGCCTCCCTGGCACGTTTCGCAACCTAACGCTAAGATAGTTTCCCGAAGGGGACTTAATACGGAGCGTCTACTAACCTGCGGCCGTGGACACTTTGGATCA"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] "TGGAATCTTTAATGTTCCGACCTTTGAGCCTCAAGTTGGACTACCGCGGCCCCCGACCGAGAGCTAACTCTAAATGATGCAAGCAGCGCGTGCCGAGTCTCTGTGGACAGGATCACATTGGATGTGAGCCAAGATCTCGAGATGAAAAACAAGTAGGTTCTCTATCGCTGGCTCCAATCATTTTTATCCTTTGCTGCATACTTATGGCCCTCCAACCTTGCGAATTGCGGCATTACGTTCTATGCACGAAAGAGGCACGAGATGTATATCACTCTTCAGCTATCTGACACAGGTAGGCATTGGATGTCAGCGTACGACCGGGGTAGGCAACCCCTTCTGTTGCCCCGCTGGCCGGATGCCAAGGTGTTTTACATCGGTATTTTAAAGATGTGAACTTAAGTAACCTACTTAGCTGACGGGAAGGTGCACATGTATGTGTGACTCTACACCAAGATGCACTTAGGCATCAATAAAAGTTGCCGGTTTGTAATCCTTGACAGTAATCGAGATAATTACTTGCGGGCACATAACCTACTCGGTTCGTCCCCCTTAGCGTACGGGGGGGTGGGGAACCATCAGCGTTCGTATGTTAGTCCTCCGGCATTTTTGGTCACGGCCCTCCATGAAATACATACTAGCGTGCCATTCCGGTCAAATGGCCCTGCGAAGGATGCGGTGCGGTAAGCGTGTGGGCCATACTTGGGCAGATTGAGTTATAAGAAACAGGCAAATTGGGAACTAGTGCGGCACATGTACAGCTCGCACTTCCTGGGGGGCGACTACCGAATTCCTAGTATGTCTGAGTAGCGTACCGGGCCAGCTTTGGGTCCTCTTACCTTGTAATGGGATCGGCCTTATGGGATGCCATGACGACACTGCGGGAGGTTAATAAGTGTCCGCGATAAAGCCTCGTGGTCGAAATCTGTTACGTGCTCTTCTGTCATTTGCCATATTGGTAAAGTTCAAGAGCCACCCTATCTATTGACTCCTAGATCTCCCAAATGTATCCTCCAACAGTACTTCACCTGGATGGTAACCCCACCTCAATCACCACTTAGGTCTCCAGTACTTTTGAGCCGCCTACGCGCTCTCGAAATAAGCTAAGCTAGCTACGGTCCGTGTTAGGCGAAAAATGAATCCCTTTCCAGCGCTACCAAGTGTAGTCGGATGCGGTTGACTTATGCCTGCCCGGTGAGCAGAATTTAAATCGCTGTACCAATCAGCACTACCACAAGGCGAACGGGGCAGCCACGACTGGCGCCACAAGCATGGAAGGAGTGTCGGGCGAAATCAGGGCCGCATTAAGCCGTTTTATCACGGGTAAAGAGGTCACATGTGCACAGAGCCAGATAGTCGGCAGTGAAGGGCACAACGCTTTTTCGGCAGGAAGACCCTTGCACCTTTATCACACCGCGGGTCATCACCGGCCAAAGCAGTCGGCGGTCAACGTTAAAATTATTGCATGTCTAGGTAAAGCAGGACCAGAGAGACGTCGAAATC"</code></pre>
 </div>
 </div>
-<p>Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the <code>paste()</code> method in code to collapse it from a list down to a single string.</p>
+<p>Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the <code>paste()</code> method in code to collapse it from a list down to a single string. I also added another line, using set.seed(215) to initialize a random number generator with the seed 215. And once again, the <code>paste()</code> function was used to collapse the list down to one single string.</p>
 </section>
 <section id="challenge-4" class="level1">
 <h1>Challenge 4</h1>
@@ -213,7 +213,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] "TGGAATCTTTAATGTTCCGACCTTTGAGCCTCAAGTTGGACTACCGCGGCCCCCGACCGAGAGCTAACTCTAAATGATGCAAGCAGCGCGTGCCGAGTCT"</code></pre>
 </div>
 </div>
-<p>The frequency of Adenine (A) in the resulting “genome” above is 23.</p>
+<p>Here, I used <code>set.seed(215)</code> to generate a random genome (<code>randGenome</code>) consisting of 100 nucleotides, collapsed down to a single string with the <code>paste()</code> function. I counted the frequency of Adenine (A) in the resulting “genome” above and got 23.</p>
+<section id="for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="for-loops"><strong><code>for</code></strong> Loops</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mySum <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -234,6 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [1] 55</code></pre>
 </div>
 </div>
+<p>Before starting challenge 5, I began learning different ways to run a new programming technique called the <code>for</code> loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.</p>
+</section>
 </section>
 <section id="challenge-5" class="level1">
 <h1>Challenge 5</h1>
@@ -263,44 +267,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [1] 1.307674e+12</code></pre>
 </div>
 </div>
+<p>In Challenge 5, I wrote and executed my own for loop in order to analyze a genome.</p>
 </section>
 <section id="challenge-6" class="level1">
 <h1>Challenge 6</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 6</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Genome <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">215</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>Genome <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "CTGTGGACAG"</code></pre>
+<pre><code>[1] "TGGAATCTTT"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>myProduct <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>){</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  myProduct <span class="ot">&lt;-</span> myProduct <span class="sc">*</span> j</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(myProduct)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> j, <span class="at">end =</span> j))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 6
-[1] 24
-[1] 120
-[1] 720
-[1] 5040
-[1] 40320
-[1] 362880
-[1] 3628800
-[1] 39916800
-[1] 479001600
-[1] 6227020800
-[1] 87178291200
-[1] 1.307674e+12</code></pre>
+<pre><code>[1] "T"
+[1] "G"
+[1] "G"
+[1] "A"
+[1] "A"
+[1] "T"
+[1] "C"
+[1] "T"
+[1] "T"
+[1] "T"</code></pre>
 </div>
 </div>
+<section id="flow-control" class="level2">
+<h2 class="anchored" data-anchor-id="flow-control">Flow Control</h2>
+<p>Challenge 6 involved generating a random genome substring consisting of 10 nucleotides and using the <code>paste()</code> method to collapse the genome to a single string rather than a list. Next, I wrote a <code>for</code> loop to print out each individual nucleotide instead of the entire thing. Next, I added the <code>1:nchar()</code> function to run the for loop through all nucleotides in the string. The <code>str_sub()</code> function was used to extract individual nucleotides. By using <code>str_sub()</code> and using <code>j</code> as both the start and end for subsetting, I was able to have the for loop extract each individual nucleotide.</p>
+</section>
+</section>
+<section id="challenge-7" class="level1">
+<h1>Challenge 7</h1>
 </section>
 
 </main>
