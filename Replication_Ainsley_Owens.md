@@ -45,7 +45,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "T" "A" "G" "G" "C" "G" "T" "G" "C" "G" "A" "T" "C" "A" "T"
+ [1] "G" "G" "C" "T" "G" "T" "A" "A" "T" "T" "G" "A" "A" "T" "G"
 ```
 :::
 :::
@@ -62,7 +62,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TAGGCGTGCGATCAT"
+[1] "GGCTGTAATTGAATG"
 ```
 :::
 :::
@@ -83,7 +83,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "GGTGTCAGTCGCCCTAATACACGAGAGGCGTGATCCTTAACGGTCTAATGCTACAGCTGATCTATATGAAACGGTACTTAACGGCTCCTACGGATTACTGCTTAAAACTTACGAGCCCAAATCAAGGTTTATAAAGACAAAATTACGTGAGACACCTGGCTTTAATTTACATTTACGAGAACTCGATCGCCTCGCGTCAAGACTGGTAGGTTGGAAGCTGCGGTTAGAATGGTTATCCAAATTATTTGTCTACTGGTCAGGGCTCGGCAGGAGGTGTCATTATGGCGAACCGCCCTATATGTTCTTTCGTCCCCAAAAGTTCGTATAATGCAGCACTGAACAAGGTACGGTGCATGCCGCGGGAGATTACATTCGGGGAGAGCATGCAGCCCACACGGTTAGATCTCAAAAGAGATCAGTGAGAAAACTATGGGAGAAGCTGTAGGCAGCGCTTACCACGCCCCGGTCCCTCTAGCTCGAACGCGGCGGCGCGAGTTACCACACACAGGATGTAGTCAAAACGGAAAGTCTAGGGTAATTTGCAGTGGGAACAAGGGTGCGGTTACCGCTCCTAAAGCCCGATGCACGTCGTGCTGGACTTACGGGTGCAGACACTGGCCAAATGTAATCAGAAGCACCGCGACCGAGTAGATTTGGGGAAAGACCAACTTGTACTTCATAGTTGCCGCATGGGCCCCAAACTCAACTTACGAACGAGTCACGAAGCCGAGTAATAGATACGTGCTGTAATCTAATCTACGGCTGGGGCGTTACTTAGCCTAAAATCTCAGGTTTAACCTCAAAGTGATTCATGCAAAATCATCATTGGTACCCGCGGCTGACTTGCCGTCAAGATTGGACAGTACACCCATATGCGTTTTCGGCATGCCAAGGATTTCTCGATGCCTATACGACGGAGCTCCAAAGTTTTACGTCTTCAAAACCATTATACAGCCTACTCTGATCAAATCAATCCACGGCACGGTAGGATGTGCTATTCCATACCACTCGGACCACTTACGAACGTTCCAGTCTCACCCGGCATAAGACATGCCCTGACGAATAGGAATTCACACTCGTCTGCGCTAAACCTTCTGTGACATTCCGGCGATCAAGTGTGCCGGATATGGAACAAAGCGCTCTTCTGTCCGAGTTTGTACGTCCTGGGAATCAGAATCCGCCTTTCGATCAAGTGGGGTGTGAATCGCCATGCTCCCGGAAGTTGCGCAAGAAGATCTGCCGCTGGGCTCTTGTGCGACGGACCAAGACTCCCAACTTCGTCCGTGTCCTGATACGACCTTTCCACGTCCGCCGACTTGCCTGAGAATGCATTCGAGCTGAGGAGAGTTCGTAGCAAGTGACAAGCGACCTGCTTCCTTGGCAAACACGGTTTAGCCTCTGATCAGTTGTGTGGATGTTGGGTCATCAAAGGACTCCCGAAAGGGGCTATCTCGGGCAAGAGAACTGCTTTGAAATTAATCGATCCCTCTCAACATTGTA"
+[1] "TAGTGGGGACTCCCTCTAGTATCCTGGACCCGCGATGACTAGCAATTTTGACACCTAGGGGTCGAATTTCGCACGTGCGTATTCATACCTCTTGGCCTTGACTCGAGCAGATGACGTCCTATCCATACACACCGGAAATCAGTGCGGAGTAACCCTAGCCTTCCTCTCACTAGTTTGTGAATTATTAGTTTCTTCTTCGTAATGTGGCATTGTTTCGTCATATCTCCCCATCAGCAGGCCTAGGCGAGTTTTCCCGAAATTCCATCTTGATAGTTACATATTGAACAAGCCCAGGCGTGGGCACCGCCGGACCACGGGGTGATTCTCTAAGACTCTGTATTCGGACAAACTCATAAAGCAGCTTGCAAGTCGTAGGTGGGACCGAGTAGGATTAGCTCATCGGGCTCAAGTGCTGACTAGCCCCCTACGGGTCTCTTTCTGGGATGTTAAAAACACAACGGAGGCCGAGGTATTAGGCTCATATTCGCACAAAAAATTGAAACCTCAACAGAAGCTCTGCTCCGCCTTGTCCTCTCGAGTAGAATATCAGGTCCGTCAAAGACGGAGGGCGTAATATGCCCCGTGAACAAAGCGGCTTCAAAGCCTCTACTTGCTAATGTATAGTGATTGTGAGTCTGCAGGTGGGTACGACACGTATTCATCATATCAATGTGTAAAGGTCGAGGTGACCTATCACTCTAATATACCATAGTTAGGTGCCTGCGCTGGGCCGTACTTGTCGGCGCTTGACTGGATTGCGTATCGGAGGGTCACAGTTCGGCCCATCGGACGCTCCGCCGGTAAGTAGGTAAGGGTTACCCTAAAACCGTCACTCCAATGACCGATCTCTCTTTAACGTACCGGATCCTGCAGGAACTCTGTACGCTAGGGATGCAGCCGTAGGTGCTGAAAGCCATTACTGAGGCTAATAAAGATACAGTTTCTACAGAGTGCCAGCCTCTATGGATCCTCCCGCTAAGGCCTGCACCTTGTGTAGCACCACAGGAGGTTCGCAACCTCATGTGACACAATGAAGCGAGAGATGTAGCCCGATAACTATGCCATTAGCGGCTCAAAAGATACAGACCCTGTATTTGATCAATTTATCACATACATGGCAACTTAGGACCGTACTTATAAGGTGACGGAACAACAGCTTATGGATCACGCGGGCGAGAGGTCTTGATCCATGTAGCAAGATCGTGTCGTGTCAACGGAGCCCTATCTTCCTATATAGGCGAACTGGAACGGATGTATAACTCTGGTAGAGGAGCGAGACTAGTCGTCACATGGCCGTACGTTTGGGCCCAGAACGATAAGCGAAGAGCCCGCATTCATTCAGCATTCGCCTGTTAGATCAATAGGTAACGAGATCAATGAATGGAAAATATCGGTACCTATTCCGGGTACTGGAGCCTGAGTATCAATGGGGAAGATGGAGCTACTGTAGTACTGGGTCCACATATTATTTTCTACATGAAACGACGCAAGGTGGCAAAG"
 ```
 :::
 :::
@@ -231,14 +231,13 @@ adenineCount <- 0
 for(i in 1:nchar(randGenome)){
   if(str_sub(randGenome, start = i, end = i) == "A"){
     adenineCount <- adenineCount +1
-    print(adenineCount)
   }
 }
+ print(adenineCount)
 ```
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 1
 [1] 2
 ```
 :::
@@ -246,3 +245,229 @@ for(i in 1:nchar(randGenome)){
 
 
 ### Challenge 8
+
+Now that I have created a for loop to count the number of occurrences of Adenine in the string, I will adapt the loop to count the frequencies of each of the four nucleotides.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "T"){
+   thymineCount <- thymineCount +1
+  
+  }
+   if(str_sub(randGenome, start = i, end = i) == "A"){
+   adenineCount <- adenineCount +1
+   }
+   
+  if(str_sub(randGenome, start = i, end = i) == "C"){
+   cytosineCount <- cytosineCount +1
+  
+  }
+  if(str_sub(randGenome, start = i, end = i) == "G"){
+   guanineCount <- guanineCount +1
+  
+  }
+}
+print(thymineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 5
+```
+:::
+
+```{.r .cell-code}
+print(adenineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 2
+```
+:::
+
+```{.r .cell-code}
+print(guanineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 1
+```
+:::
+
+```{.r .cell-code}
+print(cytosineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 2
+```
+:::
+:::
+
+
+Here, I read in the Vibrio Cholerae genome, composed of 1,108,250 nucleotides.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+vib_c <- scan("C:/Users/owens/OneDrive/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
+```
+:::
+
+
+### Challenge 9
+
+Now I can use the for loop I created to count all of the occurrences of the individual nucleotides in the cholera genome.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "T"){
+   thymineCount <- thymineCount +1
+  
+  }
+   if(str_sub(vib_c, start = i, end = i) == "A"){
+   adenineCount <- adenineCount +1
+   }
+   
+  if(str_sub(vib_c, start = i, end = i) == "C"){
+   cytosineCount <- cytosineCount +1
+  
+  }
+  if(str_sub(vib_c, start = i, end = i) == "G"){
+   guanineCount <- guanineCount +1
+  
+  }
+}
+print(thymineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 294711
+```
+:::
+
+```{.r .cell-code}
+print(adenineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 293942
+```
+:::
+
+```{.r .cell-code}
+print(guanineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 256024
+```
+:::
+
+```{.r .cell-code}
+print(cytosineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 263573
+```
+:::
+:::
+
+
+### Challenge 10
+
+
+::: {.cell}
+
+```{.r .cell-code}
+rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna.txt", what = "character", sep = NULL)
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+thymineCount <- 0
+cytosineCount <- 0
+adenineCount <- 0
+guanineCount <- 0
+for(i in 1:nchar(rosalindSequence)){
+  if(str_sub(rosalindSequence, start = i, end = i) == "T"){
+   thymineCount <- adenineCount +1
+  
+  }
+   if(str_sub(rosalindSequence, start = i, end = i) == "A"){
+   adenineCount <- cytosineCount +1
+   }
+   
+  if(str_sub(rosalindSequence, start = i, end = i) == "C"){
+   cytosineCount <- guanineCount +1
+  
+  }
+  if(str_sub(rosalindSequence, start = i, end = i) == "G"){
+   guanineCount <- thymineCount +1
+  
+  }
+}
+print(adenineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 229
+```
+:::
+
+```{.r .cell-code}
+print(cytosineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 228
+```
+:::
+
+```{.r .cell-code}
+print(guanineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 227
+```
+:::
+
+```{.r .cell-code}
+print(thymineCount)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 226
+```
+:::
+:::
