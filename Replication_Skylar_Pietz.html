@@ -158,14 +158,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "G" "T" "C" "C" "A" "C" "C" "C" "G" "A" "C" "C" "T" "G" "T"</code></pre>
+<pre><code> [1] "A" "C" "T" "T" "A" "G" "A" "G" "A" "G" "C" "A" "C" "G" "A"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "GTCCACCCGACCTGT"</code></pre>
+<pre><code>[1] "ACTTAGAGAGCACGA"</code></pre>
 </div>
 </div>
 <p>In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span> )</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "ATATAGGATGATCAAAGTACTATGCCACAGCATCACTGTGGGTGAGGACAACATCAGTTTTGAGGCCCTGAGGCCCTCTCGGTACCAATTAGCGGTCAGGCTGTGCGGCCGCCTACTATAATTCTCTGGTTATTTAGGTGTGTAATATCAACCTGAAATATGACTGACTTAAATCCGCCGCTCAATATAGAGCTAATCAACCCAGAGGGTAATGCGCCGAACCTGTCATCGTGTCTGGTAAACATGGAGTCTGCTTCGCGCACCGAGCTCACCGGGGAATACTGGGGTCCCGCAATTAACGTGGATTCGCCTACCATTATCTTCGCGTAAATCATCTCACATTACGTCAGAATCGCTCCCTGCTACCCAAATCGGCTCAAGATTCGCCCGGGCAAGCCTATTTAATGACTGCAACAATAGGAATCAGTGGGACACGTAATCACACCTGGCTTCAATCTTCGCAAATGTTGGCAACTGTTGGACTCACATAGACCATGCCTCGTAATCCTGTCTCGGTCTCAAAGGCATCTTCATTACGTGACAACGGGCAACGATGTTGTAACCCGTTCAGTGTGCCCCATCACGCATCTTCGTCATTATATTGGCCAGTTGAAGGGGAGTTATCAACACCAATCAAATGGCCTGTCAGCATCGATCGGGTATAATGGTTACGACTATTTCTCCCTAGCGCGGAGTTCTGATTCGATGACGCACTTTCGTATAATGTGCCTCTCCAGAGGTACGGGCAAGCGCAGCGCTCACATTACGTGACGACATTCAAGCGGTCTGAGTAGCATGTCACACCCAACGCTATACACATAATGGCGGCTATGTGGAGTTTAAGCCTAGGTTTGATTGTCTTTGTTCCCAGGGCACTTAGCTAGTGGCTACGTGGAGGACAGAGAGAGTCTATAATCGCGTAAGTGTTCTTGTAATTAGTGCGGGCCAACCAGTGTAGTGTTCCCAACACTGCAGCTTAAGCCCCTTTCCCTTGCGGGGGTTTTCTAATGATAAAGCATGACATCTATAGTGTTAATGTGTAATTATAAGGGTGCTGACCAACAATTGATGCCCTATTTACATAGACGTTTTAAGGGCATAGCCGACGGCGGTGTACGGCATCCGTAGGATGGAGAGGGTTTAACGCAAGGCACCGAAGGTACAGGGACTTTGTCGTTAAATCGGCAAATGGTGTCGGATAGCGTGTCTCTTAGAATCGTATGCGGACCCCTCCGGGCGAAGAGTTAAGAAACGCGCCGGAGGCTTAGATTGATTCCTGTAGCCCAGGCGTTGAAGCGATGTGCGTTGGCGCTGGCACCCCGTAACTGTGTACAATCGCACGACGTCCACGCAGTTAATAACGGAGCGACCTAGGATTTGCCGATATGAGGGACAATGCACATCTAAACAGGTGGCTTTTGAGCGAAGCACTTTGAGACAAAGTATACACTGACTGAGCAACGAGGTCGAGAGCTGGCACGGTGGAGACACGGTTATCAT"</code></pre>
+<pre><code>[1] "ACTAATCGGCTACCTGATGATGACCGCATCCTGCTACTACAGAGGAACCTTGTGTGTGAAATGGCTGTGGTCTGCCAGATGCGAGACCATTCACCAGAACAGAGGACCCCTAAGAGCGCAACTAGGTATCAACGACATAGACGCGTTTAACAACTATGAAAATCTTAATACTGAACAGCCATAGCGGAGTGCCCACCTACTATGCCGTTAAAAGGGTAGTACGATCTTACAGCCACTTTCGCCCCCAAGACACTAATCCCGGTCTGTGCACATCTCACTAAACAATTCTGTTTTAAGAATCACTCTGATACCCTCGGCAGAATCATCGAAGGTTAAGATGTCTCCCACTAAGAGAGTTACGGTGGTGGATGGATGGACTCAGGAAGCCGTTTGCGTCCATGACTAGCCCACTTACCGGGGCTTCCTTAGCTAGGTAACTCCTGAGCCCCTACGTGGTTGCGAGATCGAAGATAGAATTGGCGAGGGAAGACTAGACTTCGGGACACTCCGCGACAAAATCCTACCTTCTTAAGCCCAAGTAACTCGATTCAAAATCCGGGACATTTGCTGTCAAGCACCCTTGGCCGCTTGGGACTTGGGGCCGGACGCGTGATACGAACTACCTTTTGCCGATGTCAGGCAGTCCGTAACTTTGGGATGTACCAGCAACGTTCTGTTGGATAAATTGTGCGCATATTATACGGGCACACGCCTTATGAGCGCGATCGCGTGTCAGCGCAAAGATTTCAAGGGGTATTCATGTAGTAGCCGCTCCCCGTTGTTGACCTGAAGTAACTGTTAAACCGTTAGACTACGCCCTATCAACCTGAACAGTTGTATCTGCGTGTCTCGCGCCCTCTGGAAATCACGTTGCGACTCCGTAATCGTAGAACGATCTTCCATCAAGGATGGGCCCCAGGTGCGTGCTCCTGCGCTCTTCTTATCTGAACGTTCGAGGAGGTGAGACGGTGGGCATATCCCATAGATGGCGCGGCTCTAATTGTTAACCTGGCCAGAGATAAGCGTATAGGAATCGCTGCCTAGCGCCCGTTCGGGGGTGGGGTTGCAACCAGGAGACGGATAAGGAGATAAGGAGCCTAACCTCTTATACGACATGCCATCAGTCCACGCCACTGTTCATCCGACCGGTTCGGCCCAGCGGGTCTCTAGTGACAACAGCAGCTCTGTCCTAATCGTAGTCGAAACTCTCATATTACATATAGCACTGTAAACAAAATCATCTGCTCCGAAGCATAGTACCGCAGTCCCCCAAGCGCGGTTGCGGATGGGCAGTATGTTTCATCGGTGTTAAGTTTCACCGGCTATACAATGCAGGGTTAACTGTACAGCCCTAAGACAGGAATACAGCAGCTGTGTCTTCTCCACTAACGGGAGGTCGTGGGAGTTACTCGGAAGCGGGCAGGCAAAATCCCAATTACAATACTAATCATGGTCAATGGTAAGGGATCTTTTCCCCGTAGACACTCAGGATGAGCACGT"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -451,10 +451,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] 294711</code></pre>
 </div>
 </div>
-<p>In Challenge 9, I was able to use the code from Challenge 8 to count the frequency of each nucleotide in the <em>Vibrio Cholerae</em> chromosome. After doing this,</p>
+<p>In Challenge 9, I was able to use the code from Challenge 8 to count the frequency of each nucleotide in the <em>Vibrio Cholerae</em> chromosome. After doing this, the frequency of adenine was 293942, Guanine was 256024, Cytosine was 263573, and Thymine was 294711.</p>
 </section>
 <section id="challenge-10" class="level1">
 <h1>Challenge 10</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>rosalinddata <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"rosalind_dna.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>countA <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(rosalinddata)){</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(rosalinddata, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"A"</span>){</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    countA <span class="ot">&lt;-</span> countA <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 223</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>countG <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(rosalinddata)){</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(rosalinddata, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"G"</span>){</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    countG <span class="ot">&lt;-</span> countG <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 202</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>countC <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(rosalinddata)){</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(rosalinddata, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"C"</span>){</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    countC <span class="ot">&lt;-</span> countC <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 233</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>countT <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(rosalinddata)){</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(rosalinddata, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"T"</span>){</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    countT <span class="ot">&lt;-</span> countT <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(countT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 201</code></pre>
+</div>
+</div>
+<p>In Challenge 10, I used code once again to scan in another genome from the rosalind website (similar to what I did in the previous challenge with the Vibrio Cholerae genome). I then used the code from Challenge 9 in order to calculate the frequency of each nucleotide in the genome string. I determined the frequency of Adenine in the Rosalind DNA genome to be 223, Guanine was 202, Cytosine was 233, and Thymine was 201. I got the Rosalind Challenge correct!</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>In all, I learned a lot throughout this notebook. Including:</p>
+<ul>
+<li><p>Created a list of <code>nucleotides</code></p></li>
+<li><p>Used the <code>sample()</code> function to create a random "genome" using the characters found in the <code>nucleotides</code> list.</p></li>
+<li><p>Used <code>paste()</code> with the parameter setting <code>collapse = ""</code> to collapse my random genome into a single long string of nucleotides.</p></li>
+<li><p>Used <code>set.seed()</code> to set a seed for a random number generator to make my results reproducible over time and across different machines (and different researchers too).</p></li>
+<li><p>Used a for loop to repeat a set of simple instructions for a pre-determined number of iterations.</p></li>
+<li><p>Used programmatic flow control in the form of <code>if/else if/else</code> statements to run code only when a particular condition is satisfied.</p></li>
+<li><p>Constructed a <code>for</code> loop and used <code>if</code> statements to count the frequency of each of the four nucleotides in a genome string.</p></li>
+<li><p>Solved a bioinformatics problem on the <em>rosalind</em> platform!</p></li>
+</ul>
 </section>
 
 </main>
