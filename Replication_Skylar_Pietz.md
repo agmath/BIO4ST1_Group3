@@ -55,7 +55,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "A" "C" "C" "A" "A" "A" "C" "C" "T" "T" "C" "A" "C" "G" "T"
+ [1] "A" "C" "T" "T" "A" "G" "A" "G" "A" "G" "C" "A" "C" "G" "A"
 ```
 :::
 :::
@@ -69,13 +69,13 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "ACCAAACCTTCACGT"
+[1] "ACTTAGAGAGCACGA"
 ```
 :::
 :::
 
 
-In challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The `paste()` method was used to collapse the genome of nucleotides down to a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
+In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The `paste()` method was used to collapse the genome of nucleotides down to a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
 
 # Challenge 3
 
@@ -93,7 +93,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "CCACATCAGCTCTTCACGGTTTTCTACCAGACATCATCCATCGTCCTAAACGGAATTAAACGCTATTCTTAAGATCACGGTCGGGTTCCGTCTCCAAGACGGAGTAACATGCTTTAGGCTCGGAGGGCTGGTCTCGGTCCAGTGTGCGGACCTGGGCCACATCCCAAAATCGATCTAACGTTCCCTGAAGGCACATCTCGACCCCAGGGTACTGTGCTGGGATCGTAGTGAAAACGAGTTGGTCACAAGTGCGTTCACCCGCCCCACAAATCGAGGAACCAGGGCAGTCATGGGACTCTGAAAGACACCCGTTAATACGCCCGCATAAGGGGTTCTTACCATCAGGCGTTAGGCGAAAAACCGAATGGGATTCCCAGACGCCACTGAGGAAATTTCCGCGGAGTCGTCATACGTTTCCTTTCTCGCTTTGCGCAACTGCGTCGAGCGGCGCTCGGAGAATACTTACGGTGCGTTCAGGGGGCAATTATGTTCAAGCAATACCATGGATTCGAGAAATCACATTTCCTCTAGTACGTAAAAGGATTGCTTCTTCTTAGTTAGGTGTTTAGACGAAATCATGAACGTAATATGAGAGTTGCTGAACGACTTACATTAACGCAATGCACGGCGGGGTTAATCTAGTCAGTAAGTATATTGCCGGTGATTCATGCCCACGGCGCAGGACTATGGTCTTGCCGCCTAAAACCAAGATCACTATAGGCAGTTGCAGAGGGATCACCGCCAGAATAATTTTGGAAACCTTCGTCAGTAGGATCATCAACTCTTAGCATGTCAAAGGATATACAGCTTACCTATCACCATGAAGCAACAGTGGGATCTTACTTGTTTTTCTTCTGACACGGGATCTTCCAGGCCTTTTACTGACAGCTATTGGACTTACGACGTGTAAATATCGACCCGTGCGCTACAGTGGCACTGAATCCCACGGTAAGCCCAAGAGGAACAATATGCAAATTATGCAATTGATATAGGGATTTAGATTCGCTACATACCAGCGTTGGGAACATCCGATGCAAATCACGCTCTTGTCGACTGGAATCCCGCAATGTGGGGGGCGTAAACTTCTACTAGTGTTGTCTCCCGGCATCTTGTCTGCGGAATAGGCTACTAGTCCCGCAAAGATTAGCCGGCGACGGGTTGGGAATCACTGCGAGCGCACCCTCCAGCCAAAAAATCTGATTTTTCCGATCCATTCATTTTTTTAACTTGGGCACTTGGGCCCTTGCTACAGCAATGAATCTGCAGACAGTGGACTCAACCTGAGGTGTTGGATTCTCTGCCGGTTCTAGAGCTGCAACCGTGTGATACATACGAAGAACCTCAGACGCACCAACCTCTGCACTGGATACATCTAGTACTGCAAAAGCCGTCATCTGCAGTTCCGATCGGGCTTTAACTCTACCGACTGCCAGGAGTCACAGTCCGGATGGTGTTTCGCAGAAAATGTCTTTAAGAAAGCCTCCCTGCCCAAAAATTTCG"
+[1] "ACTAATCGGCTACCTGATGATGACCGCATCCTGCTACTACAGAGGAACCTTGTGTGTGAAATGGCTGTGGTCTGCCAGATGCGAGACCATTCACCAGAACAGAGGACCCCTAAGAGCGCAACTAGGTATCAACGACATAGACGCGTTTAACAACTATGAAAATCTTAATACTGAACAGCCATAGCGGAGTGCCCACCTACTATGCCGTTAAAAGGGTAGTACGATCTTACAGCCACTTTCGCCCCCAAGACACTAATCCCGGTCTGTGCACATCTCACTAAACAATTCTGTTTTAAGAATCACTCTGATACCCTCGGCAGAATCATCGAAGGTTAAGATGTCTCCCACTAAGAGAGTTACGGTGGTGGATGGATGGACTCAGGAAGCCGTTTGCGTCCATGACTAGCCCACTTACCGGGGCTTCCTTAGCTAGGTAACTCCTGAGCCCCTACGTGGTTGCGAGATCGAAGATAGAATTGGCGAGGGAAGACTAGACTTCGGGACACTCCGCGACAAAATCCTACCTTCTTAAGCCCAAGTAACTCGATTCAAAATCCGGGACATTTGCTGTCAAGCACCCTTGGCCGCTTGGGACTTGGGGCCGGACGCGTGATACGAACTACCTTTTGCCGATGTCAGGCAGTCCGTAACTTTGGGATGTACCAGCAACGTTCTGTTGGATAAATTGTGCGCATATTATACGGGCACACGCCTTATGAGCGCGATCGCGTGTCAGCGCAAAGATTTCAAGGGGTATTCATGTAGTAGCCGCTCCCCGTTGTTGACCTGAAGTAACTGTTAAACCGTTAGACTACGCCCTATCAACCTGAACAGTTGTATCTGCGTGTCTCGCGCCCTCTGGAAATCACGTTGCGACTCCGTAATCGTAGAACGATCTTCCATCAAGGATGGGCCCCAGGTGCGTGCTCCTGCGCTCTTCTTATCTGAACGTTCGAGGAGGTGAGACGGTGGGCATATCCCATAGATGGCGCGGCTCTAATTGTTAACCTGGCCAGAGATAAGCGTATAGGAATCGCTGCCTAGCGCCCGTTCGGGGGTGGGGTTGCAACCAGGAGACGGATAAGGAGATAAGGAGCCTAACCTCTTATACGACATGCCATCAGTCCACGCCACTGTTCATCCGACCGGTTCGGCCCAGCGGGTCTCTAGTGACAACAGCAGCTCTGTCCTAATCGTAGTCGAAACTCTCATATTACATATAGCACTGTAAACAAAATCATCTGCTCCGAAGCATAGTACCGCAGTCCCCCAAGCGCGGTTGCGGATGGGCAGTATGTTTCATCGGTGTTAAGTTTCACCGGCTATACAATGCAGGGTTAACTGTACAGCCCTAAGACAGGAATACAGCAGCTGTGTCTTCTCCACTAACGGGAGGTCGTGGGAGTTACTCGGAAGCGGGCAGGCAAAATCCCAATTACAATACTAATCATGGTCAATGGTAAGGGATCTTTTCCCCGTAGACACTCAGGATGAGCACGT"
 ```
 :::
 :::
@@ -178,7 +178,7 @@ for(i in 1:10){
 :::
 
 
-Before starting challenge 5, I began learning different ways to run a new programming technique called the `for` loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.
+Before starting Challenge 5, I began learning different ways to run a new programming technique called the `for` loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.
 
 # Challenge 5
 
@@ -333,6 +333,8 @@ for(i in 1:nchar(randGenome)){
 :::
 
 
+In Challenge 7, I created a genome 10 nucleotides long using the (`randGenome`) function. I then adapted the for loop in order to count the number of Adenine (A) in randGenome. Using these functions, I was able to determine that there were 3 Adenine.
+
 # Challenge 8
 
 
@@ -407,3 +409,205 @@ for(i in 1:nchar(randGenome)){
 vib_c <- scan("VibrioCholerae.txt", what = "character", sep = NULL)
 ```
 :::
+
+
+Challenge 8 was similar to Challenge 7 in that I created a randome nucleotide and used the for loop to count the frequencies of each of the four individual nucleotides. I then was able to perform these functions on a real genome from the *Vibrio Cholerae* chromosome DNA, consisting of 1,108,250 nucleotides. I read this large genome into R with the scan() function.
+
+# Challenge 9
+
+
+::: {.cell}
+
+```{.r .cell-code}
+countA <- 0 
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "A"){
+    countA <- countA + 1
+  }
+}
+
+print(countA)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 293942
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countG <- 0 
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "G"){
+    countG <- countG + 1
+  }
+}
+
+print(countG)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 256024
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countC <- 0 
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "C"){
+    countC <- countC + 1
+  }
+}
+
+print(countC)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 263573
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countT <- 0 
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "T"){
+    countT <- countT + 1
+  }
+}
+
+print(countT)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 294711
+```
+:::
+:::
+
+
+In Challenge 9, I was able to use the code from Challenge 8 to count the frequency of each nucleotide in the *Vibrio Cholerae* chromosome. After doing this, the frequency of adenine was 293942, Guanine was 256024, Cytosine was 263573, and Thymine was 294711.
+
+# Challenge 10
+
+
+::: {.cell}
+
+```{.r .cell-code}
+rosalinddata <- scan("rosalind_dna.txt", what = "character", sep = NULL)
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countA <- 0 
+for(i in 1:nchar(rosalinddata)){
+  if(str_sub(rosalinddata, start = i, end = i) == "A"){
+    countA <- countA + 1
+  }
+}
+
+print(countA)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 223
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countG <- 0 
+for(i in 1:nchar(rosalinddata)){
+  if(str_sub(rosalinddata, start = i, end = i) == "G"){
+    countG <- countG + 1
+  }
+}
+
+print(countG)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 202
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countC <- 0 
+for(i in 1:nchar(rosalinddata)){
+  if(str_sub(rosalinddata, start = i, end = i) == "C"){
+    countC <- countC + 1
+  }
+}
+
+print(countC)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 233
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+countT <- 0 
+for(i in 1:nchar(rosalinddata)){
+  if(str_sub(rosalinddata, start = i, end = i) == "T"){
+    countT <- countT + 1
+  }
+}
+
+print(countT)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 201
+```
+:::
+:::
+
+
+In Challenge 10, I used code once again to scan in another genome from the rosalind website (similar to what I did in the previous challenge with the Vibrio Cholerae genome). I then used the code from Challenge 9 in order to calculate the frequency of each nucleotide in the genome string. I determined the frequency of Adenine in the Rosalind DNA genome to be 223, Guanine was 202, Cytosine was 233, and Thymine was 201. I got the Rosalind Challenge correct!
+
+# Summary
+
+In all, I learned a lot throughout this notebook. Including:
+
+-   Created a list of `nucleotides`
+
+-   Used the `sample()` function to create a random \"genome\" using the characters found in the `nucleotides` list.
+
+-   Used `paste()` with the parameter setting `collapse = ""` to collapse my random genome into a single long string of nucleotides.
+
+-   Used `set.seed()` to set a seed for a random number generator to make my results reproducible over time and across different machines (and different researchers too).
+
+-   Used a for loop to repeat a set of simple instructions for a pre-determined number of iterations.
+
+-   Used programmatic flow control in the form of `if/else if/else` statements to run code only when a particular condition is satisfied.
+
+-   Constructed a `for` loop and used `if` statements to count the frequency of each of the four nucleotides in a genome string.
+
+-   Solved a bioinformatics problem on the *rosalind* platform!
