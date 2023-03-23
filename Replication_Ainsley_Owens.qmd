@@ -195,6 +195,8 @@ print(cytosineCount)
 
 ### Challenge 10
 
+Here, I used the `scan()` function to read in a Rosalind genome. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.
+
 ```{r}
 rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna.txt", what = "character", sep = NULL)
 ```
@@ -207,19 +209,19 @@ adenineCount <- 0
 guanineCount <- 0
 for(i in 1:nchar(rosalindSequence)){
   if(str_sub(rosalindSequence, start = i, end = i) == "T"){
-   thymineCount <- adenineCount +1
+   thymineCount <- thymineCount +1
   
   }
    if(str_sub(rosalindSequence, start = i, end = i) == "A"){
-   adenineCount <- cytosineCount +1
+   adenineCount <- adenineCount +1
    }
    
   if(str_sub(rosalindSequence, start = i, end = i) == "C"){
-   cytosineCount <- guanineCount +1
+   cytosineCount <- cytosineCount +1
   
   }
   if(str_sub(rosalindSequence, start = i, end = i) == "G"){
-   guanineCount <- thymineCount +1
+   guanineCount <- guanineCount +1
   
   }
 }
@@ -228,3 +230,34 @@ print(cytosineCount)
 print(guanineCount)
 print(thymineCount)
 ```
+
+Throughout this notebook, I learned several skills. I was able to create a list of nucleotides using `c()`. Using the `sample()` function, I was able to use the nucleotide list I provided to create a random genome. The `collapse()` function allowed me to collapse the genome into one single strand, as opposed to separate single characters. I learned that the `set.seed()` function allows for the code to set a seed for random number generation to enable reproducible results over time. I learned how to create a for loop to repeat instructions provided, and I used `if/else` statements to ensure the code is only ran when certain criteria is met. This notebook also taught me how to scan in data from other sources, like the vibrio genome and the Rosalind sequence, using the `scan()` function.
+
+### Replication Origin 1
+
+### Challenge 1
+
+Using the `sample()` function alongside the `paste()` and `collapse""`, I generated a random genome with a length of 2000 nucleotides. Using the `nucleotide_frequency()` function, I was able to count the frequency of Cytosine, `"C"`, in the random genome.
+
+```{r}
+genome <- 2000
+randGenome <- sample(Nucleotides, size= genome, replace= TRUE)
+randGenome <- paste (randGenome, collapse="")
+nucleotide_frequency(randGenome,nucleotide="C")
+```
+
+### Challenge 2
+
+In this challenge, I created a function to compute random genomes. This will make future work in this notebook easier because I no longer need to create genome lists, but instead can pull using the `rand_genome()` function. To do so, I just need to insert `rand_genome()` and place the desired genome length in the parentheses.
+
+```{r}
+rand_genome <- function(K){
+  nucleotides <-c ("A", "T", "C", "G")
+  rand_genome <- sample(nucleotides, size= K, replace= TRUE)
+  rand_genome <- paste(rand_genome, collapse= "")
+  return(rand_genome)
+}
+rand_genome(100)
+```
+
+### Challenge 3
