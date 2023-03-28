@@ -10,6 +10,10 @@ execute:
 
 
 
+### Intro to R Notebook
+
+In this notebook, I will be exploring several functions of R and learning tools to complete the Replication Origin Notebooks. This will include using the arrow operator `<-`to store objects in variables, using R's `sample()` function to create random genomes for testing functions, and building functions to process and analyze genetic data. I will also be learning about for loops and reading in data from outside sources. These tools will be used to analyze genomes.
+
 ### Challenge 1
 
 Here I am using the `c()` function to put four nucleotides (A, G, C, T) into a list.
@@ -45,7 +49,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "G" "G" "C" "T" "G" "T" "A" "A" "T" "T" "G" "A" "A" "T" "G"
+ [1] "T" "C" "G" "A" "G" "C" "G" "T" "G" "G" "C" "T" "T" "C" "C"
 ```
 :::
 :::
@@ -62,7 +66,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "GGCTGTAATTGAATG"
+[1] "TCGAGCGTGGCTTCC"
 ```
 :::
 :::
@@ -83,7 +87,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TAGTGGGGACTCCCTCTAGTATCCTGGACCCGCGATGACTAGCAATTTTGACACCTAGGGGTCGAATTTCGCACGTGCGTATTCATACCTCTTGGCCTTGACTCGAGCAGATGACGTCCTATCCATACACACCGGAAATCAGTGCGGAGTAACCCTAGCCTTCCTCTCACTAGTTTGTGAATTATTAGTTTCTTCTTCGTAATGTGGCATTGTTTCGTCATATCTCCCCATCAGCAGGCCTAGGCGAGTTTTCCCGAAATTCCATCTTGATAGTTACATATTGAACAAGCCCAGGCGTGGGCACCGCCGGACCACGGGGTGATTCTCTAAGACTCTGTATTCGGACAAACTCATAAAGCAGCTTGCAAGTCGTAGGTGGGACCGAGTAGGATTAGCTCATCGGGCTCAAGTGCTGACTAGCCCCCTACGGGTCTCTTTCTGGGATGTTAAAAACACAACGGAGGCCGAGGTATTAGGCTCATATTCGCACAAAAAATTGAAACCTCAACAGAAGCTCTGCTCCGCCTTGTCCTCTCGAGTAGAATATCAGGTCCGTCAAAGACGGAGGGCGTAATATGCCCCGTGAACAAAGCGGCTTCAAAGCCTCTACTTGCTAATGTATAGTGATTGTGAGTCTGCAGGTGGGTACGACACGTATTCATCATATCAATGTGTAAAGGTCGAGGTGACCTATCACTCTAATATACCATAGTTAGGTGCCTGCGCTGGGCCGTACTTGTCGGCGCTTGACTGGATTGCGTATCGGAGGGTCACAGTTCGGCCCATCGGACGCTCCGCCGGTAAGTAGGTAAGGGTTACCCTAAAACCGTCACTCCAATGACCGATCTCTCTTTAACGTACCGGATCCTGCAGGAACTCTGTACGCTAGGGATGCAGCCGTAGGTGCTGAAAGCCATTACTGAGGCTAATAAAGATACAGTTTCTACAGAGTGCCAGCCTCTATGGATCCTCCCGCTAAGGCCTGCACCTTGTGTAGCACCACAGGAGGTTCGCAACCTCATGTGACACAATGAAGCGAGAGATGTAGCCCGATAACTATGCCATTAGCGGCTCAAAAGATACAGACCCTGTATTTGATCAATTTATCACATACATGGCAACTTAGGACCGTACTTATAAGGTGACGGAACAACAGCTTATGGATCACGCGGGCGAGAGGTCTTGATCCATGTAGCAAGATCGTGTCGTGTCAACGGAGCCCTATCTTCCTATATAGGCGAACTGGAACGGATGTATAACTCTGGTAGAGGAGCGAGACTAGTCGTCACATGGCCGTACGTTTGGGCCCAGAACGATAAGCGAAGAGCCCGCATTCATTCAGCATTCGCCTGTTAGATCAATAGGTAACGAGATCAATGAATGGAAAATATCGGTACCTATTCCGGGTACTGGAGCCTGAGTATCAATGGGGAAGATGGAGCTACTGTAGTACTGGGTCCACATATTATTTTCTACATGAAACGACGCAAGGTGGCAAAG"
+[1] "TATTGCGGTATTAGCGTCGTCCTACGGGAACATTGTCCAGGGTACCTATAAAAATAAAGTAACCTTTAGAAACGTACATATGCTAATCTTCACGTTTCAGTCAACGCACCCGCGGATCACATCGAGAGTCGTACGGTCGTTAAAGATCTTCTAATTACCGATTCCAATGAAGAGCTTCATAGGAGTTGCACTATAAAATGATTGGCTGCATTGCACTGAGTCAACCACCGCTACTCATTCTACGGCTAACGCTTGATTATGTACCGCCACATGATGTGGACAAGAATGGGTCTGCCGTCGGGGTCGTTCATTTACCAGTGCGGTGCTTTTCACTGCCGACGGTGGTGTATGGGATTGTACAGGGACACGGGGATTTGAAATCAGAAAATGGATTGCTGGCTGATCAGTAGGTGATCTTTATCTTTACGAGCACTCCCTGAAGGCGGAGCATATATCGACGAAAATGCCACGGACGTCAGTTGTCCGCAGCCTTACGAATTTCTACGTCGGAAAAGATTGACCCAAGGCGGTTGCATGGCGTTGGGAACATTCCCGACCTGACGGTACAGCGTGATCGATTGATGATGCGAGGAGCCTTCCCCTAGATGCGAGGAAAATTATAACAGTTTGGGCGCCCGCGTGGCGGTCACCTCTCGTACATGAAACCACTGTGCAATCATTGAAACGGTCTCTGCGGAAATTAATTTCCCTGTATACGGTAGACATCCGATAGTGGTCTTACGGGACCATAACTTCGCTCGGGCGTAAAACCGGGTACTGAAACTGCCTTCCCCCATACCTCCGCGAGCGTTACAATACCTCCTGTGGTTTTTTACGATGTCTCTTGGCTAGGTTTTGCTATCGCGAAGGAAAGTGCTCGAATTTTGACATGGGTATATCATTTCCTGCCCCCAACAGGCACGAGTGTTACACATATCTGCCTTCGCACACATAATCAGCCTGTATATTGCGAGGTACTCCCCAACTAGCACTAGCCGGACGGCCGACACCCCTCCACCCAATTGGTTCAAAGGAATCGACTTAACTACCCAAGCGTGGCGTTTGATAAGTGGGGCGGAAACTGCGACGGGCAAGACGCCTAGTATAGTGAACGTATCGTATGTGCTTTTAAAACCCGAGTATAATCCCACATCCGGCTTGGAGATATCATAGGAACAGGATATTCGTACCCTCGGCGGACGTTAACGTGCACAAGGCAAACTTATTGTTCAACTGCTGACCAAAGTCTGAGTAAACAGCCAGTGGAACTAACTAAAAGTCTGAGTTGGTACGCGACATTTAGGCGTATTACACTTTTATCGGCATCTCTCATCAGAATCTGAAGTTCAGCGATGCTTGACTCGACATTCATGGTGTACATACCAGAATATCTTTCCGCGTAAGCAATACCATGAGGGGCAGATAATCTGCAGACTAAACCTGAATCAGTCTTGGAAAGGTCATTATTACAGACGCACGTTGTACTACACGGATTTACTG"
 ```
 :::
 :::
@@ -399,6 +403,8 @@ print(cytosineCount)
 
 ### Challenge 10
 
+Here, I used the `scan()` function to read in a Rosalind genome. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.
+
 
 ::: {.cell}
 
@@ -416,19 +422,19 @@ adenineCount <- 0
 guanineCount <- 0
 for(i in 1:nchar(rosalindSequence)){
   if(str_sub(rosalindSequence, start = i, end = i) == "T"){
-   thymineCount <- adenineCount +1
+   thymineCount <- thymineCount +1
   
   }
    if(str_sub(rosalindSequence, start = i, end = i) == "A"){
-   adenineCount <- cytosineCount +1
+   adenineCount <- adenineCount +1
    }
    
   if(str_sub(rosalindSequence, start = i, end = i) == "C"){
-   cytosineCount <- guanineCount +1
+   cytosineCount <- cytosineCount +1
   
   }
   if(str_sub(rosalindSequence, start = i, end = i) == "G"){
-   guanineCount <- thymineCount +1
+   guanineCount <- guanineCount +1
   
   }
 }
@@ -437,7 +443,7 @@ print(adenineCount)
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 229
+[1] 250
 ```
 :::
 
@@ -447,7 +453,7 @@ print(cytosineCount)
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 228
+[1] 203
 ```
 :::
 
@@ -457,7 +463,7 @@ print(guanineCount)
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 227
+[1] 230
 ```
 :::
 
@@ -467,7 +473,157 @@ print(thymineCount)
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 226
+[1] 244
 ```
 :::
 :::
+
+
+Throughout this notebook, I learned several skills. I was able to create a list of nucleotides using `c()`. Using the `sample()` function, I was able to use the nucleotide list I provided to create a random genome. The `collapse()` function allowed me to collapse the genome into one single strand, as opposed to separate single characters. I learned that the `set.seed()` function allows for the code to set a seed for random number generation to enable reproducible results over time. I learned how to create a for loop to repeat instructions provided, and I used `if/else` statements to ensure the code is only ran when certain criteria is met. This notebook also taught me how to scan in data from other sources, like the vibrio genome and the Rosalind sequence, using the `scan()` function.
+
+### Replication Origin 1
+
+### Challenge 1
+
+In the first code block, I am reading in the `nucleotide_frequency` function for further use. This function counts the number of occurrences of specific nucleotides, dependent on the nucleotide dictated in the first line of code. Using the `sample()` function alongside the `paste()` and `collapse""`, I generated a random genome with a length of 2000 nucleotides. Using the `nucleotide_frequency()` function, I was able to count the frequency of Cytosine, `"C"`, in the random genome.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+nucleotide_frequency <- function(genomeString, nucleotide = "A"){
+  count <- 0
+  for(i in 1:nchar(genomeString)){
+    if(str_sub(genomeString, start = i, end = i) == nucleotide){
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+  genome <- 2000
+randGenome <- sample(Nucleotides, size= genome, replace= TRUE)
+randGenome <- paste (randGenome, collapse="")
+nucleotide_frequency(randGenome,nucleotide="C")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 499
+```
+:::
+:::
+
+
+### Challenge 2
+
+In this challenge, I created a function to compute random genomes. This will make future work in this notebook easier because I no longer need to create genome lists, but instead can pull using the `rand_genome()` function. I provided the function with the nucleotide list to use, denoted the size parameter as k, and used the `paste()` and `collapse''` functions to create one string. To do so, I just need to insert `rand_genome()` and place the desired genome length in the parentheses, using the `k` parameter.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+rand_genome <- function(k){
+  nucleotides <-c ("A", "T", "C", "G")
+  rand_genome <- sample(nucleotides, size= k, replace= TRUE)
+  rand_genome <- paste(rand_genome, collapse= "")
+  return(rand_genome)
+}
+rand_genome(k=15)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "CTCCCCTATCCTAGC"
+```
+:::
+:::
+
+
+### Challenge 3
+
+For this challenge, I will create a for loop that can run all the characters in a genome and count consecutive characters. This for loop will count and return all the substrings of 3 nucleotides in the genome, known as 3-mers. I used the `rand_genome()` function within the new `generate_3_mers` function that I created to generate a 2000 nucleotide sequence. The `generate_3_mers` function then reported all of the 3-mers in the genome.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+generate_3_mers <- function(genomeString) {
+  list_3_mers <- c()
+
+  for(i in 1:(nchar(genomeString) - 1)){
+  list_3_mers <- list_3_mers %>%
+  append(str_sub(genomeString, start = i, end = i + 2))
+    }
+  return(list_3_mers)
+}
+
+list_3_mers <- generate_3_mers(rand_genome(k=2000))
+```
+:::
+
+
+To check if the function collected only 3-mers, I used the `tail()` function to print the last 25 substrings collected, using `n=`. I was able to call the `list_3_mers` data because I named the list in the previous code block. The tail function showed that the last substring was a 2-mer, not a 3-mer ("CA").
+
+
+::: {.cell}
+
+```{.r .cell-code}
+tail(list_3_mers, n= 25)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+ [1] "CCT" "CTT" "TTT" "TTT" "TTA" "TAG" "AGA" "GAT" "ATT" "TTT" "TTG" "TGG"
+[13] "GGG" "GGA" "GAG" "AGA" "GAG" "AGT" "GTT" "TTA" "TAA" "AAA" "AAA" "AAA"
+[25] "AA" 
+```
+:::
+:::
+
+
+### Challenge 4
+
+For this challenge, I am adapting the function from the previous challenge to create a function that reports k-mers of any size. I did so by adding the k value. I named the list `list_k_mers` so I am able to call upon this list during future work. The value next to rand_genome at the bottom of the code block determines how many characters the genome will be comprised of, while the value next to myGenome in the last line of code determines how long the k-mers reported by the function are. If I give the rand_genome function a value of 10, named myGenome, then the genome will be 10 nucleotides long. If I give the generate_k\_mers function a value of 5, pulling from myGenome, then the function will report the k-mers that are 5 nucleotides long.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+generate_k_mers <- function(genomeString, k) {
+  list_k_mers <- c()
+
+  for(i in 1:(nchar(genomeString) - (k-1))){
+  list_k_mers <- list_k_mers %>%
+  append(str_sub(genomeString, start = i, end = i + k-1))
+    }
+  return(list_k_mers)
+}
+myGenome <- rand_genome(10)
+myGenome
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "TTGATCTCTA"
+```
+:::
+
+```{.r .cell-code}
+generate_k_mers (myGenome, 5)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "TTGAT" "TGATC" "GATCT" "ATCTC" "TCTCT" "CTCTA"
+```
+:::
+:::
+
+
+### Challenge 5
