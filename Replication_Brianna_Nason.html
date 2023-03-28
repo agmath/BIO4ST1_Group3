@@ -153,7 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size =</span> randGenome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>schedule</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "A" "G" "T" "T" "A" "T" "T" "C" "C" "C" "A" "T" "G" "T" "C"</code></pre>
+<pre><code> [1] "G" "T" "G" "G" "T" "G" "A" "A" "C" "G" "G" "C" "A" "C" "A"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>randGenome<span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TAAATTACTTCATCGACTAAACAATTCGGCTTACGGAGCCCGCATAGTAAAACGCTCAAACCCGCCCAGAGCGGAGTTCGTGCTCCCTTATGGTTCTAAGATAATCGTGGACACTGCCTAATGGAAGCGCGGTCGTATAAGAGTTGACTACTTGCTTTCTCATTCACTTAGCGACCTCCTCACATCGACCATGTACTTGCTTCGCGGGAAAGCCTTAGTGTGTAATGACAGAAGCATTGAGGGCTGACTGATCACCCCGTGAACGGTTCCTCCACACGACGGGTGGTGACGGTCTCGGTCGAAAGCCTTTTGATCTTGTTGGCATGCTCTCGATATTGAGAGCACTCCCAGTGTGACGAGATGGACTATAACGGGACCAGACAGGTATCGTTCCTGTTGTGGGCGTACCGTATGGTAGGTTCACCCAGGTGGAACACATGTCACGTCCTTGCCTAAAATATAGGCTGACTTACGGCTGCACGGCCTAGACATGTTCCCATAAATCCGACGGCAGCAAGAAGAGTCAACTCTCCCAAACCGACCAATAACTCGGGTGTGCAGAATTCGACCTAGGAGCCTTCTGGGCCATCCAGGACCGTTGGTTATGGTAAGGTTATGTTGTGACGTGCCTGTCGAGGATATTACCTGGTATGTTCTGTTCGTAATAGTATACGGATGAAACGCTTTTCTCGGGTCGGCACATGGGATTGTGGTATCTGCCTCGTTATGCATTTCCAATGTCTGGCACATATGGGTGCTTATCCTGACCGAGCGGATAAGCGGCCTATAGCAAGGCGCCGTTTCGCTGATTAAGTGTGGCTGTGGGTCTAAAATATTATACACGGACTCCATCAAGTTGAAAGGATTAAATATCCCGGGTCTAGCCTCGTAGTGACACGCCGGAGTCGGCTCCTTGAGATCCGCACGTCTTCGCTCCCTTTTCGAAAATAAGATGTCATGACGATTAGACCCTTAAAACTTGCGTTCAACTCCGCATCTAATCTACATAATAGTTATGGCGTGTTGCCCCACCACGTCGGCCAATTCGACGCGGTATTGCTTATCCCTCACTTGCTGTCAGAACGGGGGCATAGCCCTCTTGATGACGGCTGATAAGAGGCTTAAGTGCATCCCGTTGCCGAGACTCAGGCCTTTGACTGGCCGCGGAATGAAAAGAATAATGACGCGGTCCATTAGATCCATTAGTTGATTCCGTAAAGTGTCCTCGGTGCCTGCTGTTGCTGACCCTACGATTCTGTAACCTCATTTGCAGCGGCCAACAAACAAGAGAACCCTAGCTTCAAAGCTCGCTAGAATTTTGGCCTCGCAATCCTCCAAGGGACTCCGTGCTCGACAGGGGCAGTATCACCGAGGTATAGGGCATCTAGCGTCTCAGTGTTGCCTGTAGCACAGTCGGATTCAGTTCCGCAATGAACGTTTATGTCATTAGGTATTATCGTCGGATACGTCCAGTACGCCGTAAATAAGGGGCGACCCGAT"</code></pre>
+<pre><code>[1] "AAATATTTTAGGTCGCTACGCATGTGGCAACTACCTCTGTTCGAGTAATTAACCACAATTTGCTGTGGACGCTCAACCATCGCCAACTGGTCGAGGGGGCGAATCAAAGTTTAGGACAATCTGCGTTCGAAAAGTCCTATCACCGCCCGCCGATTAAGGGTTTGTATCTCATGACCTTACAAGACAAGACCACGTCCTCCTAAGTACGGCAACCTCCTATCATCATCGGTGCAACAATGCTCCGAGCTTCTTCAAGGGTCCCGAGGCCAGCCTATATGTAGCTTCTGCGTCTCGCGTATTGGGTCGCCGCAGGAGAGACGCTGAGGTGACTTACGGGTTCCCAGACATACGACTTGCGGCTCTCACTCCTTCTCGGTTTCACCTAACAGCTTCATATTCACATTCCGCGGAACGTCCATCATATGATATGCGCTGTACGTACACTCGTCACCGCTATGCACACCAAGATGTGTGAGCGCTGGCCCTCGACGTTTCTACGCCAGTCGGAGCGTCCTGACGTATAGAACTGGCGCTCCTGTACGCACATATCCTCATAGAGCTTACGCGTTTCGTGTAATATGGCTCAGGACCTAGGTGTTGTAAACTCCCTATCTGCCTGGGGTCGCGCTATACCGCCCGCAGCACCGGGTTCCTTAATGCCGACCGTCTCTGTACAATTCGTGGGGCTTTTGGAGTCCCTAGTGTGAAGTCCAGATGCAGCCCTACGCTCAGGCATCCAGTGTGCAAATCCTTTGAACACATAGTCTGGTCGTCCATATGTGGTAAGTTGGTGAAGTGTGTGCGAACAGCGGTTCCTCGCGATGACCCGCAGGATCCCGCGGTATTAAGCATATACCGCAAGGCAATGGGACTACTTTTGCTTTTGCAGCTTCGGGACTACTTCGCAGGCGCTTTAAAGTGTGACTCTGCAATCCACGGTGCCAGAAAATACGGAGTACGCTTAGAGATCCCTTCTTAAAAACCCCCCCACGAAATATCTAGCCATTGTTTCGCTTAGGCTCAATACTCCTCGGCAGCTGGCGGGCAGTATGTCCTCTGCGGAGTAAGGATACATACTGTTTAACTCCACGCCCCAACTCTCTGTCCAGAGAGTTCGTCCAAATCTGCTTGCACGGCAATTTTGGACCTGTTAGAAGACTCTTGGGATGTCCGTGCCCAGGGATCAACGTGTACGGATCCAATTCAATCGTGTATCTGATTTCTCCATCTATAGGTCCGCTGTGCAGGCGCTTGTCCGGTGTTAACGTGATTTGGTTGGTTCATAAAGCTGGGCACGTTAGCTAGTACATTGACGCTAATAAGGTATATTAAGGACCCTGTTTCTAATTGGGCTATCTGTAGTTCACGTAAGAAAAGGGCCTATCTATTTCGACTGCGAGGTGCATTCGCGCAATTGCGGTGAGTCATTCAGCTTAGCAACCTCCATGCCATGGTATTTGCTCGCACGCAGACGATGACGAGAGTGCATGAATGGACGAG"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -330,6 +330,268 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [1] 2</code></pre>
 </div>
 </div>
+</section>
+<section id="challenge-8" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-8">Challenge 8</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Nucleotides <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"T"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>Genome_size <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(Nucleotides, <span class="at">size =</span> Genome_size, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">collapse =</span> <span class="st">""</span>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(randGenome)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "AAGATCTCGA"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Adenine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    Adenine_count <span class="ot">&lt;-</span> Adenine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(Adenine_count)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 2
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Cytosine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"C"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    Cytosine_count <span class="ot">&lt;-</span> Cytosine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(Cytosine_count)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 2
+[1] 2
+[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Guanine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"G"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    Guanine_count <span class="ot">&lt;-</span> Guanine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(Guanine_count)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 2
+[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Thymine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(randGenome, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"T"</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    Thymine_count <span class="ot">&lt;-</span> Thymine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(Thymine_count)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 2
+[1] 2
+[1] 2
+[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-9" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-9">Challenge 9</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>vib_c <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"/Users/briannanason/Documents/Bioinformatics info/VibrioCholerae.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>Adenine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    Adenine_count <span class="ot">&lt;-</span> Adenine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>Cytosine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"C"</span>)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    Cytosine_count <span class="ot">&lt;-</span> Cytosine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>Guanine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"G"</span>)</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    Guanine_count <span class="ot">&lt;-</span> Guanine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>Thymine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"T"</span>)</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    Thymine_count <span class="ot">&lt;-</span> Thymine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(Adenine_count, Cytosine_count, Guanine_count, Thymine_count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 293942 263573 256024 294711</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-10" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-10">Challenge 10</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>vib_c <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"/Users/briannanason/Downloads/rosalind_dna.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>vib_c <span class="ot">&lt;-</span> <span class="st">"TGAATCGCCATAGACCAGGTAGCACCACGGATCGACCGTGCAAGTCCCACATATACCATGTGTTAGTGAAATATTGCGCTTAGGTCCGCAGATAAGAGTGTTTGACAAGGCGGGTAAATACAATATCAGAATCAAGTCGGCTAAACGAGCTCATGATTGGACTGCTTGAACAGTTTAGCGAGTTGCGGGTGACTTACCTGTACGGTGCACGCGTTTTCGTGGAGAACTTTAAGCCCTCGCCAACGTGTTGTAATAGCCTCCTGCTCACCGGCCTCCTATATCCAGACATTGCGACTAGTGCGCATACACCTACTCTTATTTATAAGAACATAAATTGCGCTAACCGTAATGCCTAACACTATGTTCGTGGCTTCGGGTACCAAGGTACCGATGGCACGGGTCGCAACCCGATACGAGCTCTATTGTGGATACTAACTCTGTGATCGTCGCGACAAGATTTGCGAGATTGGGTGGCGTTGAGCAGCAGGCCCCGAACGGTAAACTTACTTGCACGCGATTGGACAAGGAAGTAAATACGCGACTTGAACCCTTATAGAACTTTTAGAGTCGGAATGAGTTATCGAGTCCCAATGGGCTTGTATCTGGGCTGGTTGTCACCTACGCTTCCGAAGACAACATCTAGATTGAGATCAGGTGGTGAGTCTTACACCAATGATTGATACGCTTCACTTGGCGGGCGAGTCCTTGGATAGCTCGCTGCGTTAGCGATTTTCACCCAGTCAGTATTGATTCATTAACTCGGGCGAACTAGATCACTCCCTGAGTAGGGCGCGGACACGCGGTATTGCTGCTAGGGGTGCGTGAACGGAACCACTG"</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>Adenine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    Adenine_count <span class="ot">&lt;-</span> Adenine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>Cytosine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"C"</span>)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>    Cytosine_count <span class="ot">&lt;-</span> Cytosine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>Guanine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"G"</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>    Guanine_count <span class="ot">&lt;-</span> Guanine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>Thymine_count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_sub</span>(vib_c, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> <span class="st">"T"</span>)</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>    Thymine_count <span class="ot">&lt;-</span> Thymine_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(Adenine_count, Cytosine_count, Guanine_count, Thymine_count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 211 197 217 212</code></pre>
+</div>
+</div>
+</section>
+<section id="origin-replication-i" class="level2">
+<h2 class="anchored" data-anchor-id="origin-replication-i">Origin Replication I</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>nucleotide_frequency <span class="ot">&lt;-</span> <span class="cf">function</span>(genomeString, <span class="at">nucleotide =</span> <span class="st">"A"</span>){</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(genomeString)){</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(genomeString, <span class="at">start =</span> i, <span class="at">end =</span> i) <span class="sc">==</span> nucleotide){</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nucleotide_frequency</span>(<span class="st">"ACTTGCGGGTATCGAG"</span>, <span class="st">"G"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Nucleotides</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "A" "C" "G" "T"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>Sample_genome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span><span class="dv">2000</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>Sample_genome <span class="ot">&lt;-</span> <span class="fu">paste</span>(Sample_genome, <span class="at">collapse=</span><span class="st">""</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nucleotide_frequency</span>(Sample_genome, <span class="st">"C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 485</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-2-1">Challenge 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>rand_genome <span class="ot">&lt;-</span> <span class="cf">function</span>(k){</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  Nucleotides <span class="ot">&lt;-</span><span class="fu">c</span> (<span class="st">"A"</span>, <span class="st">"T"</span>, <span class="st">"G"</span>, <span class="st">"C"</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  rand_genome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span>k, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  rand_genome <span class="ot">&lt;-</span> <span class="fu">paste</span>(rand_genome, <span class="at">collapse=</span><span class="st">""</span>)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rand_genome)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rand_genome</span>(<span class="at">k=</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "AATGAGGGGCGGAGG"</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-3-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-3-1">Challenge 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>generate_3_mers <span class="ot">&lt;-</span> <span class="cf">function</span>(myString) {</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  list_3_mers <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nchar</span>(myString) <span class="sc">-</span> <span class="dv">2</span>)){</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  list_3_mers <span class="ot">&lt;-</span> list_3_mers <span class="sc">%&gt;%</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">append</span>(<span class="fu">str_sub</span>(myString, <span class="at">start =</span> i, <span class="at">end =</span> i <span class="sc">+</span> <span class="dv">2</span>))</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_3_mers)</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>myGenome <span class="ot">&lt;-</span> <span class="fu">rand_genome</span>(<span class="dv">10</span>)</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>myGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GCTTACGAAC"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_3_mers</span>(myGenome)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GCT" "CTT" "TTA" "TAC" "ACG" "CGA" "GAA" "AAC"</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-4-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-4-1">Challenge 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>generate_k_mers <span class="ot">&lt;-</span> <span class="cf">function</span>(genomeString, k) {</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  list_k_mers <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nchar</span>(genomeString) <span class="sc">-</span> (k<span class="dv">-1</span>))){</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  list_k_mers <span class="ot">&lt;-</span> list_k_mers <span class="sc">%&gt;%</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">append</span>(<span class="fu">str_sub</span>(genomeString, <span class="at">start =</span> i, <span class="at">end =</span> i <span class="sc">+</span> k<span class="dv">-1</span>))</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_k_mers)</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>myGenome <span class="ot">&lt;-</span> <span class="fu">rand_genome</span>(<span class="dv">10</span>)</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>myGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GTAGGGTCAG"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_k_mers</span>(myGenome, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GTAGGG" "TAGGGT" "AGGGTC" "GGGTCA" "GGTCAG"</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-5-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-5-1">Challenge 5</h2>
 </section>
 
 </main>

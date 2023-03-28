@@ -49,7 +49,7 @@ schedule
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "A" "G" "T" "T" "A" "T" "T" "C" "C" "C" "A" "T" "G" "T" "C"
+ [1] "G" "T" "G" "G" "T" "G" "A" "A" "C" "G" "G" "C" "A" "C" "A"
 ```
 :::
 
@@ -79,7 +79,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TAAATTACTTCATCGACTAAACAATTCGGCTTACGGAGCCCGCATAGTAAAACGCTCAAACCCGCCCAGAGCGGAGTTCGTGCTCCCTTATGGTTCTAAGATAATCGTGGACACTGCCTAATGGAAGCGCGGTCGTATAAGAGTTGACTACTTGCTTTCTCATTCACTTAGCGACCTCCTCACATCGACCATGTACTTGCTTCGCGGGAAAGCCTTAGTGTGTAATGACAGAAGCATTGAGGGCTGACTGATCACCCCGTGAACGGTTCCTCCACACGACGGGTGGTGACGGTCTCGGTCGAAAGCCTTTTGATCTTGTTGGCATGCTCTCGATATTGAGAGCACTCCCAGTGTGACGAGATGGACTATAACGGGACCAGACAGGTATCGTTCCTGTTGTGGGCGTACCGTATGGTAGGTTCACCCAGGTGGAACACATGTCACGTCCTTGCCTAAAATATAGGCTGACTTACGGCTGCACGGCCTAGACATGTTCCCATAAATCCGACGGCAGCAAGAAGAGTCAACTCTCCCAAACCGACCAATAACTCGGGTGTGCAGAATTCGACCTAGGAGCCTTCTGGGCCATCCAGGACCGTTGGTTATGGTAAGGTTATGTTGTGACGTGCCTGTCGAGGATATTACCTGGTATGTTCTGTTCGTAATAGTATACGGATGAAACGCTTTTCTCGGGTCGGCACATGGGATTGTGGTATCTGCCTCGTTATGCATTTCCAATGTCTGGCACATATGGGTGCTTATCCTGACCGAGCGGATAAGCGGCCTATAGCAAGGCGCCGTTTCGCTGATTAAGTGTGGCTGTGGGTCTAAAATATTATACACGGACTCCATCAAGTTGAAAGGATTAAATATCCCGGGTCTAGCCTCGTAGTGACACGCCGGAGTCGGCTCCTTGAGATCCGCACGTCTTCGCTCCCTTTTCGAAAATAAGATGTCATGACGATTAGACCCTTAAAACTTGCGTTCAACTCCGCATCTAATCTACATAATAGTTATGGCGTGTTGCCCCACCACGTCGGCCAATTCGACGCGGTATTGCTTATCCCTCACTTGCTGTCAGAACGGGGGCATAGCCCTCTTGATGACGGCTGATAAGAGGCTTAAGTGCATCCCGTTGCCGAGACTCAGGCCTTTGACTGGCCGCGGAATGAAAAGAATAATGACGCGGTCCATTAGATCCATTAGTTGATTCCGTAAAGTGTCCTCGGTGCCTGCTGTTGCTGACCCTACGATTCTGTAACCTCATTTGCAGCGGCCAACAAACAAGAGAACCCTAGCTTCAAAGCTCGCTAGAATTTTGGCCTCGCAATCCTCCAAGGGACTCCGTGCTCGACAGGGGCAGTATCACCGAGGTATAGGGCATCTAGCGTCTCAGTGTTGCCTGTAGCACAGTCGGATTCAGTTCCGCAATGAACGTTTATGTCATTAGGTATTATCGTCGGATACGTCCAGTACGCCGTAAATAAGGGGCGACCCGAT"
+[1] "AAATATTTTAGGTCGCTACGCATGTGGCAACTACCTCTGTTCGAGTAATTAACCACAATTTGCTGTGGACGCTCAACCATCGCCAACTGGTCGAGGGGGCGAATCAAAGTTTAGGACAATCTGCGTTCGAAAAGTCCTATCACCGCCCGCCGATTAAGGGTTTGTATCTCATGACCTTACAAGACAAGACCACGTCCTCCTAAGTACGGCAACCTCCTATCATCATCGGTGCAACAATGCTCCGAGCTTCTTCAAGGGTCCCGAGGCCAGCCTATATGTAGCTTCTGCGTCTCGCGTATTGGGTCGCCGCAGGAGAGACGCTGAGGTGACTTACGGGTTCCCAGACATACGACTTGCGGCTCTCACTCCTTCTCGGTTTCACCTAACAGCTTCATATTCACATTCCGCGGAACGTCCATCATATGATATGCGCTGTACGTACACTCGTCACCGCTATGCACACCAAGATGTGTGAGCGCTGGCCCTCGACGTTTCTACGCCAGTCGGAGCGTCCTGACGTATAGAACTGGCGCTCCTGTACGCACATATCCTCATAGAGCTTACGCGTTTCGTGTAATATGGCTCAGGACCTAGGTGTTGTAAACTCCCTATCTGCCTGGGGTCGCGCTATACCGCCCGCAGCACCGGGTTCCTTAATGCCGACCGTCTCTGTACAATTCGTGGGGCTTTTGGAGTCCCTAGTGTGAAGTCCAGATGCAGCCCTACGCTCAGGCATCCAGTGTGCAAATCCTTTGAACACATAGTCTGGTCGTCCATATGTGGTAAGTTGGTGAAGTGTGTGCGAACAGCGGTTCCTCGCGATGACCCGCAGGATCCCGCGGTATTAAGCATATACCGCAAGGCAATGGGACTACTTTTGCTTTTGCAGCTTCGGGACTACTTCGCAGGCGCTTTAAAGTGTGACTCTGCAATCCACGGTGCCAGAAAATACGGAGTACGCTTAGAGATCCCTTCTTAAAAACCCCCCCACGAAATATCTAGCCATTGTTTCGCTTAGGCTCAATACTCCTCGGCAGCTGGCGGGCAGTATGTCCTCTGCGGAGTAAGGATACATACTGTTTAACTCCACGCCCCAACTCTCTGTCCAGAGAGTTCGTCCAAATCTGCTTGCACGGCAATTTTGGACCTGTTAGAAGACTCTTGGGATGTCCGTGCCCAGGGATCAACGTGTACGGATCCAATTCAATCGTGTATCTGATTTCTCCATCTATAGGTCCGCTGTGCAGGCGCTTGTCCGGTGTTAACGTGATTTGGTTGGTTCATAAAGCTGGGCACGTTAGCTAGTACATTGACGCTAATAAGGTATATTAAGGACCCTGTTTCTAATTGGGCTATCTGTAGTTCACGTAAGAAAAGGGCCTATCTATTTCGACTGCGAGGTGCATTCGCGCAATTGCGGTGAGTCATTCAGCTTAGCAACCTCCATGCCATGGTATTTGCTCGCACGCAGACGATGACGAGAGTGCATGAATGGACGAG"
 ```
 :::
 :::
@@ -314,3 +314,378 @@ for(i in 1:nchar(randGenome)){
 ```
 :::
 :::
+
+
+## Challenge 8
+
+
+::: {.cell}
+
+```{.r .cell-code}
+Nucleotides <- c("A", "C", "G", "T")
+Genome_size <- 10
+
+randGenome <- paste(
+  sample(Nucleotides, size = Genome_size, replace = TRUE),
+                   collapse = "")
+print(randGenome)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "AAGATCTCGA"
+```
+:::
+
+```{.r .cell-code}
+Adenine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "A")
+    Adenine_count <- Adenine_count + 1
+    
+    print(Adenine_count)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 1
+[1] 2
+[1] 2
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 3
+[1] 4
+```
+:::
+
+```{.r .cell-code}
+Cytosine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "C")
+    Cytosine_count <- Cytosine_count + 1
+    
+    print(Cytosine_count)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 2
+[1] 2
+[1] 2
+```
+:::
+
+```{.r .cell-code}
+Guanine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "G")
+    Guanine_count <- Guanine_count + 1
+    
+    print(Guanine_count)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 1
+[1] 2
+[1] 2
+```
+:::
+
+```{.r .cell-code}
+Thymine_count <- 0
+for(i in 1:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "T")
+    Thymine_count <- Thymine_count + 1
+    
+    print(Thymine_count)
+  }
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 0
+[1] 0
+[1] 0
+[1] 0
+[1] 1
+[1] 1
+[1] 2
+[1] 2
+[1] 2
+[1] 2
+```
+:::
+:::
+
+
+## Challenge 9
+
+
+::: {.cell}
+
+```{.r .cell-code}
+vib_c <- scan("/Users/briannanason/Documents/Bioinformatics info/VibrioCholerae.txt", what = "character", sep = NULL)
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+Adenine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "A")
+    Adenine_count <- Adenine_count + 1
+}
+
+Cytosine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "C")
+    Cytosine_count <- Cytosine_count + 1
+}
+
+Guanine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "G")
+    Guanine_count <- Guanine_count + 1
+}
+
+Thymine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "T")
+    Thymine_count <- Thymine_count + 1
+}
+
+print(c(Adenine_count, Cytosine_count, Guanine_count, Thymine_count))
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 293942 263573 256024 294711
+```
+:::
+:::
+
+
+## Challenge 10
+
+
+::: {.cell}
+
+```{.r .cell-code}
+vib_c <- scan("/Users/briannanason/Downloads/rosalind_dna.txt", what = "character", sep = NULL)
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+vib_c <- "TGAATCGCCATAGACCAGGTAGCACCACGGATCGACCGTGCAAGTCCCACATATACCATGTGTTAGTGAAATATTGCGCTTAGGTCCGCAGATAAGAGTGTTTGACAAGGCGGGTAAATACAATATCAGAATCAAGTCGGCTAAACGAGCTCATGATTGGACTGCTTGAACAGTTTAGCGAGTTGCGGGTGACTTACCTGTACGGTGCACGCGTTTTCGTGGAGAACTTTAAGCCCTCGCCAACGTGTTGTAATAGCCTCCTGCTCACCGGCCTCCTATATCCAGACATTGCGACTAGTGCGCATACACCTACTCTTATTTATAAGAACATAAATTGCGCTAACCGTAATGCCTAACACTATGTTCGTGGCTTCGGGTACCAAGGTACCGATGGCACGGGTCGCAACCCGATACGAGCTCTATTGTGGATACTAACTCTGTGATCGTCGCGACAAGATTTGCGAGATTGGGTGGCGTTGAGCAGCAGGCCCCGAACGGTAAACTTACTTGCACGCGATTGGACAAGGAAGTAAATACGCGACTTGAACCCTTATAGAACTTTTAGAGTCGGAATGAGTTATCGAGTCCCAATGGGCTTGTATCTGGGCTGGTTGTCACCTACGCTTCCGAAGACAACATCTAGATTGAGATCAGGTGGTGAGTCTTACACCAATGATTGATACGCTTCACTTGGCGGGCGAGTCCTTGGATAGCTCGCTGCGTTAGCGATTTTCACCCAGTCAGTATTGATTCATTAACTCGGGCGAACTAGATCACTCCCTGAGTAGGGCGCGGACACGCGGTATTGCTGCTAGGGGTGCGTGAACGGAACCACTG"
+
+Adenine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "A")
+    Adenine_count <- Adenine_count + 1
+}
+
+Cytosine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "C")
+    Cytosine_count <- Cytosine_count + 1
+}
+
+Guanine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "G")
+    Guanine_count <- Guanine_count + 1
+}
+
+Thymine_count <- 0
+for(i in 1:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "T")
+    Thymine_count <- Thymine_count + 1
+}
+
+print(c(Adenine_count, Cytosine_count, Guanine_count, Thymine_count))
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 211 197 217 212
+```
+:::
+:::
+
+
+## Origin Replication I
+
+
+::: {.cell}
+
+```{.r .cell-code}
+nucleotide_frequency <- function(genomeString, nucleotide = "A"){
+  count <- 0
+  for(i in 1:nchar(genomeString)){
+    if(str_sub(genomeString, start = i, end = i) == nucleotide){
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+
+nucleotide_frequency("ACTTGCGGGTATCGAG", "G")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 6
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+Nucleotides
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "A" "C" "G" "T"
+```
+:::
+
+```{.r .cell-code}
+Sample_genome <- sample(Nucleotides, size=2000, replace=TRUE)
+Sample_genome <- paste(Sample_genome, collapse="")
+nucleotide_frequency(Sample_genome, "C")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 485
+```
+:::
+:::
+
+
+## Challenge 2
+
+
+::: {.cell}
+
+```{.r .cell-code}
+rand_genome <- function(k){
+  Nucleotides <-c ("A", "T", "G", "C")
+  rand_genome <- sample(Nucleotides, size=k, replace = TRUE)
+  rand_genome <- paste(rand_genome, collapse="")
+  return(rand_genome)
+}
+rand_genome(k=15)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "AATGAGGGGCGGAGG"
+```
+:::
+:::
+
+
+## Challenge 3
+
+
+::: {.cell}
+
+```{.r .cell-code}
+generate_3_mers <- function(myString) {
+  list_3_mers <- c()
+
+  for(i in 1:(nchar(myString) - 2)){
+  list_3_mers <- list_3_mers %>%
+  append(str_sub(myString, start = i, end = i + 2))
+    }
+  return(list_3_mers)
+}
+
+myGenome <- rand_genome(10)
+myGenome
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "GCTTACGAAC"
+```
+:::
+
+```{.r .cell-code}
+generate_3_mers(myGenome)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "GCT" "CTT" "TTA" "TAC" "ACG" "CGA" "GAA" "AAC"
+```
+:::
+:::
+
+
+## Challenge 4
+
+
+::: {.cell}
+
+```{.r .cell-code}
+generate_k_mers <- function(genomeString, k) {
+  list_k_mers <- c()
+
+  for(i in 1:(nchar(genomeString) - (k-1))){
+  list_k_mers <- list_k_mers %>%
+  append(str_sub(genomeString, start = i, end = i + k-1))
+    }
+  return(list_k_mers)
+}
+
+myGenome <- rand_genome(10)
+myGenome
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "GTAGGGTCAG"
+```
+:::
+
+```{.r .cell-code}
+generate_k_mers(myGenome, 6)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "GTAGGG" "TAGGGT" "AGGGTC" "GGGTCA" "GGTCAG"
+```
+:::
+:::
+
+
+## Challenge 5
