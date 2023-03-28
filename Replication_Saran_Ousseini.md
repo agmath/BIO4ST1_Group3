@@ -40,7 +40,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "T" "T" "A" "C" "A" "C" "A" "G" "G" "G" "A" "C" "C" "C" "C"
+ [1] "C" "A" "C" "T" "T" "C" "C" "C" "C" "G" "A" "T" "A" "T" "C"
 ```
 :::
 :::
@@ -57,7 +57,7 @@ paste(randGenome, collapse = "")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TTACACAGGGACCCC"
+[1] "CACTTCCCCGATATC"
 ```
 :::
 :::
@@ -222,3 +222,79 @@ for(i in 0:nchar(randGenome)){
 
 
 ## Challenge 8
+
+
+::: {.cell}
+
+```{.r .cell-code}
+vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
+
+#vib_c
+```
+:::
+
+
+## Challenge 9
+
+
+::: {.cell}
+
+```{.r .cell-code}
+CountA <- 0
+CountT <- 0
+CountC <- 0
+CountG <- 0
+
+for(i in 0:nchar(randGenome)){
+  if(str_sub(randGenome, start = i, end = i) == "A"){
+    CountA <- CountA + 1}
+  
+  if(str_sub(randGenome, start = i, end = i) == "T"){
+    CountT <- CountT + 1}
+  if(str_sub(randGenome, start = i, end = i) == "C"){
+   CountC <- CountC + 1}
+  if(str_sub(randGenome, start = i, end = i) == "G"){
+    CountG <- CountG + 1}  
+}
+print(c(CountA, CountT, CountC, CountG))
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 2 2 2 4
+```
+:::
+:::
+
+
+## Challenge 10
+
+
+::: {.cell}
+
+```{.r .cell-code}
+CountA <- 0
+CountT <- 0
+CountC <- 0
+CountG <- 0
+
+for(i in 0:nchar(vib_c)){
+  if(str_sub(vib_c, start = i, end = i) == "A"){
+    CountA <- CountA + 1}
+  
+  if(str_sub(vib_c, start = i, end = i) == "T"){
+    CountT <- CountT + 1}
+  if(str_sub(vib_c, start = i, end = i) == "C"){
+   CountC <- CountC + 1}
+  if(str_sub(vib_c, start = i, end = i) == "G"){
+    CountG <- CountG + 1}  
+}
+print(c(CountA, CountT, CountC, CountG))
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 293942 294711 263573 256024
+```
+:::
+:::

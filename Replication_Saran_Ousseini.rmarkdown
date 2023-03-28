@@ -14,7 +14,9 @@ library(tidyverse)
 
 ```
 
+
 ## Challenge 1
+
 
 ```{r}
 
@@ -31,13 +33,17 @@ randGenome <- sample(nucleotide, size = numNucleotide, replace = TRUE)
 randGenome
 ```
 
+
 Challenge 2
+
 
 ```{r}
 paste(randGenome, collapse = "")
 ```
 
+
 ## Challenge 3
+
 
 ```{r}
 set.seed(200)
@@ -49,7 +55,9 @@ randGenome <- paste(randGenome, collapse = "")
 randGenome 
 ```
 
+
 ## Challenge 4
+
 
 ```{r}
 set.seed(215)
@@ -61,7 +69,9 @@ randGenome <- paste(randGenome, collapse = "")
 randGenome 
 ```
 
+
 I counted 23 Adenine (A)
+
 
 ```{r}
 mySum <- 0
@@ -72,7 +82,9 @@ for(i in 1:10){
 }
 ```
 
+
 ## Challenge 5
+
 
 ```{r}
 myProduct <- 1
@@ -83,7 +95,9 @@ for (j in 1:15) {
 }
 ```
 
+
 ## Challenge 6
+
 
 ```{r}
 nucleotides <- c("A", "C", "G", "T")
@@ -95,7 +109,9 @@ randGenome <- paste(
 print(randGenome)
 ```
 
+
 ## Challenge 7
+
 
 ```{r}
 for(i in 0:nchar(randGenome)){
@@ -105,7 +121,9 @@ for(i in 0:nchar(randGenome)){
 }
 ```
 
+
 ## Challenge 8
+
 
 ```{r}
 vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
@@ -113,7 +131,9 @@ vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "charact
 #vib_c
 ```
 
+
 ## Challenge 9
+
 
 ```{r}
 CountA <- 0
@@ -135,7 +155,9 @@ for(i in 0:nchar(randGenome)){
 print(c(CountA, CountT, CountC, CountG))
 ```
 
+
 ## Challenge 10
+
 
 ```{r}
 CountA <- 0
@@ -158,7 +180,9 @@ print(c(CountA, CountT, CountC, CountG))
 
 ```
 
+
 # Replication0rigin_PartI
+
 
 ```{r}
 nucleotide_frequency <- function(genomeString, nucleotide = "A"){
@@ -174,7 +198,9 @@ nucleotide_frequency <- function(genomeString, nucleotide = "A"){
 nucleotide_frequency("ACTTGCGGGTATCGAG", "G")
 ```
 
+
 ## Challenge 1
+
 
 ```{r}
 nucleotide <- c("A", "C", "T", "G")
@@ -192,7 +218,9 @@ randGenome
 nucleotide_frequency(randGenome, "C")
 ```
 
+
 ## Challenge 2
+
 
 ```{r}
 randGenome <- function(k){
@@ -228,8 +256,11 @@ generate_2_mers <- function(myString) {
 generate_2_mers(randGenome())
 ```
 
+
 ## Challenge 3
+
 
 ```{r}
 
 ```
+
