@@ -158,14 +158,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "C" "G" "C" "G" "C" "A" "G" "G" "A" "G" "G" "G" "C" "G" "A"</code></pre>
+<pre><code> [1] "T" "C" "A" "T" "A" "A" "A" "C" "A" "A" "C" "C" "A" "G" "C"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "CGCGCAGGAGGGCGA"</code></pre>
+<pre><code>[1] "TCATAAACAACCAGC"</code></pre>
 </div>
 </div>
 <p>In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span> )</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TGCGACCGCAGTAGTACGGTGCTTAGCCGTCAAGATAAAGAGGCCGCCGTCCATGGCCACCGATGCTCATGTGGCTCGCATCAGAGGGGGCCTCGCGTTTTTACGGGAAGTAAGTGGTCTCCATCCGCCAACAGCGCGACAGCGCTAAACACAGGTCCATGACGAAAGAAACCCCACCACCACGACACGCCTCCTGGCCGGCTGGCACGCTACTATCAGCGCACAGCCTGGTCCCTAGCGATCTACTGTGTTAACCTGAGCAACGTTGTCGAGCGAGCGTTGGTATTCCAAACGATCGGGACTATGCTTCCGGTGTTGGTCAGGCGGGTCGATCGCGGTAGCCTCCGTCGGTTTTCGAATGGTACTCTGGTTGTGGTATGGAGGACCGAGCCTGTGGCCCGGAAATGGAGATAGCCTGTAACGGTCAGCGCGTTACTAATCCTGGTGGATAGCGAAAACAGGCTGGCGCTAGACGAGAGTAGACATTAAATCTGTCAAGTGTCAGTGCTCTTATATTTATGCGTACATGAGGGCCTTGTGGACACCGCATCTGACTGGTTCATACTTGAAGCCATGGCCTTTCCTGGTCTGTCGGTACCGTTTTTTGAATGTGTTCGATAAACCTACGGTACCCAGGGTAGCCTGCCTCGCTTGTTCCATATATGATAAGTGCATCTTCAATTGCAAAGAGCATCCTATAAGTTTCTTCCCAGTTACCAGGTCATGACTCCGCATAGATCGGAGTGGAAAGTGACATTGAATGCCACGGCAAAGTGGCGAATATTGAATCTGCTTCGTCTCAACCCGCCCGGATAGCAGCTCTGGGCTCATAGATGGTAGAACAGAGCTGTCGTGTCCACCTGCTGGTTTCGCTCCAATTAATCGCCATACAACGACGCTCTTTTTATATGTAGAAGACTGGGAATAGTACTTGCTTGTAGGGGTTTGGTTAATTTGGCACGATAGAAAGTCTCGCGCGCTTGTGATTCGTAACTCAACAGAGACAATTTGGTTGACATATTGTGACAGTAAGTTTTCCTCAAATGTTAGGACACTTCGCTTGTCTATAGTTAAGGCTGGCTCAAATGGCTAGTTTTGCGCCTAAGCTATGGATGTTGTAATTATTGTAACCCAAAAGACGTTGGACACGACTCGCTCACCATTTCAAACTCCCCCACTTAGGCTACGCGTGGATCATCGCATACGGTTGCGGACGAATACCCAATTGGGCCCAGCCTCACGGGCGCGAAGCTAGCGTTTTGTACGAGACGTGTCCGCTGGACTTTGAATATGACCTACTCCCCTCCGGTCGTCTATCAACGAAAAGTCATGTCACGGTACCACGACACAGCTCAGGTATAGAGATCTCCTCTGTCATTGTGCCAATTAGAGATCCTGTTCCGTAAACCTACTCTTATGCCCTCCGAGAGTGGAGATCCCATTTTGATCTAGTGGATTAGTGATGCAGTTAAATTGCGTACTAGACACCACATTCACCGC"</code></pre>
+<pre><code>[1] "CTAATCCGTCGCCTACGCGCAGCAGTAGAGTCATCTCGTTGAAAAGTCCGAGACACCTAGGATCGTATCTGGGCAGTAACCGATACCAACAGACTCTCCTGACTCTTAAGCCCCTATTGTCGAGACACTGTCAAGCATGTGTCAACAAATACCAGGTGACTGACTCACAGTCATCACCTTTTCATAAGATCGACAAAGTTACGTCAGATCATGATTCCCTACGCGACGAAGCGGTCTTACTCCGGGTCAGTAATCGCGCTCCCTCTGTAGGATGCGAGTGCTACTTATGTGGCGTACCGGGGCACGAGCACTGGTAGGTGGAACAATAGCCCGCTAGTGAGCCCATATACGCCAAAAGTATCAAATCCTCCCATTAGAGTACGCAAATTTGAAGGAGGACTTTGCGTTCACTTTCGAGTTACACAGAACCCAACGGTAAGATAGTGTAGCATGTTTCCATCTTGATTCGTGTGGTACTGACCCTTTGCGTAGTAGCCCCTCGAGTCGGTGTTCCAGACTTGGGTACCACTGGTCACCACAAGAGTTCTGAATGCACTTCCCTATGGTAAGGTCACCAATTCAATGGTTAGCTTGACCCTAATCTGGATTTAGCAGTATCCGCTGCTCCGATACCATGCGTCACTCACGAAGGAAGTAATTACTGGGGTGCCTACTTATGAATCGCAACACAAATTTTATATTCCTATTTACCTCTCTCGGACACCCAACGGATGCCTGGTTACGTATAGGACTACAAGCTCCAGAACAATGGGATAAGCCAGCAAGCAAACTATTTGGACAAGAGCCTGATCTGCGCTTTTAAGGTGCATGCTTACTAACCGTTGATAACCTCAAAAGGCCATAGTGTTTCGTTCGTCCGTATACCTCAAACCAGCGTTGCAAGTGGGACTTGATGGAGCGGTCTAGGGCTATCTCGCAAGTGATATGTTGTTACAGAACTGTGGTGCACTATCAACGTAGAGCCTTAATTCTTGCCCTGTTGCGCGGCATCGATGCACGGATCGCCGAGAAATCACTCGAGTACCCCCCGGTCGCGGACCTCAGGGGCGATAGACTGAGGTGGGTACAGTGTTTGGCTTCTATAAATCGTTTCGGTCGGCCCATCATGATTTAGTGTGCGCGACATTTCCCCACAATTCCCAGTCGTATTCACATTCGAAGTGCTAACATACCTCGGGTTTCTATCTCGGTGGCCGGCGTAAGGGGCCCTAGAAGACTGCCCTGTTATATGCTTAAATTCGGGGAGCAGTGAAACCCATGGATGAACAGCGGATTCTTGCTTTATTACTCCTTGGACGTGCAACTCGCTTGGTTCAAAGGCTGCTAAGTACCCGAAACAGACCTCTCCAGGGATCAACATCAAATGATGGTTGTAGATACAAGTCACCGTGATACATATTAATAAAATGGGATTGCACAAAATGGCTCTGTCATTCAGCGTCGGCGCTAAAACCTGTCACCTTGTTAGAATTATGTTAT"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -668,14 +668,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(nt_matches)</span>
 <span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nt_patterns</span>(<span class="fu">rand_Genome</span>(<span class="dv">20000</span>), <span class="st">"CTG"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nt_patterns</span>(<span class="fu">rand_Genome</span>(<span class="dv">2000</span>), <span class="st">"CTG"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 310</code></pre>
+<pre><code>[1] 31</code></pre>
+</div>
+</div>
+</section>
+<section id="rosalind-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="rosalind-challenge">Rosalind Challenge</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>rosalind_string <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"rosalind_string.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>count_pattern <span class="ot">&lt;-</span> <span class="cf">function</span>(myString, pattern){</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(myString)){</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(myString, <span class="at">start =</span> i, <span class="at">end =</span> i<span class="sc">+</span><span class="dv">8</span>) <span class="sc">==</span> pattern){</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="fu">count_pattern</span> (rosalind_string, <span class="st">"GTGGCCAGT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
 </div>
 </div>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>rosalind_string <span class="ot">&lt;-</span> <span class="st">"GGTGGCCATAAGTGGCCATAGTGGCCAGTGGCCATAAAAGTGGCCAGCGGTGGCCAAGCCGTGGCCAGCGTGGCCATTAAAGGGTGGCCACGTGAGTGGCCAGTGGCCAGTGGCCATTTTGTGGCCAGGTGTGGCCATAGTGGCCAGGTGGCCAGACGTGGCCAGGTGGCCACCTGGCTGTGGCCACGTGGCCAAGTGGCCAGGTGGCCAGTGGCCACGAGTGGCCAATAGTGGCCAGAGTGGCCATACCGTGGCCAGGTGGCCAACGTGGCCAGAAGTGGCCAGTGGCCAGTGGCCAAATGTGGCCAGTGGCCATGTGGCCAGGTGGCCACGGACAAGGTGGCCAGTGGCCAGCGGGTGGCCAGTGTGGCCAAGTGGCCAAGTGTGGCCAGTGGCCACTTATGGTGGCCAGTGGCCAAGTGGCCACCTATGTGGCCATATGGTGGCCATGTGGCCAAGTGGCCATGGTGGCCACGTGGCCAAGTGGCCACCTTAGGTTGGTGGCCAGCGGTGGCCAGTGGCCACAATCAATGTGGCCACGGTGGCCATTAAGTGGCCATATTGATGAGGCCCGGTGGCCAGGTGGCCAGTGGCCAAAGGGGTGGTGGCCATACGGTGGCCATTGTGGCCATTCGTGGCCAGGGTGTGGCCACCCGTGGCCAATGAGGTGGCCACGTGGCCAAAGATGTGGCCAACTGGAGTGGCCAATGTGGCCAAGTGGCCACCTCCACGTGGCCACTAGCGTGGCCATCACCGACCTGGTGGCCAGTGGCCAATGGTGGCCAGTGGCCAGTGGCCAGTGGCCAATACTGGGTGGCCAGTGGCCAGCGACGTGGCCATGTGGCCAGTGGCCACCTGTGGCCACGTGGCCACCAGTGGCCAGTGGCCAGTGGCCACAAAGTGGCCAGTGGCCAAGGTGGCCAATGCTGTGGCCATTCGAGTGGCCA"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>In this last Challenge, I wrote a new function called <code>count_pattern()</code> that counts occurrences of a particular <code>pattern</code> within a larger <code>genomeString</code>. My function took two arguments, <code>genomeString</code> and the <code>pattern</code> I want to count occurrences of. My function returned the count of occurrences of the <code>pattern</code> within the <code>genomeString</code>. My function accomplished what I intended it to. It counted 22 patterns of “CTG” in my randome genome string that was 2000 nucleotides long. I then used this function to count the number of occurrences of the pattern in the genome string and submit the result to Rosalind. I solved the Rosalind Challenge! There were 22 patterns of GTGGCCAGT in the Rosalind DNA string.</p>
+</section>
+</section>
+<section id="finding-the-replication-origin-part-ii" class="level1">
+<h1><strong>Finding the Replication Origin, Part II</strong></h1>
+<section id="challenge-1-2" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-1-2">Challenge 1</h2>
 </section>
 </section>
 

@@ -468,9 +468,35 @@ nt_patterns <- function(string, pattern) {
   }
   return(nt_matches)
 }
-nt_patterns(rand_Genome(20000), "CTG")
+nt_patterns(rand_Genome(2000), "CTG")
+```
+
+## Rosalind Challenge
+
+```{r}
+rosalind_string <- scan("rosalind_string.txt", what = "character", sep = NULL)
 ```
 
 ```{r}
-
+count_pattern <- function(myString, pattern){
+  count <- 0
+  for(i in 1:nchar(myString)){
+    if(str_sub(myString, start = i, end = i+8) == pattern){
+      count = count + 1
+    }
+  }
+  return(count)
+}
+  
+count_pattern (rosalind_string, "GTGGCCAGT")
 ```
+
+```{r}
+rosalind_string <- "GGTGGCCATAAGTGGCCATAGTGGCCAGTGGCCATAAAAGTGGCCAGCGGTGGCCAAGCCGTGGCCAGCGTGGCCATTAAAGGGTGGCCACGTGAGTGGCCAGTGGCCAGTGGCCATTTTGTGGCCAGGTGTGGCCATAGTGGCCAGGTGGCCAGACGTGGCCAGGTGGCCACCTGGCTGTGGCCACGTGGCCAAGTGGCCAGGTGGCCAGTGGCCACGAGTGGCCAATAGTGGCCAGAGTGGCCATACCGTGGCCAGGTGGCCAACGTGGCCAGAAGTGGCCAGTGGCCAGTGGCCAAATGTGGCCAGTGGCCATGTGGCCAGGTGGCCACGGACAAGGTGGCCAGTGGCCAGCGGGTGGCCAGTGTGGCCAAGTGGCCAAGTGTGGCCAGTGGCCACTTATGGTGGCCAGTGGCCAAGTGGCCACCTATGTGGCCATATGGTGGCCATGTGGCCAAGTGGCCATGGTGGCCACGTGGCCAAGTGGCCACCTTAGGTTGGTGGCCAGCGGTGGCCAGTGGCCACAATCAATGTGGCCACGGTGGCCATTAAGTGGCCATATTGATGAGGCCCGGTGGCCAGGTGGCCAGTGGCCAAAGGGGTGGTGGCCATACGGTGGCCATTGTGGCCATTCGTGGCCAGGGTGTGGCCACCCGTGGCCAATGAGGTGGCCACGTGGCCAAAGATGTGGCCAACTGGAGTGGCCAATGTGGCCAAGTGGCCACCTCCACGTGGCCACTAGCGTGGCCATCACCGACCTGGTGGCCAGTGGCCAATGGTGGCCAGTGGCCAGTGGCCAGTGGCCAATACTGGGTGGCCAGTGGCCAGCGACGTGGCCATGTGGCCAGTGGCCACCTGTGGCCACGTGGCCACCAGTGGCCAGTGGCCAGTGGCCACAAAGTGGCCAGTGGCCAAGGTGGCCAATGCTGTGGCCATTCGAGTGGCCA"
+```
+
+In this last Challenge, I wrote a new function called `count_pattern()` that counts occurrences of a particular `pattern` within a larger `genomeString`. My function took two arguments, `genomeString` and the `pattern` I want to count occurrences of. My function returned the count of occurrences of the `pattern` within the `genomeString`. My function accomplished what I intended it to. It counted 22 patterns of "CTG" in my randome genome string that was 2000 nucleotides long. I then used this function to count the number of occurrences of the pattern in the genome string and submit the result to Rosalind. I solved the Rosalind Challenge! There were 22 patterns of GTGGCCAGT in the Rosalind DNA string.
+
+# **Finding the Replication Origin, Part II**
+
+## Challenge 1
