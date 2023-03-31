@@ -231,5 +231,59 @@ generate_2_mers(randGenome())
 ## Challenge 3
 
 ```{r}
+generate_3_mers <- function(myString) {
+  list_3_mers <- c()
 
+  for(i in 1:(nchar(myString) - 1)){
+  list_3_mers <- list_3_mers %>%
+  append(str_sub(myString, start = i, end = i + 2))
+    }
+  return(list_3_mers)
+}
+
+generate_3_mers(randGenome())
+```
+
+## Challenge 4
+
+```{r}
+generate_k_mers <- function(geneomeString, k=3) {
+  list_codon <- c()
+  for (i in seq(1, nchar(geneomeString) - k +1, by = k)) { 
+    list_codon <- list_codon %>%
+      append(str_sub(geneomeString, start = i, end = i + k -1))
+  }
+return(list_codon)
+}
+generate_k_mers(randGenome(9))
+```
+
+```{r}
+count_pattern <- function(myString, pattern){
+  count <- 0
+  for(i in 1:nchar(myString)){
+    if(str_sub(myString, start = i, end = i+1) == pattern){
+      count = count + 1
+    }
+  }
+  return(count)
+}
+  
+count_pattern(myString, "be")
+```
+
+## Challenge 5
+
+```{r}
+nt_patterns <- function(string, pattern) {
+  nt_matches <- 0
+  
+  for (i in seq(1, nchar(string))){
+    if(str_sub(string, i, i + str_length(pattern)-1) == pattern){
+      nt_matches = nt_matches + 1
+  }
+  }
+  return(nt_macthes)
+}
+nt_patterns(randGenome(2000), AGG)
 ```

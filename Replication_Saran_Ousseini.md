@@ -40,7 +40,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "C" "A" "C" "T" "T" "C" "C" "C" "C" "G" "A" "T" "A" "T" "C"
+ [1] "C" "A" "A" "T" "C" "G" "T" "T" "T" "T" "A" "T" "G" "G" "T"
 ```
 :::
 :::
@@ -57,7 +57,7 @@ paste(randGenome, collapse = "")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "CACTTCCCCGATATC"
+[1] "CAATCGTTTTATGGT"
 ```
 :::
 :::
@@ -297,4 +297,149 @@ print(c(CountA, CountT, CountC, CountG))
 [1] 293942 294711 263573 256024
 ```
 :::
+:::
+
+
+# Replication0rigin_PartI
+
+
+::: {.cell}
+
+```{.r .cell-code}
+nucleotide_frequency <- function(genomeString, nucleotide = "A"){
+  count <- 0
+  for(i in 1:nchar(genomeString)){
+    if(str_sub(genomeString, start = i, end = i) == nucleotide){
+      count <- count + 1
+    }
+  }
+  return(count)
+}
+
+nucleotide_frequency("ACTTGCGGGTATCGAG", "G")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 6
+```
+:::
+:::
+
+
+## Challenge 1
+
+
+::: {.cell}
+
+```{.r .cell-code}
+nucleotide <- c("A", "C", "T", "G")
+
+nucleotide
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "A" "C" "T" "G"
+```
+:::
+
+```{.r .cell-code}
+set.seed(200)
+genomeLength <- 2000
+
+randGenome <- sample(nucleotide, size = genomeLength, replace = TRUE)
+
+randGenome <- paste(randGenome, collapse = "")
+randGenome 
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "CCTGTGGACGCCTGTGGAGCTGGTCACCTGCTTTAACTGTAGCACGCGCTGTTAGACCCTACTGCAAAACGTATGAGCTACTAGACGCTGCTTCCCTGCATGCATTTGATTTAGTATGACTAGGCCGCTCGACACCCACTCTGCAGTATCTTGAAATGGACTCCTTGTTTTGAAGGTCGCCATATTCTCTAGAAACTACATTCAGAATGAATTCGTGTCCCAGAATCAGTTCGCACCGACGCACGAGGTAGTTAGGTCTGCGCCTCATGACTTGGGGTCGCCTACTTTTAGCTCCTCGGACCGACCACCCGCAGCCCAGATCTATGGACTGCTACATCCTACCGCGTATATGCCCTGCTTGAGAATGCGTCGCATGTTCGATGGAAGTTTAGTCAGATCGCGACCAACTTCATAAATAATCTGATTGGGGATTAACAGTGATGAGGATTCAGTATGAAAGTCCTATGGAGAGTTTTTCGCATTGACAGACTAACAGCGCAGTAATGCTTGTTGACCTGTATAGAGCCGGACGCGCTGTCACAATCTCTCTTACCCGCGTTAGGTTCTGGCCTCACGCCCGTGCACTGAGGAGAATTTGGTCGGCCTTTGTACTAATATAGCCGACTCTAGACAAATGGCTAAGATCGTCTTCGTTGAGCGTATCAACCTTGGCCAGACGTGCTTACTATGTCAACCCAAATTAAACCCTCACTGCGAGTAATGAGGCGTTAGCGGCGGAAGATTGCTTGCGTTCCAGACGTATCGCATAGATCCGTGAACCGACCTCATCAAGCGTCTTGCTGGGCACTCGAGCAGCCTTACTGGGGCCCTTCTTTCGCAATCTACGCCTTAGGCCGCGTTAGACCAGCCGTCTAGCCTGTGGCTGGATACCCAATCTCGAGGCTCGCGAGATCAACCATCATCCGAGACAGACCGTGAAGCAACGCGGAACGTCGGGTCACGCTTAGGTAATATTGAAGTAGCGAATTGACGTTCGGCTTGCTGCGACGCGAGTACAGGCAGGCAACCTCATGGCAGAGGTAACGAATGTTCCGGAGCGTTTACGTTGCCATGGGAATGTTTCATCTTACGACAGTCAGCCGGTCATCGTAAATTCGTCATGTAAACGTCACGAATAGATGAATCGCGTCTTTCTGAAAATCGCGAACTCGTGTTCACACCCTGCAATGACATTGCCGGATTGAACCGCTCACCATACTCACGCTGAACACACTGCCCTGTACTAGATATCACAGAGTGTTTCGGGTCCAGAACGTACGCATCACATTCACTCGGGAGGCTGATTGGCGTCTGCCGAGCAGAACGAGATGGTTGGGAGACTATAGGCAGAGCACGATGGGAAGCCGCTAAGGCACTGTCATTGGAGCGCATGCGCTCCCCCTCCGTTCTCAAACCCAACGCTCTTCGATCTCAGCGCGTGTCATAGTAAGTGGCACGGCTCCTACGCAAAGTTATAACAGCGTAAGTTAGGTGGGACCATAAATGTCGGGTAGAATCGTCCGATATGAAAATGCTGGTGATCGCGAGATCCCGCATCCTCATGAGTAGTCTCCAACCTGTACTAGCGGACTATAGATCAGTCGGTCGCAAACGTGACCATCCACGCTCAAATCGCCTATTCTGTGTTTTAAGAGCTGAATCCCCGTGCATGTGTGGGATGACCATTGAGATTTCGCCCGTAAGCTTCCTTAGTGCAAATGGCAACAAAGAGCGAAACGTAGATTCGTAAGGGGCATTCGGCTGAATGTAATGCTAATGCTCCTACGCCGGCGGACGATTGTCATAGATTCCCGAGTAGTAAGAACATCCATGTTAACGATTGGTACAACTGCAAAAATTTCGATTCAAAGTATGTTGCGGGTCTTTGCCTTGCTTTATGAACGAAGGTCCGTGTTTTGCGCGACCAAACGTGTTTAACATTCGCAGAGCAGTGGGTGCATCAGTAAGGTAGCGTTACTGTTAATCTTCCACCGACCGTA"
+```
+:::
+
+```{.r .cell-code}
+nucleotide_frequency(randGenome, "C")
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 509
+```
+:::
+:::
+
+
+## Challenge 2
+
+
+::: {.cell}
+
+```{.r .cell-code}
+randGenome <- function(k){
+  nucleotide <- c("A", "C", "T","G")
+randGenome <- sample(nucleotide, size = k, replace = TRUE)
+
+randGenome <- paste(randGenome, collapse = "")
+randGenome 
+
+  return(randGenome)
+}
+
+randGenome(5)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "ATTGC"
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+myString <- randGenome
+
+str_sub(randGenome(), start = 1, end = 2)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "TC"
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+generate_2_mers <- function(myString) {
+  list_2_mers <- c()
+
+  for(i in 1:(nchar(myString) - 1)){
+  list_2_mers <- list_2_mers %>%
+  append(str_sub(myString, start = i, end = i + 1))
+    }
+  return(list_2_mers)
+}
+
+generate_2_mers(randGenome())
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "GC" "CG" "GT"
+```
+:::
+:::
+
+
+## Challenge 3
+
+
+::: {.cell}
+
 :::
