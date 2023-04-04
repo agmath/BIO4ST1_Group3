@@ -83,7 +83,7 @@ for (j in 1:15) {
 }
 ```
 
-## Challenge 6
+## Challenge 6:
 
 ```{r}
 nucleotides <- c("A", "C", "G", "T")
@@ -95,7 +95,7 @@ randGenome <- paste(
 print(randGenome)
 ```
 
-## Challenge 7
+## Challenge 7:Adapt the for loop provided above so that it counts the number of occurrences of Adenine (A) in randGenome.
 
 ```{r}
 for(i in 0:nchar(randGenome)){
@@ -105,7 +105,7 @@ for(i in 0:nchar(randGenome)){
 }
 ```
 
-## Challenge 8
+## Challenge 8: Adapt the loop you just created so that it will count the frequencies of each of the four individual nucleotides.
 
 ```{r}
 vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
@@ -113,7 +113,7 @@ vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "charact
 #vib_c
 ```
 
-## Challenge 9
+## Challenge 9: Use your code from Challenge 8 to count the frequency of each nucleotide in the*Vibrio Cholerae* chromosome.
 
 ```{r}
 CountA <- 0
@@ -121,21 +121,23 @@ CountT <- 0
 CountC <- 0
 CountG <- 0
 
-for(i in 0:nchar(randGenome)){
-  if(str_sub(randGenome, start = i, end = i) == "A"){
+my_genome<- randGenome(1000)
+
+for(i in 0:nchar(my_genome)){
+  if(str_sub(my_genome, start = i, end = i) == "A"){
     CountA <- CountA + 1}
   
-  if(str_sub(randGenome, start = i, end = i) == "T"){
+  if(str_sub(my_genome, start = i, end = i) == "T"){
     CountT <- CountT + 1}
-  if(str_sub(randGenome, start = i, end = i) == "C"){
+  if(str_sub(my_genome, start = i, end = i) == "C"){
    CountC <- CountC + 1}
-  if(str_sub(randGenome, start = i, end = i) == "G"){
+  if(str_sub(my_genome, start = i, end = i) == "G"){
     CountG <- CountG + 1}  
 }
 print(c(CountA, CountT, CountC, CountG))
 ```
 
-## Challenge 10
+## 
 
 ```{r}
 CountA <- 0
@@ -157,6 +159,8 @@ for(i in 0:nchar(vib_c)){
 print(c(CountA, CountT, CountC, CountG))
 
 ```
+
+## Challenge 10: Create A Rosalinda account
 
 # Replication0rigin_PartI
 
@@ -205,7 +209,8 @@ randGenome
   return(randGenome)
 }
 
-randGenome(5)
+randgenome <- randGenome(5)
+randgenome
 ```
 
 ```{r}
@@ -283,7 +288,69 @@ nt_patterns <- function(string, pattern) {
       nt_matches = nt_matches + 1
   }
   }
-  return(nt_macthes)
+  return(nt_matches)
 }
-nt_patterns(randGenome(2000), AGG)
+nt_patterns(randGenome(2000), "AGG")
+```
+
+# Part II: 
+
+## Challenge 1: Find the most frequent words in a string
+
+```{r}
+generate_k_mers <- function(geneomeString, k=3) {
+  list_codon <- c()
+  for (i in seq(1, nchar(geneomeString) - k +1, by = k)) { 
+    list_codon <- list_codon %>%
+      append(str_sub(geneomeString, start = i, end = i + k -1))
+  }
+return(list_codon)
+}
+generate_k_mers("ACACAGACATCCCACCCC")
+```
+
+```{r}
+find_frequent_kmers <- function(genome, k){
+  kmers <- generate_k_mers(genome,k)
+  kmers <- unique(kmers)
+  kmer_count <- rep(0, length(kmers))
+  for (i in 1 : length(kmers)) {
+    count_pattern(genome, kmers[i])
+    max_count <- max(kmer_count)
+    frequent_kmers <- kmers[kmer_count == max_count]
+    
+  }
+  return(frequent_kmers)
+}
+find_frequent_kmers("ACACAGACATCCCACCCC", k = 3)
+```
+
+```{r}
+find_frequent_kmers <- function(genome, k){
+  kmers <- generate_k_mers(genome,k)
+  kmers <- unique(kmers)
+  kmer_count <- rep(0, length(kmers))
+  for (i in 1 : length(kmers)) {
+    count_pattern(genome, kmers[i])
+    max_count <- max(kmer_count)
+    frequent_kmers <- kmers[kmer_count == max_count]
+    
+  }
+  return(frequent_kmers)
+}
+find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT", k = 4)
+```
+
+## Challenge 2: The Reverse-Complement Problem
+
+```{r}
+reverse_complement <- function(geneomeSubString, k=3) {
+  list_codon <- c()
+  for (i in seq(1, nchar(geneomeSubString) - k +1, by = k)) { 
+    list_codon <- list_codon %>%
+      append(str_sub(geneomeSubString, start = i, end = i + k -1))
+  }
+return(list_codon)
+}
+reverse_complement("ACACAGACATCCCACCCC")
 ```
