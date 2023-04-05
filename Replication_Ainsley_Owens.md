@@ -12,7 +12,7 @@ execute:
 
 ### Intro to R Notebook
 
-In this notebook, I will be exploring several functions of R and learning tools to complete the Replication Origin Notebooks. This will include using the arrow operator `<-`to store objects in variables, using R's `sample()` function to create random genomes for testing functions, and building functions to process and analyze genetic data. I will also be learning about for loops and reading in data from outside sources. These tools will be used to analyze genomes.
+In this notebook, I will be exploring several functions of R and learning tools to complete the Replication Origin Notebooks. This will include using the arrow operator `<-`to store objects in variables, using R's `sample()` function to create random genomes for testing functions, and building functions to process and analyze genetic data. I will also be learning about for loops and reading in data from outside sources. These tools will be used to analyze genomes in future work.
 
 ### Challenge 1
 
@@ -36,7 +36,7 @@ Nucleotides
 
 ### Challenge 2
 
-Now, I will create a random string of 15 nucleotides, titled randGenome.
+Now, I will create a random string of 15 nucleotides, titled randGenome, using the `sample()` tool. Using the `<-` will store the list as randGenome.
 
 
 ::: {.cell}
@@ -49,7 +49,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "G" "C" "T" "T" "T" "G" "A" "C" "T" "G" "T" "A" "G" "T" "G"
+ [1] "G" "C" "G" "A" "T" "A" "T" "T" "C" "A" "G" "G" "A" "A" "T"
 ```
 :::
 :::
@@ -66,7 +66,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "GCTTTGACTGTAGTG"
+[1] "GCGATATTCAGGAAT"
 ```
 :::
 :::
@@ -74,7 +74,7 @@ paste (randGenome, collapse="")
 
 ### Challenge 3
 
-Now, I will create a random genome that is 1500 nucleotides long. I used the `paste()` function to collapse the list into a single string.
+Now, I will create a random genome that is 1500 nucleotides long, using the `sample()` function again, naming this genome randGenome. I used the `paste()` function to collapse the list into a single string.
 
 
 ::: {.cell}
@@ -87,13 +87,13 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TCACTAGTGACGCACCGCCATACATGTTTACCTTATTGCTATCGTTATTTATGGTCAAGGTATTCTCTTTCCGAAAACCCAGTGGGCTGTCTGAGGGGGGATTGAGCTTCCTAGTATGAGTGTGAAACTGGCGGCTATGGCGTGGATTTATATGGATCCAATCAGGTAGCACATTTCGAACGCGCACGGCCAGACGATGTCAGATGCATGATCATGCGAAAGTAGGGCTACGCACCTTTTACTGTGAAGATCTGATCTCGAGTCGGTGTTGTTCGCCGAGGCGGTAAATCACGGACTATTAGTTGGGGCGGGACCCGGTACAGCCCGGCCCGTGTAACATTTTATTGGTTGGGAATCTCGCGTCTAACCATAGAGGACGCCTGTACCTTCTGAAGGGGGCGAGGCTAATTGCCGTCTAGGGGTCGATTGCGCTAATCTGAGAACGGTAGAATTGTGCACCTCACTCTCGTACCAAGGGCGTAATCCATTAGGGGACTAGACTAGCGCACACGAACAAAATAGGTTTCTGACCTACGAGCCTTGCCGAACCGCTCACTGGGGCACATATTATGGAGGAGTCCGCTTTCGACTACTTACTTAGTGTCGGCGGCCTTTCTATTGTTCTGGTCTTGAGTGTTCACAGGACTGTCCCCGGAGGGTGCGTAAGTCTAGTGACAGGACGAAAATCCGGCACTGATTTCCGAGGCGAAAGATACGTGCTGATATATTGTATCGTAAGAGGGGTTGATCCTAGGTTGAACTAAGCGCCTAACGGCCCAATAATGAAAAGACCAATAGCTAGAACTTACGCTATGCGCGCATCGGAGAGCGAACTAAGTTTACGCAACCCATACTGACTCGGCGCCTCTGTTTTCTGGCGCCTTTGTGGGGACTGCTGCGACGTCTGTGTTTTAGTCAAAAGGCTTGAGGGCGCGAGATCAATGACGTGGTCCACGGATTACGCGGAGAAATCATGTCACACCTAAGCGGGAATAAATTAAATTGCCATTCCTCACCCGAACGGGACTGGGTGGAGGAGCGTCCGACATGCGTCGAAGCCCCGTGGCTATTCAAAAGACTCTCCACGGCCGGTGGGGGTGCGAGGTATTGCCAATAGTCCTGTTGAGATGCCGCACGGCTTCAACTTACCCCTCCCGGAGCCATGTGGCCACCACGATTTATATGGCCGAAGTGGGTGCTTTAAAATGGGACCGATCGCTAGTTTAGCCTGATGTTTCAGCTTCCGTCAGTCAGACATAGTGTGTAACCAGCACTAATGCGTTCATGACATGACCCCCTAAATCCTTTATTAGGACCTCATCGTTTTTTCGTAGGCACCCTGGGGTCTTAGAATGGGACGCTTGGCATGGCCAGTGGCAGCCGTCCCATAGAACCACCAGTGTTCCGTGCTCCTTCCAGTTGAGAGGCGTTCGATACGACCGCAACTCTTAGCTACACCTCTGGGGCTCCGGGTCGTGGAACCTAGAATAAAACCTCATC"
+[1] "AACCATGCTGGGAGCGTACGCTACCCCATTTCCGAGTAGTTTCGGGCAAGACCCAACTGATACGTAGGAGCCTTTCAACGTAACCCATTTTGTAAGTTACTGTCTGCGCGGTTGAGATCCCTGACTCGATCACATACCGGCCGATGCACTTCAGGTAATGCCTGCATTTTACCCCATTACGACTAGTTGGGTTCCTGGAAAACCTTAAAGAGGGTCTTAATTTAAGCCTGTTGCGTTTCACAAGCTCCATTTGTCGTTCTTAGCGTTCAACGGGTCTCCTTGTTTGTTGGATAAACTCTCGGCAATAATGCAAGTCAGGATCCGCGTACAAACCCGCACCCGTTCCAAGGCGCCCGGCCAAAACCAATAAGAACTTGGATCGACCAGTACAGAAGTAGGCCATGGTCTCTAAGGCAAGCGTCTTATCGTCTGACTGTTTAACCACTGGGAAACCATTACGTAGATCTTTGCACTAGAGTACTAGCCAATGCCTAAACCCAATGTGGCAGCGCGCCAGACGACCGCAGGCAAGTTACCCCGCGTAGGTGTATGAGTCCCAGGGACTTGTTCTTACATGCTCCCGCATTAGCAGCCGTACAAAGATTGGACTCCTGTGGTCACTACTACCCGACGCGGTATCAATCAGCTCGCATGTCCCGTTACATCGATCACTACTCCTACTGATTCGCATTGACCCCTCCCGCCAAAGGACTGCCATTAGATTAGGCACAATTGGCACACGTTCCATAACATTGTCTGCTCATAGTCCATCCCAACCAAGTTACCCACAAGGAATAGACACGGATTGTAGGGCTCCCGCTGCAACGGTCTCATCGCCTACGTCGATATAATTTATGAAAACCGACAACGAGTGTTGCTTATTGATGATGGTGTTGAGACCTCGGGGCATGCCTATGCCGGGAGGCCGGCTGGACATTCTAGTGTGACTTTAAGCTTGTGCTAGTATCTGCCCGACAGTTAACGGAGGGGCCGAACCTGCAAGTATTGATTAATGGTTGCTAGAACTGCACACAGGAGATGAGTCATTAGACATTTCCAACGTGATTGGCAAAGGGCGAATACTAACCAGATCGTGCACGAAACAACGGGGTTGTTAGTAACAATGTTTGAACCATAATTGCAAGGTAGTTTTTAACCTGAGCGCACTAGCTACTACTATCCACACCTGCGCATGGATTGGGTTTCGTACAGTTCGTAAGTGGGCATTGCCGCCTAGCCCCGCTCTAGTAATTCTCGACTTAAATAGCAACCAGGCGGGATCTACGCGCCCGATAAAACGCTAAAGCATCGCTGGGTCGCAACCTTTATCTCTTACCACGCCGGAAGATGCGCCGAAGGAGGACCAACACGCCCTCCTGACGATACTATAACGCCGGACTCTTGTAGGGGATCTAGCAGATTACTCAGAGAGGAAAGGGAGCGCACAAACGCAACTACCTGATGACGCAAGGTCCTACGACTAGTTCTTGGGACCGGTGT"
 ```
 :::
 :::
 
 
-Here, I am using `set.seed(215)` to initialize the random number generation with the seed 215, using the `paste()` function to collapse the list into one string.
+Here, I am using `set.seed(215)` to initialize the random number generation with the seed 215, using the `paste()` function to collapse the list into one string. The `set.seed(215)` function guarantees that the same random values will be produced each time the code is ran, useful for reproducible results.
 
 
 ::: {.cell}
@@ -118,7 +118,7 @@ randGenome
 
 ### Challenge 4
 
-Using `set.seed(215)`, I created a random genome composed of 100 nucleotides. The `paste()` function collapsed the list into one single strand.
+Using `set.seed(215)`, to ensure the same random sample is created each time I run the code, I created a random genome composed of 100 nucleotides, done by setting the `genomeLength` to `<-100`. The `paste()` function collapsed the list into one single strand.
 
 
 ::: {.cell}
@@ -142,16 +142,16 @@ randGenome
 
 ### Challenge 5
 
-Here, I am learning how to create a for loop so I can create for loops to analyze genomes.
+Here, I am learning how to create a for loop so I can create for loops to analyze genomes. A for loop is a control-flow construct used to run through a dataset and apply the same set of operations on each item in the dataset. To create a for loop, you must set an iterator and provide the instructions to be run each time through the loop. This simple for loop will multiply `myProduct`. I first initialized the container, `myProduct`, with a starting value of 1. By setting the `for(j in )` value to `1:15`, this instructs the loop to run through the range of integer values from 1 through 15. I then provided the condition on the iterator within a set of parentheses, ending the line with an open bracket. I will indent the next line, as the indented lines following the open bracket are where the instructions to be run through the loop are located.
 
 
 ::: {.cell}
 
 ```{.r .cell-code}
-myProduct <- 0
+myProduct <- 1
 
 for(j in 1:15){
-  myProduct <- myProduct + j
+  myProduct <- myProduct*j
   print(myProduct)
 }
 ```
@@ -159,20 +159,20 @@ for(j in 1:15){
 ::: {.cell-output .cell-output-stdout}
 ```
 [1] 1
-[1] 3
+[1] 2
 [1] 6
-[1] 10
-[1] 15
-[1] 21
-[1] 28
-[1] 36
-[1] 45
-[1] 55
-[1] 66
-[1] 78
-[1] 91
-[1] 105
+[1] 24
 [1] 120
+[1] 720
+[1] 5040
+[1] 40320
+[1] 362880
+[1] 3628800
+[1] 39916800
+[1] 479001600
+[1] 6227020800
+[1] 87178291200
+[1] 1.307674e+12
 ```
 :::
 :::
@@ -180,7 +180,7 @@ for(j in 1:15){
 
 ### Challenge 6
 
-Here, I created a random genome consisting of 10 nucleotides. I then created a for loop intended to print each individual nucleotide as opposed to the whole string. I used `1:nchar()` to run the for loop through all characters in the string. I used the `str_sub()` function to extract individual nucleotides. By using `str_sub()` and using `j` as both the start and end for subsetting, I was able to have the for loop print the individual nucleotides.
+Here, I created a random genome consisting of 10 nucleotides. I then created a for loop intended to print each individual nucleotide as opposed to the whole string. I used `1:nchar()` to run the for loop through all characters in the string. I used the `str_sub()` function to extract individual nucleotides. The string subset function takes three arguments: the `string` to be subset, the position to `start` subsetting, and the position to `end` subsetting the string. If `start` and `end` are the same, a single character will be extracted. By using `str_sub()` and using `j` as both the `start` and `end` for subsetting, I was able to have the for loop print the individual nucleotides.
 
 
 ::: {.cell}
@@ -225,7 +225,7 @@ for(j in 1:nchar(randGenome)){
 
 ### Challenge 7
 
-Here, I adapted the for loop used in Challenge 6 to count the number of occurrences of Adenine in the string. I did this by creating the adenineCount variable, set to 0. I then removed the `print()` function previously used and replaced it with adenineCount, increasing the value by 1 every time there is an Adenine in the string, `adenineCount <-adenineCount +1`, then reinserted the `print()` function to print the count of Adenine occurrences.
+Flow control is a programming concept used to execute code only when certain conditions are satisfied. This can be achieved using `if`, `else if`, and `else` statements. The code in Challenge 6 was adapted to only print occurrences of Adenine (`"A"`). This is done by using an `if` statement. I first initialized the container, `adenineCount`, with a starting value of 0. The `for` line instructs the code to run through all of the characters in the random genome. The `if` line instructs the code to only run if the current nucleotide in the random genome is Adenine (`"A"`). Because I already initialized the container with a starting value of 0, I can instruct the code to increment the value of the container by one every time an Adenine occurs, by following the `for` line, with `adenineCount <- adenineCount +1`. After closing the brackets for the flow control, I used the `print()` function to return the occurrences of Adenine.
 
 
 ::: {.cell}
@@ -250,7 +250,7 @@ for(i in 1:nchar(randGenome)){
 
 ### Challenge 8
 
-Now that I have created a for loop to count the number of occurrences of Adenine in the string, I will adapt the loop to count the frequencies of each of the four nucleotides.
+Now that I have created a for loop to count the number of occurrences of Adenine in the string, I will adapt the loop to count the frequencies of each of the four nucleotides. I did so by setting containers for each nucleotide, `thymineCount`, `cytosineCount`, `adenineCount`, and `guanineCount`, to a starting value of zero. I then repeated the code used in Challenge 7, and changed the nucleotide in the `if` line to count each nucleotide, as well as the `nucleotideCount` line to the matching nucleotide to increment by 1 each time the nucleotide occurs. After closing the brackets for my loops, I printed each nucleotide count, using the `print(c(nucleotideCount))` function.
 
 
 ::: {.cell}
@@ -278,48 +278,18 @@ for(i in 1:nchar(randGenome)){
   
   }
 }
-print(thymineCount)
+print(c(thymineCount, adenineCount, cytosineCount, guanineCount))
 ```
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 5
-```
-:::
-
-```{.r .cell-code}
-print(adenineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 2
-```
-:::
-
-```{.r .cell-code}
-print(guanineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 1
-```
-:::
-
-```{.r .cell-code}
-print(cytosineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 2
+[1] 5 2 2 1
 ```
 :::
 :::
 
 
-Here, I read in the Vibrio Cholerae genome, composed of 1,108,250 nucleotides.
+Here, I read in the Vibrio Cholerae genome, composed of 1,108,250 nucleotides, to test my code on a real genome. I named the dataset `vib_c`, and scanned the data in using the file path in my computer in quotations, followed by `, what = "character", sep = NULL`. These lines following the `scan` function must be in parentheses.
 
 
 ::: {.cell}
@@ -332,16 +302,16 @@ vib_c <- scan("C:/Users/owens/OneDrive/Desktop/VibrioCholerae.txt", what = "char
 
 ### Challenge 9
 
-Now I can use the for loop I created to count all of the occurrences of the individual nucleotides in the cholera genome.
+Now I can use the for loop I created to count all of the occurrences of the individual nucleotides in the cholera genome, by replacing `randGenome` with `vib_c`, to pull the nucleotides from the cholera genome.
 
 
 ::: {.cell}
 
 ```{.r .cell-code}
-thymineCount <- 0
-cytosineCount <- 0
 adenineCount <- 0
+cytosineCount <- 0
 guanineCount <- 0
+thymineCount <- 0
 for(i in 1:nchar(vib_c)){
   if(str_sub(vib_c, start = i, end = i) == "T"){
    thymineCount <- thymineCount +1
@@ -360,42 +330,12 @@ for(i in 1:nchar(vib_c)){
   
   }
 }
-print(thymineCount)
+print(c(thymineCount, adenineCount, cytosineCount, guanineCount))
 ```
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 294711
-```
-:::
-
-```{.r .cell-code}
-print(adenineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 293942
-```
-:::
-
-```{.r .cell-code}
-print(guanineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 256024
-```
-:::
-
-```{.r .cell-code}
-print(cytosineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 263573
+[1] 294711 293942 263573 256024
 ```
 :::
 :::
@@ -409,18 +349,19 @@ Here, I used the `scan()` function to read in a Rosalind genome. I used the for 
 ::: {.cell}
 
 ```{.r .cell-code}
-rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna.txt", what = "character", sep = NULL)
+rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna (6).txt", what = "character", sep = NULL)
 ```
 :::
 
 ::: {.cell}
 
 ```{.r .cell-code}
+rosalindSequence <- "AGAATGGACTTCTGTTAAAAAGTACGATACAATTAACACGCAGCGAATCCAGGTCGGGGCGTCTATCGACAGAAAAAGTGATCTAATGACTAGATGTGCGGTTAGGGTCATTAGTTGTACTAACCGCGGGTGCCGCGACCAACTAGATACGTATAACTAGACACGTTACCCGCTGCAATCGAACTCGCAAACCGAGCAACGCCCGTGGGCCATTATTACTATTAACAGGGAGGGATCGGTTTGAGCTCCCTTGTCTCGTAAAAATTTGGTTACGCTCAGTTGCATGCAATTCAGCGTGTGGTCGCTCTCGCTTGGCCCCCTCCAAGTGAACATCGAATAACGGTGGCCCGTAGCCAATTGCGGCAGTCGGGCCCGATAATCGACCGTGCGAGACATTCACTCGAATTTAATAGTTGTGCACTGTACCAGGGTATTCCATAGTTCACAAGCCGTTTACCAGGGCCTAAGCGCCAGAAGAGCTCGCACCTCTGAGACCTCAAACCCGCCCAGCAGGCGTATCCTGACATAGTAAGATCGGAGCCGGGTTTGGCGCGGTACACTACTACTCGTCGTCAAGTCATTTAAAGACGGAAGTAACTGCCTATAAGGTATCCCCCGGATCCGGACCGGTACCCTAAATCTGGTTCGTTAACAACCCGTCGGCCCGGGCCTCCAACAGACTTATTTGATTAGGGTGTATAAATGATTTGGCCCCAAGATATGTCGGCGTGCACCGTCTCTTATTCGTCCCCCGATAGGCGCGCTAGCAACATACAAATTCCTCTGGAGTGATGAGCCACGTCACACTGTTACGACATTTATCCGACCCACAGAAATGCGCGCAAGATCCGTACGCACGCGTACAGATGTCCACCTTTTTTGCCATAGGAAAGTGACCGAGTGCTCCGAGCGATACCAATCCGCCGGTAGTCCAGCTAGACTGTCTTA"
 thymineCount <- 0
-cytosineCount <- 0
 adenineCount <- 0
+cytosineCount <- 0
 guanineCount <- 0
-for(i in 1:nchar(rosalindSequence)){
+for(i in 0:nchar(rosalindSequence)){
   if(str_sub(rosalindSequence, start = i, end = i) == "T"){
    thymineCount <- thymineCount +1
   
@@ -438,42 +379,12 @@ for(i in 1:nchar(rosalindSequence)){
   
   }
 }
-print(adenineCount)
+print(c(adenineCount,cytosineCount, guanineCount, thymineCount))
 ```
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 250
-```
-:::
-
-```{.r .cell-code}
-print(cytosineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 203
-```
-:::
-
-```{.r .cell-code}
-print(guanineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 230
-```
-:::
-
-```{.r .cell-code}
-print(thymineCount)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-[1] 244
+[1] 243 256 230 219
 ```
 :::
 :::
@@ -743,9 +654,63 @@ generate_k_mers (myGenome, 3)
 :::
 
 
-I will now adapt the `generate_k_mers` function to create a function that will count and report frequently occurring k-mers.
+I will now adapt the `generate_k_mers` function to create a function that will count and report frequently occurring k-mers. This code block is intended to find and count k-mers in the genome, loop through the list of k-mers and return the most frequently occurring k-mers. By giving `k` a value of 4, this code will return the most frequent 4-mer. I can change this `k` value to determine what length of most frequent k-mer is returned.
 
 
 ::: {.cell}
 
+```{.r .cell-code}
+frequent_kmers <- function(genome, k) {
+  kmers <- generate_k_mers(genome, k)
+  kmers <- unique(kmers)
+  kmer_counts <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_counts[i] <- count_pattern(genome, kmers[i])
+  }
+  max_count <-max (kmer_counts)
+  frequent_kmers <- kmers[kmer_counts==max_count]
+  return(frequent_kmers)
+  
+}
+
+smallGenome <- "ATCCATTAT"
+frequent_kmers(smallGenome, k=4)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "TTAT"
+```
+:::
+:::
+
+
+Now, to ensure my code is working properly, I will test it on a Rosalind sequence. This code block is using the Rosalind sample sequence before downloading the full genome.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+find_frequent_kmers <- function(genome, k) {
+  kmers <- generate_k_mers(genome, k)
+  kmers <- unique(kmers)
+  kmer_count <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_count[i] <- count_pattern(genome, kmers[i])
+  }
+  max_count <-max (kmer_count)
+  frequent_kmers <- kmers[kmer_count==max_count]
+  return(frequent_kmers)
+  
+}
+
+rosalindGenome <- "ACGTTGCATGTCGCATGATGCATGAGAGCT"
+find_frequent_kmers(rosalindGenome, k = 4)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] "AGCT"
+```
+:::
 :::
