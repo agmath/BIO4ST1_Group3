@@ -390,8 +390,22 @@ myGenome
 generate_k_mers (myGenome, 3)
 ```
 
-I will now adapt the `generate_k_mers` function to create a function that will count and report frequently occurring k-mers.
+I will now adapt the `generate_k_mers` function to create a function that will count and report frequently occurring k-mers. This code block is intended to find and count k-mers in the genome, loop through the list of k-mers and return the most frequently occurring k-mers.
 
 ```{r}
+frequent_kmers <- function(genome, k) {
+  kmers <- generate_k_mers(genome, k)
+  kmers <- unique(kmers)
+  kmer_counts <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_counts[i] <- count_pattern(genome, kmers[i])
+  }
+  max_count <-max (kmer_counts)
+  frequent_kmers <- kmers[kmer_counts==max_count]
+  return(frequent_kmers)
+  
+}
 
+smallGenome <- "ATCCATTAT"
+frequent_kmers(smallGenome, k)
 ```
