@@ -195,7 +195,7 @@ print(c(thymineCount, adenineCount, cytosineCount, guanineCount))
 Here, I used the `scan()` function to read in a Rosalind genome. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.
 
 ```{r}
-rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna (6).txt", what = "character", sep = NULL)
+rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna (6).txt", what = "character")
 ```
 
 ```{r}
@@ -337,20 +337,21 @@ rosalindString <- "CGCTGCAATGTGCAATGTTGCAATGTGCAATGAATTATGCAATGAATGCAATGTTGCAATG
 
 ```
 
-In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to `i+8`, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, `count_pattern()`, I replaced the string to pull from rosalindString, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly.
+In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to `i+8`, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, `count_pattern()`, I replaced the string to pull from rosalindString, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly. (I adjusted this code to be functional in Replication Origin II, changing the `end= i+8` to `end= i+ k -1`. Having the `end= i+8` caused the `count_pattern` function to not be usable in Challenge 1 of Replication Origin II, because the string was not 9 nucleotides long.)
 
 ```{r}
 count_pattern <- function(genomeString, pattern){
   count <- 0
+  k<- nchar(pattern)
   for (i in 1:nchar(genomeString)){
-    if(str_sub(genomeString, start = i, end = i+8) == pattern){
+    if(str_sub(genomeString, start = i, end = i+k-1) == pattern){
       count = count + 1
     }
   }
   return(count)
 }
   
-count_pattern(rosalindString, "TGCAATGTG")
+count_pattern("ATATAT", "AT")
 ```
 
 While completing this notebook, I learned several skills and concepts. I learned to use functions to write reusable code, which can be helpful when trying to find similar things in several different genomes. Using functions to write reusable code prevents having to rewrite code several times to complete the same task within different genomes. I have worked more to learn how to understand and break down genomes using code. In this notebook, I learned how to count the number of occurrences of patterns in the genome.
@@ -418,4 +419,24 @@ find_frequent_kmers <- function(genome, k) {
 
 rosalindGenome <- "ACGTTGCATGTCGCATGATGCATGAGAGCT"
 find_frequent_kmers(rosalindGenome, k = 4)
+```
+
+Here, I read in the full Rosalind sequence, as data, and then named the data `genomeString`.
+
+```{r}
+data <-"ACCGCAGAGTCCCTATGGGCAGCCGCACGCCCTATGGGACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGACAGCCGCACGCAGCCGCACGACCGCAGAGTACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGCAGCCGCACGCAGCCGCACGACCGCAGAGTGGAGTGGTTGCCACGGAACCGCAGAGTGGAGTGGTTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCCCTATGGGCCCTATGGGCAGCCGCACGGGAGTGGTCAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGCAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGGGAGTGGTGGAGTGGTTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCAGCCGCACGACCGCAGAGTTGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGTGCCACGGACAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTGGAGTGGTCAGCCGCACGCCCTATGGGGGAGTGGTCAGCCGCACGTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGT"
+#The genomeString
+genomeString <- data[1]
+genomeString
+
+#The value of k
+k <- as.integer(data[2])
+k
+```
+
+Now, I used the `find_frequent_kmers` function to run through the entire sequence, pulling from `genomeString`. The desired kmer length to find listed by Rosalind is 14, so I set the `k` value to equal 14. I used `noquote(frequent_kmers)` to print the kmers out in a single line with no quotations, and got the Rosalind challenge correct, meaning that my code is working properly.
+
+```{r}
+frequent_kmers<- find_frequent_kmers(genomeString, k=14)
+noquote(frequent_kmers)
 ```

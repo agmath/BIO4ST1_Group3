@@ -153,14 +153,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span> genome, <span class="at">replace=</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "G" "C" "G" "A" "T" "A" "T" "T" "C" "A" "G" "G" "A" "A" "T"</code></pre>
+<pre><code> [1] "A" "A" "T" "A" "C" "A" "G" "T" "G" "G" "A" "C" "C" "C" "G"</code></pre>
 </div>
 </div>
 <p>Now, I will <code>collapse()</code> the genome to create a single string and make it easier to read.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span> (randGenome, <span class="at">collapse=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "GCGATATTCAGGAAT"</code></pre>
+<pre><code>[1] "AATACAGTGGACCCG"</code></pre>
 </div>
 </div>
 </section>
@@ -172,7 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(Nucleotides, <span class="at">size=</span> genome, <span class="at">replace=</span> <span class="cn">TRUE</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span> (randGenome, <span class="at">collapse=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "AACCATGCTGGGAGCGTACGCTACCCCATTTCCGAGTAGTTTCGGGCAAGACCCAACTGATACGTAGGAGCCTTTCAACGTAACCCATTTTGTAAGTTACTGTCTGCGCGGTTGAGATCCCTGACTCGATCACATACCGGCCGATGCACTTCAGGTAATGCCTGCATTTTACCCCATTACGACTAGTTGGGTTCCTGGAAAACCTTAAAGAGGGTCTTAATTTAAGCCTGTTGCGTTTCACAAGCTCCATTTGTCGTTCTTAGCGTTCAACGGGTCTCCTTGTTTGTTGGATAAACTCTCGGCAATAATGCAAGTCAGGATCCGCGTACAAACCCGCACCCGTTCCAAGGCGCCCGGCCAAAACCAATAAGAACTTGGATCGACCAGTACAGAAGTAGGCCATGGTCTCTAAGGCAAGCGTCTTATCGTCTGACTGTTTAACCACTGGGAAACCATTACGTAGATCTTTGCACTAGAGTACTAGCCAATGCCTAAACCCAATGTGGCAGCGCGCCAGACGACCGCAGGCAAGTTACCCCGCGTAGGTGTATGAGTCCCAGGGACTTGTTCTTACATGCTCCCGCATTAGCAGCCGTACAAAGATTGGACTCCTGTGGTCACTACTACCCGACGCGGTATCAATCAGCTCGCATGTCCCGTTACATCGATCACTACTCCTACTGATTCGCATTGACCCCTCCCGCCAAAGGACTGCCATTAGATTAGGCACAATTGGCACACGTTCCATAACATTGTCTGCTCATAGTCCATCCCAACCAAGTTACCCACAAGGAATAGACACGGATTGTAGGGCTCCCGCTGCAACGGTCTCATCGCCTACGTCGATATAATTTATGAAAACCGACAACGAGTGTTGCTTATTGATGATGGTGTTGAGACCTCGGGGCATGCCTATGCCGGGAGGCCGGCTGGACATTCTAGTGTGACTTTAAGCTTGTGCTAGTATCTGCCCGACAGTTAACGGAGGGGCCGAACCTGCAAGTATTGATTAATGGTTGCTAGAACTGCACACAGGAGATGAGTCATTAGACATTTCCAACGTGATTGGCAAAGGGCGAATACTAACCAGATCGTGCACGAAACAACGGGGTTGTTAGTAACAATGTTTGAACCATAATTGCAAGGTAGTTTTTAACCTGAGCGCACTAGCTACTACTATCCACACCTGCGCATGGATTGGGTTTCGTACAGTTCGTAAGTGGGCATTGCCGCCTAGCCCCGCTCTAGTAATTCTCGACTTAAATAGCAACCAGGCGGGATCTACGCGCCCGATAAAACGCTAAAGCATCGCTGGGTCGCAACCTTTATCTCTTACCACGCCGGAAGATGCGCCGAAGGAGGACCAACACGCCCTCCTGACGATACTATAACGCCGGACTCTTGTAGGGGATCTAGCAGATTACTCAGAGAGGAAAGGGAGCGCACAAACGCAACTACCTGATGACGCAAGGTCCTACGACTAGTTCTTGGGACCGGTGT"</code></pre>
+<pre><code>[1] "CATGAGGCTTACAAATCGACCCTAACCGATATATATCGTCATAGCCAATTATGCCTAACACCATTTAAACCGCTGTGGCGCAATTGAGCTATGGCACGTTCCATAGAATCTTAGAGAGGAATATCAACCAGTAGGCAACCCAGGTCAGCTGAGGGACCACATCAGTTAAAGGGACAAATAAAACGAGGTTTCGTTCCGCAGATCCGTAGACTGCCCCGCGTCACGTAGGAATGCTATTCCTGTCATCGACCGAAAGGGACTGATTGGTACTTCCGGATTTTGCGCGTCCCTCTAAGCCTGACGGGCTGGTACAACGGTTAGGACTACCACATAACCCACTCCGGTGATGTGCCTAAACTCTTCCCTCTACGGCATCTACGTTATCCGGGCTGAACAGTACCGGCGGAAATGGACTGGCAAAGTGGTTCAGTGACCATCCGGAACGAAATCGTCGTATTTTGTAACCCAGAATATAGCTCCGCGGAGAGTCGCTGTCCCAAGTATTTGGCTCGTACTGAAACACAGTCAGAAAATTTGAATTCGACACTGGCTGACACCTTAAGGATTTGATTACAAGCTTTAGTACACATCGGAACGCACATTAGCGTGACCGGGCAAGATCGATAACGAAGAGTAATCCTCGTTACTGTGGCTACAGAGTCCTTGGCCGGACGAGGTCCTCTAACGGCATCTACGCTACATCGCGGTTCCGAATACATTAGGGGCCCACCGAACGTAGGGGTTCTGATGCTAAGGTGCTTACAGTCAGTCGGCGACTGGTACCAGGTTAGCGGTCTTGTGTCCTCTATCATATATCCGGAGGATCCCAGCTAAGGATATCTAAGCTGTCTCCGGGGTGTGCGTTGTTGTGCGTCCCACCACTCGCCACTGAACTAAGGGCGAACCTATATTATGACGGTGAAGGAGATCCTTGACTATGCCGCTGAAAACTAACAGAAACCTAGTCAAGGAACCGACACTGGTAACGAGGCCCACCCACTAGACGCTGAGTGGCATCGTACGTACAAGGAACAGGTTCTCCACCAAGGCGAACCTCTAAGCTCGTTTAAAGAACAGACTCTCCCCGCCCAGCATATATGGTCCCTACATTGTATCTAAAAATTTCCCAAAGAAATATGGGAGTCCCTCGCATAGATGCAAGTCTAGCCTGACATTCTCTATAGATTATTTGAATAGGACCGTCCGCTATACCATGTCGCCTGCTTGGATGTCCTCCACCTGAGTACTAACCTAATGGACTCAGTTACGCCCACATTGTCTGATCCTGGTTTATACAGTCGTTACTCTAACGGTATATTCAGATACAACGCACTACCCAAGTCATGAGCCTACGCGAAAGTGGATATGTAAGTCCGGCGGGTTCGCGTTGGTTACATCCGCGCCGTGAACGCAGGGATTAGCGGTTTGCTTTACTAATGGCATCCTGGTCTCGAAGCCAGCGGACTCTATGAGATTTGTTCGCTCTCGACCAGATAATAT"</code></pre>
 </div>
 </div>
 <p>Here, I am using <code>set.seed(215)</code> to initialize the random number generation with the seed 215, using the <code>paste()</code> function to collapse the list into one string. The <code>set.seed(215)</code> function guarantees that the same random values will be produced each time the code is ran, useful for reproducible results.</p>
@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="challenge-10">Challenge 10</h3>
 <p>Here, I used the <code>scan()</code> function to read in a Rosalind genome. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>rosalindSequence <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"C:/Users/owens/Downloads/rosalind_dna (6).txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>rosalindSequence <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"C:/Users/owens/Downloads/rosalind_dna (6).txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>rosalindSequence <span class="ot">&lt;-</span> <span class="st">"AGAATGGACTTCTGTTAAAAAGTACGATACAATTAACACGCAGCGAATCCAGGTCGGGGCGTCTATCGACAGAAAAAGTGATCTAATGACTAGATGTGCGGTTAGGGTCATTAGTTGTACTAACCGCGGGTGCCGCGACCAACTAGATACGTATAACTAGACACGTTACCCGCTGCAATCGAACTCGCAAACCGAGCAACGCCCGTGGGCCATTATTACTATTAACAGGGAGGGATCGGTTTGAGCTCCCTTGTCTCGTAAAAATTTGGTTACGCTCAGTTGCATGCAATTCAGCGTGTGGTCGCTCTCGCTTGGCCCCCTCCAAGTGAACATCGAATAACGGTGGCCCGTAGCCAATTGCGGCAGTCGGGCCCGATAATCGACCGTGCGAGACATTCACTCGAATTTAATAGTTGTGCACTGTACCAGGGTATTCCATAGTTCACAAGCCGTTTACCAGGGCCTAAGCGCCAGAAGAGCTCGCACCTCTGAGACCTCAAACCCGCCCAGCAGGCGTATCCTGACATAGTAAGATCGGAGCCGGGTTTGGCGCGGTACACTACTACTCGTCGTCAAGTCATTTAAAGACGGAAGTAACTGCCTATAAGGTATCCCCCGGATCCGGACCGGTACCCTAAATCTGGTTCGTTAACAACCCGTCGGCCCGGGCCTCCAACAGACTTATTTGATTAGGGTGTATAAATGATTTGGCCCCAAGATATGTCGGCGTGCACCGTCTCTTATTCGTCCCCCGATAGGCGCGCTAGCAACATACAAATTCCTCTGGAGTGATGAGCCACGTCACACTGTTACGACATTTATCCGACCCACAGAAATGCGCGCAAGATCCGTACGCACGCGTACAGATGTCCACCTTTTTTGCCATAGGAAAGTGACCGAGTGCTCCGAGCGATACCAATCCGCCGGTAGTCCAGCTAGACTGTCTTA"</span></span>
@@ -501,21 +501,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>rosalindString <span class="ot">&lt;-</span> <span class="st">"CGCTGCAATGTGCAATGTTGCAATGTGCAATGAATTATGCAATGAATGCAATGTTGCAATGACTTGCAATGTATGCAATGGTGCAATGTTGCAATGTGCAATGTGCAATGACCATGCAATGTGCAATGTGCAATGAATTGCAATGTGCAATGTGCAATGTGCAATGTATGGCTGCAATGTGCAATGTGCAATGTGCAATGGTGCAATGCCAGTGCAATGGTTAAGTGCAATGAGTCTTGACTGCAATGTTTTGCAATGGTTTTGCAATGTGCAATGCTGCAATGGAATGCAATGTGCAATGCTGCAATGTGCAATGTGCGTAAGTGCAATGTGCAATGATGCAATGCCTGTCCATGCAATGTGCAATGTCGGTGCAATGTCATTATGCAATGTGAAGCGAATATGCAATGATGCAATGGTGCAATGTGCAATGTTGCAATGTGCAATGCAATGCAATGGTGCAATGATTTTGCAATGTTGCAATGCCTATACCTAGTCCATGCAATGTGCAATGGTAAATGCAATGGAGTGCAATGCTATGCCTTGCAATGTTGCAATGTGCAATGCTCCTGCAATGGCATGCAATGTGCAATGGTGCAATGGAACTGCAATGCTGCAATGATCCAGATCCGTGTGCAATGTTTGCAATGTGCAATGAGGGCGTTGCAATGCCGAGAGCTGCAATGGTGCAATGGTGCAATGACAGATGCAATGGTGCAATGGATGCAATGCCTGCAATGCTGCAATGTGCAATGTGCAATGATGCAATGTGCAATGTGCAATGGCCATTGCAATGTGCAATGTGCAATGTGATCAATTGCAATGTGCAATGTTGAATGCAATGCTATTCGGTCTGCAATGTTTGCAATGTGTGCAATGTGTGCAATGCTGCAATGTTTGCTGCAATGAAATATGCAATGCCCTTTGCAATGTGCAATGTTGCAATGATGCAATGGCCCGCTGCAATGAACATGTTGCAATGTGCAATG"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to <code>i+8</code>, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, <code>count_pattern()</code>, I replaced the string to pull from rosalindString, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly.</p>
+<p>In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to <code>i+8</code>, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, <code>count_pattern()</code>, I replaced the string to pull from rosalindString, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly. (I adjusted this code to be functional in Replication Origin II, changing the <code>end= i+8</code> to <code>end= i+ k -1</code>. Having the <code>end= i+8</code> caused the <code>count_pattern</code> function to not be usable in Challenge 1 of Replication Origin II, because the string was not 9 nucleotides long.)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>count_pattern <span class="ot">&lt;-</span> <span class="cf">function</span>(genomeString, pattern){</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(genomeString)){</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(genomeString, <span class="at">start =</span> i, <span class="at">end =</span> i<span class="sc">+</span><span class="dv">8</span>) <span class="sc">==</span> pattern){</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="fu">count_pattern</span>(rosalindString, <span class="st">"TGCAATGTG"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  k<span class="ot">&lt;-</span> <span class="fu">nchar</span>(pattern)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(genomeString)){</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(genomeString, <span class="at">start =</span> i, <span class="at">end =</span> i<span class="sc">+</span>k<span class="dv">-1</span>) <span class="sc">==</span> pattern){</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="fu">count_pattern</span>(<span class="st">"ATATAT"</span>, <span class="st">"AT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 37</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>While completing this notebook, I learned several skills and concepts. I learned to use functions to write reusable code, which can be helpful when trying to find similar things in several different genomes. Using functions to write reusable code prevents having to rewrite code several times to complete the same task within different genomes. I have worked more to learn how to understand and break down genomes using code. In this notebook, I learned how to count the number of occurrences of patterns in the genome.</p>
@@ -567,7 +568,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>smallGenome <span class="ot">&lt;-</span> <span class="st">"ATCCATTAT"</span></span>
 <span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frequent_kmers</span>(smallGenome, <span class="at">k=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TTAT"</code></pre>
+<pre><code>[1] "ATCC" "TCCA" "CCAT" "CATT" "ATTA" "TTAT"</code></pre>
 </div>
 </div>
 <p>Now, to ensure my code is working properly, I will test it on a Rosalind sequence. This code block is using the Rosalind sample sequence before downloading the full genome.</p>
@@ -588,7 +589,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>rosalindGenome <span class="ot">&lt;-</span> <span class="st">"ACGTTGCATGTCGCATGATGCATGAGAGCT"</span></span>
 <span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="fu">find_frequent_kmers</span>(rosalindGenome, <span class="at">k =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "AGCT"</code></pre>
+<pre><code>[1] "GCAT" "CATG"</code></pre>
+</div>
+</div>
+<p>Here, I read in the full Rosalind sequence, as data, and then named the data <code>genomeString</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span><span class="st">"ACCGCAGAGTCCCTATGGGCAGCCGCACGCCCTATGGGACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGACAGCCGCACGCAGCCGCACGACCGCAGAGTACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGCAGCCGCACGCAGCCGCACGACCGCAGAGTGGAGTGGTTGCCACGGAACCGCAGAGTGGAGTGGTTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCCCTATGGGCCCTATGGGCAGCCGCACGGGAGTGGTCAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGCAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGGGAGTGGTGGAGTGGTTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCAGCCGCACGACCGCAGAGTTGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGTGCCACGGACAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTGGAGTGGTCAGCCGCACGCCCTATGGGGGAGTGGTCAGCCGCACGTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGT"</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co">#The genomeString</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>genomeString <span class="ot">&lt;-</span> data[<span class="dv">1</span>]</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>genomeString</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ACCGCAGAGTCCCTATGGGCAGCCGCACGCCCTATGGGACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGACAGCCGCACGCAGCCGCACGACCGCAGAGTACCGCAGAGTACCGCAGAGTTGCCACGGATGCCACGGACCCTATGGGTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGCAGCCGCACGCAGCCGCACGACCGCAGAGTGGAGTGGTTGCCACGGAACCGCAGAGTGGAGTGGTTGCCACGGACAGCCGCACGTGCCACGGACCCTATGGGGGAGTGGTTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCCCTATGGGCCCTATGGGCAGCCGCACGGGAGTGGTCAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGACCGCAGAGTGGAGTGGTACCGCAGAGTCAGCCGCACGCAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGGGAGTGGTGGAGTGGTTGCCACGGAACCGCAGAGTACCGCAGAGTGGAGTGGTCAGCCGCACGACCGCAGAGTTGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTCAGCCGCACGTGCCACGGACAGCCGCACGTGCCACGGATGCCACGGACAGCCGCACGTGCCACGGAACCGCAGAGTGGAGTGGTCAGCCGCACGCCCTATGGGGGAGTGGTCAGCCGCACGTGCCACGGACCCTATGGGACCGCAGAGTGGAGTGGTACCGCAGAGT"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The value of k</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(data[<span class="dv">2</span>])</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Now, I used the <code>find_frequent_kmers</code> function to run through the entire sequence, pulling from <code>genomeString</code>. The desired kmer length to find listed by Rosalind is 14, so I set the <code>k</code> value to equal 14. I used <code>noquote(frequent_kmers)</code> to print the kmers out in a single line with no quotations, and got the Rosalind challenge correct, meaning that my code is working properly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>frequent_kmers<span class="ot">&lt;-</span> <span class="fu">find_frequent_kmers</span>(genomeString, <span class="at">k=</span><span class="dv">14</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">noquote</span>(frequent_kmers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] CAGCCGCACGTGCC AGCCGCACGTGCCA GCCGCACGTGCCAC CCGCACGTGCCACG CGCACGTGCCACGG
+[6] GCACGTGCCACGGA</code></pre>
 </div>
 </div>
 </section>
