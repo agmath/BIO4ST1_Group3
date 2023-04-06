@@ -293,7 +293,7 @@ nt_patterns <- function(string, pattern) {
 nt_patterns(randGenome(2000), "AGG")
 ```
 
-# Part II: 
+# Part II:
 
 ## Challenge 1: Find the most frequent words in a string
 
@@ -344,13 +344,53 @@ find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT", k = 4)
 ## Challenge 2: The Reverse-Complement Problem
 
 ```{r}
-reverse_complement <- function(geneomeSubString, k=3) {
-  list_codon <- c()
-  for (i in seq(1, nchar(geneomeSubString) - k +1, by = k)) { 
-    list_codon <- list_codon %>%
-      append(str_sub(geneomeSubString, start = i, end = i + k -1))
+reverse_complement <- function(substring) {
+  substring_list <- str_split(substring, "") [[1]]
+  rev_substring <- rev(substring_list)
+  reverse_complement <- c()
+  for(i in 1:length(rev_substring)) {
+    if(rev_substring[i] == "A"){
+      reverse_complement <- append(reverse_complement, "T")
+    }
+    if (rev_substring[i] == "T"){
+      reverse_complement <- append(reverse_complement, "A")
+    }
+    if(rev_substring[i] == "C"){
+      reverse_complement <- append(reverse_complement, "G")
+    }
+    if(rev_substring[i] == "G") {
+      reverse_complement <- append(reverse_complement, "C")
+    }
   }
-return(list_codon)
+  
+  reverse_complement <- paste(reverse_complement, collapse = "")
+return(reverse_complement)
 }
 reverse_complement("ACACAGACATCCCACCCC")
+```
+
+```{r}
+reverse_complement <- function(substring) {
+  substring_list <- str_split(substring, "") [[1]]
+  rev_substring <- rev(substring_list)
+  reverse_complement <- c()
+  for(i in 1:length(rev_substring)) {
+    if(rev_substring[i] == "A"){
+      reverse_complement <- append(reverse_complement, "T")
+    }
+    if (rev_substring[i] == "T"){
+      reverse_complement <- append(reverse_complement, "A")
+    }
+    if(rev_substring[i] == "C"){
+      reverse_complement <- append(reverse_complement, "G")
+    }
+    if(rev_substring[i] == "G") {
+      reverse_complement <- append(reverse_complement, "C")
+    }
+  }
+  
+  reverse_complement <- paste(reverse_complement, collapse = "")
+return(reverse_complement)
+}
+reverse_complement("ACGTTGCATGTCGCATGATGCATGAGAGCT")
 ```
