@@ -359,6 +359,19 @@ count_pattern <- function(myString, pattern){
 count_pattern(rosalind_string, "TGCTGAATG")
 ```
 
+```{r}
+count_pattern <- function(myString, pattern){
+  count <- 0
+  k <- nchar(pattern)
+  for(i in 1:nchar(myString)){
+    if(str_sub(myString, start = i, end = i+k-1) == pattern){
+      count = count + 1
+    }
+  }
+  return(count)
+}
+```
+
 ## Origin Replication II
 
 ## Challenge 1
@@ -392,4 +405,118 @@ generate_k_mers <- function(genomeString, k) {
   return(list_k_mers)
 }
 generate_k_mers("ACACAGACATCCCACCCC",3)
+```
+
+## Rosalind Challenge
+
+sample problem:
+
+```{r}
+find_frequent_kmers <- function(genome, k){
+  #Get the Kmers
+  kmers <- generate_k_mers(genome,k)
+  kmers <- unique(kmers)
+  #count occurrences
+  kmer_counts <- rep(0,length(kmers))
+  for(i in 1:length(kmers)){
+    kmer_counts[i] <- count_pattern(genome, kmers [i])
+  }
+max_freq <- max(kmer_counts)
+freq_kmers <- kmers[kmer_counts==max_freq]
+return(freq_kmers)
+}
+
+find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT",4)
+```
+
+Frequent Words Problem:
+
+```{r}
+find_frequent_kmers <- function(genome, k){
+  #Get the Kmers
+  kmers <- generate_k_mers(genome,k)
+  kmers <- unique(kmers)
+  #count occurrences
+  kmer_counts <- rep(0,length(kmers))
+  for(i in 1:length(kmers)){
+    kmer_counts[i] <- count_pattern(genome, kmers [i])
+  }
+max_freq <- max(kmer_counts)
+freq_kmers <- kmers[kmer_counts==max_freq]
+return(freq_kmers)
+}
+
+find_frequent_kmers("TTGATCTAGTGCGGCATTGATCTTCGGCTATCGGCTATTGATCTACATGTGAGTGCGGCAAGTGCGGCATACTGTCATCGGCTATACTGTCATTGATCTTTGATCTACATGTGACATGTGTCGGCTATTGATCTTCGGCTATACTGTCAACATGTGTTGATCTTCGGCTATTGATCTAGTGCGGCATTGATCTTCGGCTATTGATCTTCGGCTATTGATCTTCGGCTAACATGTGTCGGCTATACTGTCAAGTGCGGCATACTGTCATACTGTCATTGATCTAGTGCGGCAACATGTGTCGGCTATTGATCTTTGATCTTACTGTCAAGTGCGGCAAGTGCGGCATTGATCTACATGTGTTGATCTAGTGCGGCATTGATCTTACTGTCAAGTGCGGCATCGGCTATCGGCTATACTGTCATACTGTCATTGATCTTTGATCTTACTGTCATCGGCTATTGATCTTACTGTCATCGGCTAACATGTGTCGGCTATACTGTCAACATGTGTTGATCTTTGATCTTTGATCTAGTGCGGCATCGGCTATACTGTCATACTGTCAACATGTGTACTGTCATACTGTCAAGTGCGGCATTGATCTTACTGTCATTGATCTTTGATCTAGTGCGGCATACTGTCATTGATCTAGTGCGGCATTGATCTTCGGCTAACATGTGACATGTGAGTGCGGCATCGGCTATTGATCTAGTGCGGCATTGATCTACATGTGTACTGTCAAGTGCGGCAAGTGCGGCAAGTGCGGCATTGATCTTCGGCTAAGTGCGGCAACATGTG",11)
+```
+
+## Challenge 2
+
+```{r}
+reverse_complement <- function(substring){
+  #reverse the substring
+  substring_list <- str_split(substring,"")[[1]]
+  rev_substring <- rev(substring_list)
+  #Get complimentary Base-Pairs
+  rev_complement <- c()
+  for(i in 1:length(rev_substring)){
+    if(rev_substring[i]=="A"){
+      rev_complement <- append(rev_complement, "T")
+    }
+    if(rev_substring[i]=="T"){
+      rev_complement <- append(rev_complement, "A")
+    }
+    if(rev_substring[i]=="G"){
+      rev_complement <- append(rev_complement, "C")
+    }
+    if(rev_substring[i]=="C"){
+      rev_complement <- append(rev_complement, "G")
+    }
+  }
+  rev_complement <- paste(rev_complement, collapse="")
+  return(rev_complement)
+} 
+reverse_complement("AAAACCCGGT")
+```
+
+```{r}
+rosalind_genome <- scan("/Users/briannanason/Downloads/rosalind_ba1c-2.txt", what = "character", sep = NULL)
+```
+
+```{r}
+reverse_complement(rosalind_genome)
+```
+
+## Origin Replication III
+
+## Challenge 1
+
+```{r}
+initialize_k_mer_dict <- function(k){
+  nucleotides <- c("A", "C", "G", "T")
+
+  k_mers_dict <- expand.grid(rep(list(nucleotides), k)) %>%
+    unite("k_mers", everything(), remove = TRUE, sep = "") %>%
+    unique() %>%
+    mutate(count = 0)
+  
+  return(k_mers_dict)
+}
+
+k_mers_dict <- initialize_k_mer_dict(9)
+```
+
+```{r}
+Clump_finding <- function(genome, L, K, t){
+  initial_window <- str_sub(genome, i, L)
+  my_kmer_dict <- intialize_kmer_dict (K)
+  for(i in 1: L-K+1){
+    curr_kmer<- str_sub(initial_window, i, i+K-1)
+    curr_count<- count_pattern(initial_window, curr_kmer)
+    curr_row<- which(my_kmer_dict$kmer==curr_kmer)
+    my_kmer_dict$count[curr_row]<-curr_count
+  }
+  candidates<- my_kmer_dict%>%
+    filter(count>=t)%>%
+    pull(k_mer)
+}
 ```
