@@ -6,15 +6,28 @@ execute:
   keep-md: true
 ---
 
+# First, we will load our tidyverse
+
 ```{r setup, include = FALSE}
 #Load in any packages you need
 library(tidyverse)
 
 #Read in any data
 
+#
+randGenome <- function(k){
+  nucleotide <- c("A", "C", "T","G")
+  rand_genome <- sample(nucleotide, size = k, replace = TRUE)
+
+  rand_genome <- paste(rand_genome, collapse = "")
+  rand_genome 
+
+  return(rand_genome)
+}
+
 ```
 
-## Challenge 1
+## Challenge 1: In this challenge we will create a list of the four nucleotides A, C, G, and T, using the c() function
 
 ```{r}
 
@@ -23,45 +36,48 @@ nucleotide <- c("A", "C", "T", "G")
 nucleotide
 ```
 
+## Challenge 2: We used the code from challenge 1 to create randgenom string of 15 nucleotides. We called the string "randGenoome"
+
 ```{r}
 numNucleotide <- 15
 
-randGenome <- sample(nucleotide, size = numNucleotide, replace = TRUE)
+rand_genome <- sample(nucleotide, size = numNucleotide, replace = TRUE)
 
-randGenome
+rand_genome
 ```
-
-Challenge 2
 
 ```{r}
-paste(randGenome, collapse = "")
+rand_genome <- paste(nucleotide, collapse = "")
+rand_genome
 ```
 
-## Challenge 3
+## Challenge 3: In this challenge, we generated a random genome of 1500 nucleotides long and use the paste() method to collapse it from a list down to a single string. Then printed randGenome to the notebook.
 
 ```{r}
 set.seed(200)
 genomeLength <- 1500
 
-randGenome <- sample(nucleotide, size = genomeLength, replace = TRUE)
+rand_genome <- sample(nucleotide, size = genomeLength, replace = TRUE)
 
-randGenome <- paste(randGenome, collapse = "")
-randGenome 
+rand_genome <- paste(rand_genome, collapse = "")
+rand_genome 
 ```
 
-## Challenge 4
+## Challenge 4:
+
+In this challenge we set a seed using set.seed(215), then generate a random genome called randGenome, which is made of 100 nucleotide, then we collopased down a single string. We then counted the frequency of Adenine A
 
 ```{r}
 set.seed(215)
 genomeLength <- 100
 
-randGenome <- sample(nucleotide, size = genomeLength, replace = TRUE)
+rand_genome <- sample(nucleotide, size = genomeLength, replace = TRUE)
 
-randGenome <- paste(randGenome, collapse = "")
-randGenome 
+rand_genome <- paste(rand_genome, collapse = "")
+rand_genome 
 ```
 
-I counted 23 Adenine (A)
+Result: I counted 23 Adenine (A)
 
 ```{r}
 mySum <- 0
@@ -72,7 +88,9 @@ for(i in 1:10){
 }
 ```
 
-## Challenge 5
+## Challenge 5:
+
+In this challenge, we initialized a variable called myProduct, and gave it a value of 1. We wrote our own loop, using j (an iterator).
 
 ```{r}
 myProduct <- 1
@@ -85,26 +103,30 @@ for (j in 1:15) {
 
 ## Challenge 6:
 
+In this challenge we generated a random genome susbstring consisting of 10 nucleotides and used the past() methode, to collapse our genome to a string instead of a list.
+
 ```{r}
 nucleotides <- c("A", "C", "G", "T")
 genomeLength <- 10
 
-randGenome <- paste(sample(nucleotides, size = genomeLength, replace = TRUE),
+rand_genome <- paste(sample(nucleotides, size = genomeLength, replace = TRUE),
                    collapse = "")
-print(randGenome)
+print(rand_genome)
 ```
 
 ## Challenge 7: Adapt the for loop provided above so that it counts the number of occurrences of Adenine (A) in randGenome.
 
 ```{r}
-for(i in 0:nchar(randGenome)){
-  if(str_sub(randGenome, start = i, end = i) == "A"){
-    print(str_sub(randGenome, start = i, end = i))
+for(i in 0:nchar(rand_genome)){
+  if(str_sub(rand_genome, start = i, end = i) == "A"){
+    print(str_sub(rand_genome, start = i, end = i))
   }
 }
 ```
 
-## Challenge 8: Adapt the loop you just created so that it will count the frequencies of each of the four individual nucleotides.
+## Challenge 8:
+
+Here we will adapt a loop we created to count frequencies of all of the nucleotides in the genome string
 
 ```{r}
 CountA <- 0
@@ -128,7 +150,7 @@ for(i in 0:nchar(my_genome)){
 print(c(CountA, CountT, CountC, CountG))
 ```
 
-## Challenge 9: Use your code from Challenge 8 to count the frequency of each nucleotide in the*Vibrio Cholerae* chromosome.
+## Challenge 9: We used the code from Challenge 8 to count the frequency of each nucleotide in the*Vibrio Cholerae* chromosome.
 
 ```{r}
 vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
@@ -206,7 +228,9 @@ nucleotide_frequency <- function(genomeString, nucleotide = "A"){
 nucleotide_frequency("ACTTGCGGGTATCGAG", "G")
 ```
 
-## Challenge 1
+## Challenge 1: In this challenge we will use sample () function in conjunction with the paste (..., collapse ="") to generate a random genome the of at least 2000 .
+
+## Then we used the nucleotide_frequency() function to count the frequency of Cytosine in the random genome you constructed.
 
 ```{r}
 nucleotide <- c("A", "C", "T", "G")
@@ -224,17 +248,17 @@ randGenome
 nucleotide_frequency(randGenome, "C")
 ```
 
-## Challenge 2
+## Challenge 2: 
 
 ```{r}
 randGenome <- function(k){
   nucleotide <- c("A", "C", "T","G")
-  randGenome <- sample(nucleotide, size = k, replace = TRUE)
+  rand_genome <- sample(nucleotide, size = k, replace = TRUE)
 
-  randGenome <- paste(randGenome, collapse = "")
-  randGenome 
+  rand_genome <- paste(rand_genome, collapse = "")
+  rand_genome 
 
-  return(randGenome)
+  return(rand_genome)
 }
 
 randgenome <- randGenome(5)
@@ -242,9 +266,9 @@ randgenome
 ```
 
 ```{r}
-myString <- randGenome
+#myString <- randGenome
 
-str_sub(randGenome(), start = 1, end = 2)
+str_sub(randGenome(5), start = 1, end = 2)
 ```
 
 ```{r}
@@ -258,7 +282,7 @@ generate_2_mers <- function(myString) {
   return(list_2_mers)
 }
 
-generate_2_mers(randGenome())
+generate_2_mers(randGenome(10))
 ```
 
 ## Challenge 3
@@ -274,7 +298,7 @@ generate_3_mers <- function(myString) {
   return(list_3_mers)
 }
 
-generate_3_mers(randGenome())
+generate_3_mers(randGenome(10))
 ```
 
 ## Challenge 4
@@ -427,6 +451,13 @@ reverse_complement("ACGTTGCATGTCGCATGATGCATGAGAGCT")
 
 # Part III: Finding the Replication Origin
 
+## Challenge 1 goals:
+
+1.  Work through an initial window to find frequent k_mers meeting our threshold (t)
+2.  Slide the window through the genome, update counts and add frequent k-mers to candidate list
+
+Notes: Windown size L= 5, k=2, t=2
+
 ```{r}
 initialize_k_mer_dict <- function(k){
   nucleotides <- c("A", "C", "G", "T")
@@ -445,17 +476,19 @@ k_mers_dict
 
 ```{r}
 clump_finding <- function(genomeString , L, t , k ) {
-  find_frequent_kmers(genomeString, k) <- k_mers
-  k_mers_dict <- initialize_k_mer_dict(k)
-
-  
-  kmer_count <- rep(0, length(kmers))
-  for (i in 1 : length(kmers)) {
-    count_pattern(genome, kmers[i])
-    max_count <- max(kmer_count)
-    frequent_kmers <- kmers[kmer_count == max_count]
+  initial_window <-  str_sub(genome, i, L)
+  my_kmer_dict <- initialize_k_mer_dict(k)
+  for (i in 1: L-k + 1) {
+    curr_kmer <- str_sub(initial_window, i, i + k - 1)
+    curr_count <- count_pattern(initial_window, curr_kmer)
+    curr_row <- which(my_kmer_dict$kmers == curr_kmer)
+    my_kmer_dict$count[curr_row] <- curr_count
+  }
+  candidates <- my_kmer_dict %>%
+    filter(count >= t) %>%
+  for (j  in 2:10) {#need to change 10
     
   }
-  return(frequent_kmers)
 }
+
 ```
