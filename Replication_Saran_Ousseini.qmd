@@ -89,13 +89,12 @@ for (j in 1:15) {
 nucleotides <- c("A", "C", "G", "T")
 genomeLength <- 10
 
-randGenome <- paste(
-  sample(nucleotides, size = genomeLength, replace = TRUE),
+randGenome <- paste(sample(nucleotides, size = genomeLength, replace = TRUE),
                    collapse = "")
 print(randGenome)
 ```
 
-## Challenge 7:Adapt the for loop provided above so that it counts the number of occurrences of Adenine (A) in randGenome.
+## Challenge 7: Adapt the for loop provided above so that it counts the number of occurrences of Adenine (A) in randGenome.
 
 ```{r}
 for(i in 0:nchar(randGenome)){
@@ -106,14 +105,6 @@ for(i in 0:nchar(randGenome)){
 ```
 
 ## Challenge 8: Adapt the loop you just created so that it will count the frequencies of each of the four individual nucleotides.
-
-```{r}
-vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
-
-#vib_c
-```
-
-## Challenge 9: Use your code from Challenge 8 to count the frequency of each nucleotide in the*Vibrio Cholerae* chromosome.
 
 ```{r}
 CountA <- 0
@@ -137,7 +128,13 @@ for(i in 0:nchar(my_genome)){
 print(c(CountA, CountT, CountC, CountG))
 ```
 
-## 
+## Challenge 9: Use your code from Challenge 8 to count the frequency of each nucleotide in the*Vibrio Cholerae* chromosome.
+
+```{r}
+vib_c <- scan("/Users/saranousseini/Desktop/VibrioCholerae.txt", what = "character", sep = NULL)
+
+#vib_c
+```
 
 ```{r}
 CountA <- 0
@@ -161,6 +158,37 @@ print(c(CountA, CountT, CountC, CountG))
 ```
 
 ## Challenge 10: Create A Rosalinda account
+
+## Populate genome given in the Rosalind Challenge
+
+```{r}
+genome <- c("CAAACACCAATTGTCTCTTACGAACCGAATTATTTCGTATCAGTTTGGGGCGCGATTACACATGAAGCTTTGTGGAACCTCCGCGTCCAAACGTCAATGTGAAATCCTCAGGGGAGTTAAAACCCCTGACCACGCGGGTCGAGCTCACGTCTTCTGAGGCCCGACTGGTAGGGTCGAAACTTTTAGTAAAACCTACGGTGAATTGACATATTCGTGAGTGAAGTCTACGTAAATTGCTATTCCGTCTGAGCTTTACGATTGTTGAAACTTCAATTTACATTTTAAAATGCATGCAGGTGAGCAGAAGGACATGTATTACGGATGGCACTGATATAACCTTGGTTTCGTGCTCGTTTAAGGCTCATCCATCCTATATTGGTCTATCGGGTCTTCGCTTGATTACAGCTCTTACCTTTTTGAGCCAGCCGGGAAGTAGTTAGATATCGGCCCGACTTAGTTCGAATCTGTGCCCCCGAAGCATGTTACAAATCTGCCCCAGTGTACTACGACAGTATCCGTCAACCTCTGTAGATCCGCTAGATACAATGGGGGATGGAGCCTGGAAATTGGCCCGTAGGGAGGCTTCGTGTGGGTGCACCAATTGCATAGATGTACCAATTCTTGGTATCGCTTAGTTGACCTTGGGCAAAGGACAAGTTACCCATTTATGACGGTGGATGCAGAATAGTAATCAGGCGCAGGCTCATCGAGGACAGGTCTATATCCGTGGGGATAGCTTCATGCGAGGAATTTCAGGTCCGCGCATTATATATTGCGCTTCTACCCGAAGGCGGCTCTTAACTACATTCCGTGCGTGAATAAACCACAGGCAGGCCGCATGTTAC")
+```
+
+## Solve problem from Rosalind Challenge
+
+```{r}
+CountA <- 0
+CountT <- 0
+CountC <- 0
+CountG <- 0
+
+for(i in 0:nchar(genome)){
+  if(str_sub(genome, start = i, end = i) == "A"){
+    CountA <- CountA + 1}
+  
+  if(str_sub(genome, start = i, end = i) == "T"){
+    CountT <- CountT + 1}
+  if(str_sub(genome, start = i, end = i) == "C"){
+   CountC <- CountC + 1}
+  if(str_sub(genome, start = i, end = i) == "G"){
+    CountG <- CountG + 1}  
+}
+print(c(CountA, CountC, CountG, CountT))
+
+```
+
+After adding my answer into Rosalind, I was successful in the Rosalind Challenge
 
 # Replication0rigin_PartI
 
@@ -201,10 +229,10 @@ nucleotide_frequency(randGenome, "C")
 ```{r}
 randGenome <- function(k){
   nucleotide <- c("A", "C", "T","G")
-randGenome <- sample(nucleotide, size = k, replace = TRUE)
+  randGenome <- sample(nucleotide, size = k, replace = TRUE)
 
-randGenome <- paste(randGenome, collapse = "")
-randGenome 
+  randGenome <- paste(randGenome, collapse = "")
+  randGenome 
 
   return(randGenome)
 }
@@ -273,8 +301,10 @@ count_pattern <- function(myString, pattern){
   }
   return(count)
 }
-  
-count_pattern(myString, "be")
+
+myString <- c("OUSSEINI")
+
+count_pattern(myString, "OU")
 ```
 
 ## Challenge 5
@@ -393,4 +423,39 @@ reverse_complement <- function(substring) {
 return(reverse_complement)
 }
 reverse_complement("ACGTTGCATGTCGCATGATGCATGAGAGCT")
+```
+
+# Part III: Finding the Replication Origin
+
+```{r}
+initialize_k_mer_dict <- function(k){
+  nucleotides <- c("A", "C", "G", "T")
+
+  k_mers_dict <- expand.grid(rep(list(nucleotides), k)) %>%
+    unite("k_mers", everything(), remove = TRUE, sep = "") %>%
+    unique() %>%
+    mutate(count = 0)
+  
+  return(k_mers_dict)
+}
+
+k_mers_dict <- initialize_k_mer_dict(9)
+k_mers_dict 
+```
+
+```{r}
+clump_finding <- function(genomeString , L, t , k ) {
+  find_frequent_kmers(genomeString, k) <- k_mers
+  k_mers_dict <- initialize_k_mer_dict(k)
+
+  
+  kmer_count <- rep(0, length(kmers))
+  for (i in 1 : length(kmers)) {
+    count_pattern(genome, kmers[i])
+    max_count <- max(kmer_count)
+    frequent_kmers <- kmers[kmer_count == max_count]
+    
+  }
+  return(frequent_kmers)
+}
 ```
