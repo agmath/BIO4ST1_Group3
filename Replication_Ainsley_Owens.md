@@ -49,7 +49,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "A" "A" "T" "A" "C" "A" "G" "T" "G" "G" "A" "C" "C" "C" "G"
+ [1] "C" "C" "G" "A" "C" "A" "C" "C" "T" "C" "A" "T" "C" "C" "G"
 ```
 :::
 :::
@@ -66,7 +66,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "AATACAGTGGACCCG"
+[1] "CCGACACCTCATCCG"
 ```
 :::
 :::
@@ -87,7 +87,7 @@ paste (randGenome, collapse="")
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "CATGAGGCTTACAAATCGACCCTAACCGATATATATCGTCATAGCCAATTATGCCTAACACCATTTAAACCGCTGTGGCGCAATTGAGCTATGGCACGTTCCATAGAATCTTAGAGAGGAATATCAACCAGTAGGCAACCCAGGTCAGCTGAGGGACCACATCAGTTAAAGGGACAAATAAAACGAGGTTTCGTTCCGCAGATCCGTAGACTGCCCCGCGTCACGTAGGAATGCTATTCCTGTCATCGACCGAAAGGGACTGATTGGTACTTCCGGATTTTGCGCGTCCCTCTAAGCCTGACGGGCTGGTACAACGGTTAGGACTACCACATAACCCACTCCGGTGATGTGCCTAAACTCTTCCCTCTACGGCATCTACGTTATCCGGGCTGAACAGTACCGGCGGAAATGGACTGGCAAAGTGGTTCAGTGACCATCCGGAACGAAATCGTCGTATTTTGTAACCCAGAATATAGCTCCGCGGAGAGTCGCTGTCCCAAGTATTTGGCTCGTACTGAAACACAGTCAGAAAATTTGAATTCGACACTGGCTGACACCTTAAGGATTTGATTACAAGCTTTAGTACACATCGGAACGCACATTAGCGTGACCGGGCAAGATCGATAACGAAGAGTAATCCTCGTTACTGTGGCTACAGAGTCCTTGGCCGGACGAGGTCCTCTAACGGCATCTACGCTACATCGCGGTTCCGAATACATTAGGGGCCCACCGAACGTAGGGGTTCTGATGCTAAGGTGCTTACAGTCAGTCGGCGACTGGTACCAGGTTAGCGGTCTTGTGTCCTCTATCATATATCCGGAGGATCCCAGCTAAGGATATCTAAGCTGTCTCCGGGGTGTGCGTTGTTGTGCGTCCCACCACTCGCCACTGAACTAAGGGCGAACCTATATTATGACGGTGAAGGAGATCCTTGACTATGCCGCTGAAAACTAACAGAAACCTAGTCAAGGAACCGACACTGGTAACGAGGCCCACCCACTAGACGCTGAGTGGCATCGTACGTACAAGGAACAGGTTCTCCACCAAGGCGAACCTCTAAGCTCGTTTAAAGAACAGACTCTCCCCGCCCAGCATATATGGTCCCTACATTGTATCTAAAAATTTCCCAAAGAAATATGGGAGTCCCTCGCATAGATGCAAGTCTAGCCTGACATTCTCTATAGATTATTTGAATAGGACCGTCCGCTATACCATGTCGCCTGCTTGGATGTCCTCCACCTGAGTACTAACCTAATGGACTCAGTTACGCCCACATTGTCTGATCCTGGTTTATACAGTCGTTACTCTAACGGTATATTCAGATACAACGCACTACCCAAGTCATGAGCCTACGCGAAAGTGGATATGTAAGTCCGGCGGGTTCGCGTTGGTTACATCCGCGCCGTGAACGCAGGGATTAGCGGTTTGCTTTACTAATGGCATCCTGGTCTCGAAGCCAGCGGACTCTATGAGATTTGTTCGCTCTCGACCAGATAATAT"
+[1] "TTGATTTGGATGATAAGTTACAGGGATCGTTCGACATTGGTCACTTCACTAATTGTACATTCGTACTCACTTCCACTATGGCAAATTATCAAGATTCAAACGCCTATGACTACAAGCGACGCGCAATAGGCTAGCTCCAAGCCAACTCGCTCTACGATAACACAATCTGCTGATCTCTCGCCCCGTGACGGCCTAGTCCGGAAATAATTAGAGTGGGTGAGCATCGGTGGGCTGGGATCCATCTAGCGGAAAAGAACCGCATGTGCATACATGATGCGTCGTGTTGGTTGAGACGAAATCTCTCAAGACACGAGACCTGTGTCCCCAACAGATTACCTCGTGTGGATAATCTCTTTTGCATAGCTAAGTCGTCCTACGGCCCAGTGTAGGGGCGCAATGAAGTCTCCAATGCGCCAGTGGGGTGTCCCTACCCTGTCAACTGCGGAAGCAGTGCCCACTCTATCGAGCTCTCCCGACTGACCTCCTGATAGGCGACGCAAAGCCTAGAGGGCGGGAGGAGGCGTACACAAAGATGGCCCAGTCGTGTCGCTGACTTTTATAGCTGGAAAGGATATGAACCCAATACATGACTGGACAGTAATAGGAATCAACCGATGCCCGGTCTCGTAATAGTTCAGTATAGACCGAACCTTCATACCCGTTTGCCACAGTCTCTCGAGGCACACATGGTCACATTACTAACGGTGGGCGGCACCCATCTAATAAATCTCCCCACAACCTACAAGCGAAATCCTGTCGAGGTCAGCGTTCGCTACGACCCTAGTTGAAGTTCTACATGTATGCAAAGCCATTTGTCTAAAATCAACTAAATGCCGCCTAATTAAACCCTTGATAGGCTCAGCTATTACTGTATTCTCCATATCGCGATTGCCTGTCTTCACCGGATAAACCAGACACGCCGGGGTTGTCGGACAAGAATTCACTCATGTCTCTATTTTGGGCAACGCAATTTAGATCGGTAATGCTGTGGGCTTTCCCGGGGGAACTAGGGAGAGTCCCATTTAAGACATCCTTCCCTAGTACAGCCCTCTAAAAGCACTGGAGCCCTCAGACGTAATACAGTTGCAGCTTCCTGTAGTGAGCATACTACGATGGAATTGCCGCAACCTACCGGCGCACATCTACCGGAAGCAAAATGTAAAGACTCGCAGGATGCAACGACCAGCACTAAACGACCTCGAACTAAATAGGTTGTAGGCCTTAGATTAGCTAAACCGACGGTGTAGTTGGCTTCACTTGGCTAATAAACATCTTACGTCAGCACCGGACCTATATCCTCAGTGAACCGGTTCACACCTGTCTTGGTTAACGAGTTCAGTACCGCCATGTTCTTCCCGCCATCAGCTGGGTGTAGGGTGGCGCTTCAGGCCGTATATGAACCATTGAGATACTGGAAATTTTTTTCCGATTTGTTGCTGAGACACCCGGCGGAAGGGGAGTGTTACGTTAGGTGCTTGATTCGAGAGGGATGGCCCCTAT"
 ```
 :::
 :::
@@ -343,7 +343,7 @@ print(c(thymineCount, adenineCount, cytosineCount, guanineCount))
 
 ### Challenge 10
 
-Here, I used the `scan()` function to read in a Rosalind genome. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.
+Here, I used the `scan()` function to read in a Rosalind genome, from the Counting DNA Nucleotides problem, to check that my code is working properly. I used the for loop previously created in Challenge 9 to count the occurrences of each nucleotide in the genome.
 
 
 ::: {.cell}
@@ -353,10 +353,15 @@ rosalindSequence <- scan("C:/Users/owens/Downloads/rosalind_dna (6).txt", what =
 ```
 :::
 
+
+I got this Rosalind problem correct, meaning that my code is working properly to count nucleotides.
+
+
 ::: {.cell}
 
 ```{.r .cell-code}
-rosalindSequence <- "AGAATGGACTTCTGTTAAAAAGTACGATACAATTAACACGCAGCGAATCCAGGTCGGGGCGTCTATCGACAGAAAAAGTGATCTAATGACTAGATGTGCGGTTAGGGTCATTAGTTGTACTAACCGCGGGTGCCGCGACCAACTAGATACGTATAACTAGACACGTTACCCGCTGCAATCGAACTCGCAAACCGAGCAACGCCCGTGGGCCATTATTACTATTAACAGGGAGGGATCGGTTTGAGCTCCCTTGTCTCGTAAAAATTTGGTTACGCTCAGTTGCATGCAATTCAGCGTGTGGTCGCTCTCGCTTGGCCCCCTCCAAGTGAACATCGAATAACGGTGGCCCGTAGCCAATTGCGGCAGTCGGGCCCGATAATCGACCGTGCGAGACATTCACTCGAATTTAATAGTTGTGCACTGTACCAGGGTATTCCATAGTTCACAAGCCGTTTACCAGGGCCTAAGCGCCAGAAGAGCTCGCACCTCTGAGACCTCAAACCCGCCCAGCAGGCGTATCCTGACATAGTAAGATCGGAGCCGGGTTTGGCGCGGTACACTACTACTCGTCGTCAAGTCATTTAAAGACGGAAGTAACTGCCTATAAGGTATCCCCCGGATCCGGACCGGTACCCTAAATCTGGTTCGTTAACAACCCGTCGGCCCGGGCCTCCAACAGACTTATTTGATTAGGGTGTATAAATGATTTGGCCCCAAGATATGTCGGCGTGCACCGTCTCTTATTCGTCCCCCGATAGGCGCGCTAGCAACATACAAATTCCTCTGGAGTGATGAGCCACGTCACACTGTTACGACATTTATCCGACCCACAGAAATGCGCGCAAGATCCGTACGCACGCGTACAGATGTCCACCTTTTTTGCCATAGGAAAGTGACCGAGTGCTCCGAGCGATACCAATCCGCCGGTAGTCCAGCTAGACTGTCTTA"
+rosalindSequence <- "CTTACAAATGAAGCCATATCCTCCCCCCCACTGGCGCGAAATAGAAACCCAAGCCATGTGTTAGGGCATTATAGGGATTGCGGGGTACGGCTCCTTGGCAACTAATAGATGTGAGGCTCTACACAAGTCCAAGGGCCTTTTCCACTCTAGGCTCATTATAAGCTACCGGCCCCAGTGTATCGTGGGCGCGTACCTGTCAGATAACTTTTCTCCGGGATTTGAGTCGACTCGTGGGTTTAAGATCGGTCTATCCCCCACATCCTGACTGAGGTGCACTTTACAATAATTGGTAGTTTAAACAAGGGCTATGCCCGCCGGCCTCAGACGTTGTTGCAGGAGGCAATGGCCAAAACTGCTTCCAGTAGGTTTTTAGGATCCACTACGACCAAAGCTAGCATTCAGTTGCCTGAGACGCGACTTCCAGTACTTGGCCCCGACGACAGAGGGCTTACAATTGTAGCCCCCCGTTAACCAGGGTTGCACCGGCCCAGATGCCGGCGGATGGTGTAGACTGCGAATGGAGAAACGTATCAGTACCAGGTGATCAAGTGCGAATAGGCAGCGACCTAGATTGGGCAACTTCATCGATCCCATTCGAGGCTCGGGTAGTCGGTTACACCATGGCGTCGCGGTAATGCCCTGCGAACACATTTGCAAGTCTTCGCCAATATACGTGCCTCCCGTGTAATCGGTCGAACCAGAAGCATCAGCCGGATCGGCAGGCGCTAAGCGGTAACCTATCCGCGATTGTTTTCCCAGTTCGTGCTCTTGTTACCCGGATAAATAGAAAGTTATTCATGGGAAGTACGTTCGCAGTCATAACCGCTCGTTAAATTATGTATACTCTTCAGTCAACGCGCGTTTCTACTTGTACATGGTCCCGGGTCCATCTGATGTGGGTCCGTTTAATCTCGAGGTTAGAAGGAGAAACCGATGCCGCCATCAACAAGCG
+"
 thymineCount <- 0
 adenineCount <- 0
 cytosineCount <- 0
@@ -384,21 +389,21 @@ print(c(adenineCount,cytosineCount, guanineCount, thymineCount))
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] 243 256 230 219
+[1] 229 249 242 232
 ```
 :::
 :::
 
 
-Throughout this notebook, I learned several skills. I was able to create a list of nucleotides using `c()`. Using the `sample()` function, I was able to use the nucleotide list I provided to create a random genome. The `collapse()` function allowed me to collapse the genome into one single strand, as opposed to separate single characters. I learned that the `set.seed()` function allows for the code to set a seed for random number generation to enable reproducible results over time. I learned how to create a for loop to repeat instructions provided, and I used `if/else` statements to ensure the code is only ran when certain criteria is met. This notebook also taught me how to scan in data from other sources, like the vibrio genome and the Rosalind sequence, using the `scan()` function.
+Throughout this notebook, I learned several skills. I was able to create a list of nucleotides using `c()`. Using the `sample()` function, I was able to use the nucleotide list I provided to create a random genome. The `collapse()` function allowed me to collapse the genome into one single strand, as opposed to separate single characters. I learned that the `set.seed()` function allows for the code to set a seed for random number generation to enable reproducible results over time. I learned how to create a for loop to repeat instructions provided, and I used `if/else` statements to ensure the code is only ran when certain criteria is met. This notebook also taught me how to scan in data from other sources, like the vibrio genome and the Rosalind sequence, using the `scan()` function. I learned how to correctly solve bioinformatics problems on the Rosalind platform.
 
 ### Replication Origin I
 
-In this notebook, I will be working towards developing code that can be used to find the origin of replication in a genome. Locating specific patterns in the genome are the first step in the process of determining the replication origin.
+In this notebook, I will be working towards developing code that can be used to find the origin of replication in a genome. During DNA replication, proteins must locate the origin where the process begins. Locating specific patterns in the genome are the first step in the process of determining the replication origin. Throughout this notebook, I will be creating and using reusable code.
 
 ### Challenge 1
 
-In the first code block, I am reading in the `nucleotide_frequency` function for further use. This function counts the number of occurrences of specific nucleotides, dependent on the nucleotide dictated in the first line of code. Using the `sample()` function alongside the `paste()` and `collapse""`, I generated a random genome with a length of 2000 nucleotides. Using the `nucleotide_frequency()` function, I was able to count the frequency of Cytosine, `"C"`, in the random genome.
+In the first code block, I am reading in the `nucleotide_frequency` function for further use. There are two arguments, a string (`genomeString`) and a nucleotide (`nucleotide`). This function counts the number of occurrences of specific nucleotides in the string. I set the container, `count`, to a starting value of 0. The `for` loop instructs the code to run through all characters in the string, and the `if` statement instructs the code to only run if the nucleotide indicated is present. By setting `count` to `count + 1` following the `if` statement, the code is set to increment by 1 every time the target nucleotide occurs. I am then returning the `count` of nucleotide occurrences.
 
 
 ::: {.cell}
@@ -415,6 +420,10 @@ nucleotide_frequency <- function(genomeString, nucleotide = "A"){
 }
 ```
 :::
+
+
+Using the `sample()` function alongside the `paste()` and `collapse""`, I generated a random genome with a length of 2000 nucleotides, and stored it as `randGenome`. Using the `nucleotide_frequency()` function, I instructed the code to pull from the `randGenome` sample I just created, and indicated the target nucleotide to count as `nucleotide="C"` to count the occurrences of Cytosine.
+
 
 ::: {.cell}
 
