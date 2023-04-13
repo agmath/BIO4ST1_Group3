@@ -501,7 +501,13 @@ Now that I have scanned in the dataset, and am now running the `reverse_complime
 reverse_compliment(revcomp_genome)
 ```
 
+In this notebook, I created code to search a genome for frequent near k-mers and their reverse complements. Finding these helps us get closer to finding the origin of replication, as the code will return the genetic substrings that signal to begin replication to DNA polymerase.
+
 ### Replication Origin III
+
+In the Replication Origin II notebook, I was able to find k-mers, near k-mers, the most frequent k-mers and their reverse compliments. Scientists have identified that DnaA boxes within different species of bacteria consist of different nucleotide sequences. To find DnaA boxes in certain bacteria, I need to find high-frequency 9-mers within a specific section of the genome.
+
+In this code block, I am creating a dictionary of all possible k-mers, using the `initalize_k_mer_dict` function and initialized it with a starting value of 0, naming it `k_mers_dict`, indicating a length of 9.
 
 ```{r}
 initialize_k_mer_dict <- function(k){
@@ -517,6 +523,8 @@ initialize_k_mer_dict <- function(k){
 
 k_mers_dict <- initialize_k_mer_dict(9)
 ```
+
+In this code, I created a `clump_finding` function. This function pulls from `genomeString` and takes the parameters `L`, `T`, and `K`. `L` indicates the length of the window that we are looking at and instructs the code to look in a specific area of the genome. The parameter `T` counts the frequency of occurrences, while `K` indicates the length of k-mers we want returned. The first line of code, `kmer_dict`, initializes the table of k-mers. The `for` statement tells the code what window to look at, setting up the initial window length. The `curr_kmer` function instructs the code to float through the initial window and find a pattern, while `curr_count` counts how many times that pattern appears in the initial window. The `curr_row` function shows where the k-mer appears in the k-mer dictionary `kmer_dict`. The `candidates` function represents possible candidates for DnaA boxes in the initial window. If the count exceeds the t value, the k-mer is added to the list of candidates. Following the `candidate` function, the code will slide down the sequence one nucleotide at a time until it runs through the rest of the genome. Subtracting `L-2` from `add_pattern` prevents the code from running out of the window, reaching the edge of the window without falling off. The `rem_pattern` and `add_pattern` functions move through the genome while maintaining the window, adjusting the counts for k-mers. The `rem_row` function allows us to remove k-mer counts for k-mers that are no longer in the window as we move through the genome. `Add_row` adds the new nucleotide to the window, moving down the sequence. `J` represents the left end point of the current window. The final `if` statement instructs the code to add the pattern to the list of candidates if it exceeds the threshold and updates the list of candidates. The code will run through the entire genome, leaving the last window with a final nucleotide on the right side without falling off the genome.
 
 ```{r}
 clump_finding <- function(genomeString, L, t, k){
@@ -550,3 +558,7 @@ clump_finding <- function(genomeString, L, t, k){
   return(candidates) 
 }
 ```
+
+In order to call this function, it must pass a window length, t-value, and k-value. To test our code in class, we scanned in the E. coli genome and attempted to run the code on this genome, discovering that it takes too long. The `clump_finding` function does work on smaller genomes, but was too slow to run through the 4.6 million nucleotide E. coli genome. This suggests that the code needs to be further optimized to run this genome.
+
+In Replication Origin Notebooks I, II, and III I learned several new coding methods and tools. Including but not limited to creating lists and sample genomes with the `c()` and `sample()` functions, as well as using the `set.seed()` function to set a seed for random number generation to ensure reproducible results. I also learned how to create `for` loops, and `if/else` statements to ensure the code is only ran when specific criteria are met. I also learned how to scan in datasets, and correctly solve bioinformatics problems on the Rosalind problem. I learned how to use functions to write reusable code and count the number of occurrences of patterns in a list, or genome in this case. These tools and functions all brought me closer to finding the replication origin of a genome, although future work is still required.
