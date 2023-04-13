@@ -292,7 +292,7 @@ list_3_mers <- generate_3_mers(rand_genome(k=2000))
 
 ```
 
-To check if the function collected only 3-mers, I used the `tail()` function to print the last 25 substrings collected, using `n=`. I was able to call the `list_3_mers` data because I named the list in the previous code block. The tail function showed that the last substring was a 2-mer, not a 3-mer ("CA").
+To check if the function collected only 3-mers, I used the `tail()` function to print the last 25 substrings collected, using `n=`. I was able to call the `list_3_mers` data because I named the list in the previous code block. The tail function showed that the last substring was a 2-mer, not a 3-mer ("AA").
 
 ```{r}
 tail(list_3_mers, n= 25)
@@ -300,7 +300,7 @@ tail(list_3_mers, n= 25)
 
 ### Challenge 4
 
-For this challenge, I am adapting the function from the previous challenge to create a function that reports k-mers of any size. I did so by adding the k value. I named the list `list_k_mers` so I am able to call upon this list during future work. The value next to rand_genome at the bottom of the code block determines how many characters the genome will be comprised of, while the value next to myGenome in the last line of code determines how long the k-mers reported by the function are. If I give the rand_genome function a value of 10, named myGenome, then the genome will be 10 nucleotides long. If I give the generate_k\_mers function a value of 5, pulling from myGenome, then the function will report the k-mers that are 5 nucleotides long.
+For this challenge, I am adapting the function from the previous challenge to create a function that reports k-mers of any size. I did so by adding the k value. I named the list `list_k_mers` so I am able to call upon this list during future work. The value next to `rand_genome` at the bottom of the code block determines how many characters the genome will be comprised of, while the value next to `myGenome` in the last line of code determines how long the k-mers reported by the function are. If I give the `rand_genome function` a value of 10, named `myGenome`, then the genome will be 10 nucleotides long. If I give the `generate_k_mers function` a value of 5, pulling from `myGenome`, then the function will report the k-mers that are 5 nucleotides long.
 
 ```{r}
 generate_k_mers <- function(genomeString, k) {
@@ -342,7 +342,7 @@ rosalindString <- "CGCTGCAATGTGCAATGTTGCAATGTGCAATGAATTATGCAATGAATGCAATGTTGCAATG
 
 ```
 
-In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to `i+8`, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, `count_pattern()`, I replaced the string to pull from rosalindString, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly. (I adjusted this code to be functional in Replication Origin II, changing the `end= i+8` to `end= i+ k -1`. Having the `end= i+8` caused the `count_pattern` function to not be usable in Challenge 1 of Replication Origin II, because the string was not 9 nucleotides long.)
+In this code block, the outline function is adapted to run the Rosalind sequence. I adjusted the function by changing the if statement to `i+8`, because the pattern that is being looked for in the sequence is 9 characters long. In the last line of code, `count_pattern()`, I replaced the string to pull from `rosalindString`, and I copied in the pattern that is being counted, provided by Rosalind. Copying my solution into Rosalind, I determined that my answer is correct, meaning the code is working properly. (I adjusted this code to be functional in Replication Origin II, changing the `end= i+8` to `end= i+ k -1`. Having the `end= i+8` caused the `count_pattern` function to not be usable in Challenge 1 of Replication Origin II, because the string was not 9 nucleotides long.)
 
 ```{r}
 count_pattern <- function(genomeString, pattern){
@@ -369,7 +369,7 @@ In this notebook, I will continue developing code with the goal of finding the r
 
 In bacteria, one of the proteins involved in replication is known as DnaA. DnaA binds to DnaA boxes, sequences in the genome, strings of 9 nucleotides that are more frequently repeated around the origin of replication.
 
-In this challenge, I will write code to search for frequently occurring 9-mers. I will begin by using a previously created function to practice counting k-mers. Using the `generate_k_mers` function I previously created, I read in the sample sequence from the notebook guide and named it myGenome. By changing the value on the last line of code next to myGenome, I instructed R to report the 3-mers in the sequence.
+In this challenge, I will write code to search for frequently occurring 9-mers. I will begin by using a previously created function to practice counting k-mers. Using the `generate_k_mers` function I previously created, I read in the sample sequence from the notebook guide and named it `myGenome`. By changing the value on the last line of code next to `myGenome`, I instructed R to report the 3-mers in the sequence.
 
 ```{r}
 generate_k_mers <- function(genomeString, k) {
@@ -406,7 +406,7 @@ smallGenome <- "ATCCATTAT"
 frequent_kmers(smallGenome, k=4)
 ```
 
-Now, to ensure my code is working properly, I will test it on a Rosalind sequence. This code block is using the Rosalind sample sequence before downloading the full genome.
+Now, to ensure my code is working properly, I will test it on a Rosalind sequence. This code block is using the Rosalind sample sequence, named `rosalindGenome`, before downloading the full genome.
 
 ```{r}
 find_frequent_kmers <- function(genome, k) {
@@ -439,9 +439,114 @@ k <- as.integer(data[2])
 k
 ```
 
-Now, I used the `find_frequent_kmers` function to run through the entire sequence, pulling from `genomeString`. The desired kmer length to find listed by Rosalind is 14, so I set the `k` value to equal 14. I used `noquote(frequent_kmers)` to print the kmers out in a single line with no quotations, and got the Rosalind challenge correct, meaning that my code is working properly.
+Now, I used the `find_frequent_kmers` function to run through the entire sequence, pulling from `genomeString`. The code stores the list of most frequently occurring k-mers as `frequent_kmers`. The desired kmer length to find listed by Rosalind is 14, so I set the `k` value to equal 14. I used `noquote(frequent_kmers)` to print the kmers out in a single line with no quotations, and got the Rosalind challenge correct, meaning that my code is working properly.
 
 ```{r}
 frequent_kmers<- find_frequent_kmers(genomeString, k=14)
 noquote(frequent_kmers)
+```
+
+During DNA replication, DNA polymerase can make mistakes, meaning that nucleotides may not appear in DnaA boxes the way we may expect them to. The replication signal that we are looking for to lead us to the origin may appear as the k-mer signaling that replication should begin, or as its reverse compliment. To account for this, we must create a function that counts reverse compliments as well as k-mers.
+
+Adenine and thymine are complementary base pairs, while guanine and cytosine are as well. In double stranded DNA, these complementary base pairs ( A & T, G & C) should be across from each other. If we look across from a segment of DNA, we can see the reverse complement of that segment. This refers to the fact that the complementary sequence is anti-parallel, meaning 5' and 3' ends are oriented in opposite directions on each side of the double strand. Meaning, we read the complementary sequence in reverse order.
+
+### Challenge 2
+
+In this challenge, I will write a function to compute the `reverse_compliment()` of a `genomeSubString.`
+
+This `reverse_compliment` function is created to run through the entire sequence that is provided as input, and output the reverse compliment of this sequence. The code is instructed to return the complementary nucleotide each time it loops past a nucleotide, using `if` statements to instruct the code to run only if the target nucleotide is present. Meaning, every time the code encounters an Adenine, the `reverse_compliment` function will return Thymine, and vice versa. This is also applied for Cytosine and Guanine, using `if` statements as well.
+
+I am using the Rosalind Reverse Compliment Problem sample dataset, listing it as `substring` to ensure that my code is working properly.
+
+```{r}
+reverse_compliment <- function(substring) {
+  substring_list <- str_split(substring, "") [[1]]
+rev_substring <- rev(substring_list)
+reverse_compliment <- c()
+for(i in 1:length (rev_substring)) {
+  if(rev_substring[i]=="A"){
+    reverse_compliment <- append(reverse_compliment, "T")
+  }
+if(rev_substring[i]=="T"){
+  reverse_compliment <- append(reverse_compliment, "A")
+}
+if(rev_substring[i]=="C"){
+  reverse_compliment <- append(reverse_compliment, "G")
+}
+if(rev_substring[i]=="G"){
+  reverse_compliment <- append(reverse_compliment, "C")
+}
+}
+
+reverse_compliment <- paste(reverse_compliment, collapse = "")
+return(reverse_compliment)
+}
+substring <- "AAAACCCGGT" 
+reverse_compliment(substring)
+  
+
+```
+
+Here, I am again testing to ensure my code is working properly to return the reverse compliment by running the Rosalind Reverse Complement Problem dataset.
+
+Here, I am scanning in the dataset using the `scan()` function, naming it `revcomp_genome`.
+
+```{r}
+revcomp_genome <- scan ("C:/Users/owens/Downloads/rosalind_ba1c (1).txt", what= "character")
+```
+
+Now that I have scanned in the dataset, and am now running the `reverse_compliment` function I created through the Rosalind genome. I solved the Rosalind problem correctly, proving that my code is correctly returning the reverse complement of the genome input.
+
+```{r}
+reverse_compliment(revcomp_genome)
+```
+
+### Replication Origin III
+
+```{r}
+initialize_k_mer_dict <- function(k){
+  nucleotides <- c("A", "C", "G", "T")
+
+  k_mers_dict <- expand.grid(rep(list(nucleotides), k)) %>%
+    unite("k_mers", everything(), remove = TRUE, sep = "") %>%
+    unique() %>%
+    mutate(count = 0)
+  
+  return(k_mers_dict)
+}
+
+k_mers_dict <- initialize_k_mer_dict(9)
+```
+
+```{r}
+clump_finding <- function(genomeString, L, t, k){
+  
+  kmer_dict <- initalize_k_mer_dict(k)
+  ng <- nchar(genome)
+  for(i in 1:(L-(k-1))){
+    curr_kmer <- str_sub(initial_window, i, i+ (k-1))
+    curr_count <- count+pattern(initial_window, curr_kmer)
+    curr_row <- which(kmer_dict$k_mers==curr_kmer)
+    kmer_dict$count[curr_row] <- curr_count
+  }
+  candidates <- kmer_dict %>%
+    filter(count >=t) %>%
+    pull(k_mers)
+  for(j in 2:(ng-(L-2))){
+    rem_pattern <- str_sub(genome, j-1, j-1+ (k-1))
+    add_pattern <- str_sub(genome, j + (L-2)-(k-1),j+ (L-2))
+    
+    rem_row <- which(kmer_dict$k_mers == rem_pattern)
+    add_row <- which(kmer_dict$k_mers == add_pattern)
+    
+    kmer_dict$count[rem_row] <- kmer_dict$count [rem_row] - 1
+    kmer_dict$count [add_row] <- kmer_dict$count [add_row] +1
+    
+    if(kmer_dict$count[add_row] >= t){
+      candidates <- append(candidates, add_pattern)
+      candidates <- unique(candidates)
+    }
+  }
+  return(candidates) 
+}
 ```
