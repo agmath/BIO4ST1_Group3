@@ -130,14 +130,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>You’ve used Quarto Notebooks a few times already, so you’re starting to get the hang of this. Start by editing the Notebook <code>title:</code> and make sure you credit yourself as the <code>author:</code>. As a reminder, R-code appears in grey chunks throughout your notebook. Anything within these grey blocks must be executable R code. When you are outside of an R chunk, in a section of the notebook with a white background, you can type freely as if you were in a typical Word document.</p>
-<p>You’ll quickly see the value of including text to explain your code chunks, and motivate your analysis. Trying to get help from a notebook that doesn’t effectively use these discussions will be quite difficult. Additionally, future <em>you</em> will be very thankful to present-day <em>you</em> if you document your analyses well, and will be quick to curse present-day <em>you</em> when you do not.</p>
-<p>Now, remove this <em>Getting Started</em> text and you’ll be ready to start sciencing.</p>
-</section>
-<section id="challenge-1" class="level1">
-<h1>Challenge 1</h1>
+<section id="intro-to-r-for-bioinformatics-notebook" class="level1">
+<h1>Intro to R for Bioinformatics Notebook</h1>
+<p>In this intro notebook, I will gain familiarity with the folowing:</p>
+<ul>
+<li><p>Using the arrow (<code>&lt;-</code>) operator to store objects in variables</p></li>
+<li><p>Using R's <code>sample()</code> function to create a random "genome" for the purpose of testing functions</p></li>
+<li><p>Building functions to process and analyze genetic data, learning about <code>for</code> loops and implementing them when necessary.</p></li>
+<li><p>Reading in a real bacterial genome from a text file.</p></li>
+<li><p>Analyzing the genome using the ideas and tools developed in the first part of the notebook.</p></li>
+</ul>
+<section id="challenge-1" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-1">Challenge 1</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 1</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -147,10 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] "A" "C" "G" "T"</code></pre>
 </div>
 </div>
-<p>Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the c() function.</p>
+<p>Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the <code>c()</code> function.</p>
 </section>
-<section id="challenge-2" class="level1">
-<h1>Challenge 2</h1>
+<section id="challenge-2" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-2">Challenge 2</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 2</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -158,20 +162,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "T" "G" "T" "A" "C" "G" "C" "A" "G" "G" "C" "C" "A" "T" "C"</code></pre>
+<pre><code> [1] "G" "C" "C" "A" "G" "C" "C" "G" "C" "A" "G" "T" "C" "T" "A"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TGTACGCAGGCCATC"</code></pre>
+<pre><code>[1] "GCCAGCCGCAGTCTA"</code></pre>
 </div>
 </div>
-<p>In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
+<p>In Challenge 2 I used <code>sample()</code> to create a random string of 15 nucleotides, called randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
 </section>
-<section id="challenge-3" class="level1">
-<h1>Challenge 3</h1>
+<section id="challenge-3" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-3">Challenge 3</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 3</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -180,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span> )</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "AACAAATTTACTTTCCTAACAGAGGGAGCTGAGGGGAGCAGTTGTTCCTTTCCCGAGAGATTCTTGGCTGGCTGTATACAGTAAGACGTCTATACTAGAGGCTCACACTCGGGCTACCGATACGTGATTACTTGAAAACAAGCTTGGACAGTAGCTGTCGGAAGATCCCGATCTGCGTCGTCTTAGTGTGAATAGCTGCTGAGGAGCTTAGAATGACTCAAAATCTTAAGTGAGACACCCGAATCGCTCGACAGGCAAGTACCAGCCTCGTGAGGGAAAATTATCTACACACGAAAAGCAAGCAATGTGAGTGAAGGGTACTTATCATCATCCCTCTCGGACGCAGGGGACGATCCACCGCAATATTTGTTAACTATGGGCAAATAAGCATCAAGTGCAAGGCGCGACGAAGAATGACACATTATATAGAGCAACTAGCCAAGGGACCAAGCTTTACTGGTCGCCTCCCAGGAACGCCACTGACGCGACTACTAACATACGGTCCTTTACTAAAGACACTAGGCCCACTAGTGACGCTCCTTTACCTGCCCGCTAGTGTAACGAGTCAGCACAAGGCAGCGTAAGTTACGGTTTCAACGTGCGAGCCCAGGTCGGATAAGACTTCGGGTTGTCAGCTCCCGCCAGTGTTTTGAGGCCAAGCTTCATGAAAAATAACAATGGCATAGTGGCAGGTCCTAGGTGCCCGCTGCGTGGTTCGCAGCAGGCATCGTCGGGCATCACGCGTAACGCTATTACATAACCTTGAATTTCGCCAGGCCCAGCACAGAATAGTTAAAAGCACTTTTTCTTTACACCAGACGCAGAATACATACAGTATGTTGATACCAATTCTTGTCAATTAGTCACTTCGGCCCCGTACGCTGACTCCAACGACGATTCAGACTGTTTATTGATTACCGTGCAGCTGGTTGGCTGTAATAATGACGCCGTGTACTAGGCTCCCTTTCCCCGTAGCACAGCAGCAGAAGTCGAACGCGCATACCCAACCAGGAATGCCTTAAGTAGACGCACGGCTTTTCGTGATGCTCCCGACGAATGCCTTCACCCGCGATCTAATGTATCCCCGGATGCCGCAGACCCTGGCTTAGCTGATCTAACCGAATATAAAGTCAGACTGCGCTTAAGCGGCGTAGTGGGTCGACCAGCTAAGAAGGGCGTTGGTGCCCGAGAAATGCCGCATTTCAAAAATGCAAGACCTAACGTTAGCAGCTCTACCAACTGGCTGTCACTACTATATTCCTTACCCGCTTGGAACGCCCTGATCGGAAGCGCCAGTGCGATTCGACATCAAGAGCTCAGTGTATACTACTCACACAGGTCGAAAATAACCCGTATGGTGCATGGTCAGATACGCAAACGTTAGTTAATTCCGCCGTGACAGCATAGGGCCAGGGTCAGAACTAGCCCCGAGACAGATTATTTCGACAAAACTGGTCTGCCACGTGCGGATAGAACCGGGTACCAATTAAATCCTCCCTG"</code></pre>
+<pre><code>[1] "TTGAAGGCCCCATTGAACCGCCTTCTCGCCCCTTAAGAGAGGGCAGATTTCACATAGTCCCCCACCCCTCGCGGTTCTAATTTGACGCGTCACTATGACGGGGTCGCGCTCGACTCAGCGAATGCGATTGATCTGACCCGTGGTACCACCTCCAGAAGCCTCTATTGAGGTGGAGACCCTACTCTCTTAGGGGACATTTCAAAAACTCATGACGGTGAAACAAAAGGCCGCAGTCTGGTCGAACGCGTGACGCCCGTCCAGAGAGGCAGTGATTAGAGTGCTAGCAGTCACCTTTGGCAGTCTCCTCCTGAAATTTATGATATATGAGATCGAAGACTATTATACAAGACCACTTTCACGTATGGGAGCCGAACTCGGTATACCAGTACAGCTCTTCCTAGCCCTGCCCTAGTATCTGATTATACTAATTTGTCAAGCGTGCTTGAAGGAACTAGGTCCGTACAGCAATGTTGGAGCTGATAATAGCTTCTACGACCACGCGCTGTACCGAGTCACTGGGCCTAAGTTTGGATGACTCTATCCCACTTCCTTAACCTTACTCGTCACATTTGGCAAACTGTTCATACAAATGATCTCCTTGGTCCTGGAATTATTCCCGTACCACTCTCTTTCTGGCCTTGATGGACGAAATCAACGGTACGCATTATGTTATTATACCGCGTGTAAGTCGTACCCCAGCTGGTTGGGTTGCTCCCCTGGATCGCACAATTTCATGCTATAGTATGACCACACGGCGTACAGAGTTCAAACGCTACTAGTCGTTTATGAACAGTGTCGCCCAAGGAATGAAGGCAGACAACGGGCCGCTCGTGTTATAAAAAACCGAGTTTCTCACGGGCGAGAATTCTAAACGGGATAGCAATTGTATTACGCTCTTATTCGCTAGGTAACACGAAACCGAACTAACATCACACCGTGCAGATAGTAATCGGCCGTAAAGGAGGTCCAAATCTGGATAGGATAGTTCTTTCCACAAGCCTTAGGCCTACAATTCCTGACTTCCCCTTCCCTTTACTTTCCGATATCCTGCTCGTCGTACCTACATTTAGGAGACCTAACTTTGACTGTGCTAAATACGTACCGGAACCTGGGGGAGGTACAAAGAAGCGATGGATCGGCTTGGTCCAGATCCTCTTTACTAGATCAAACGCCTTACACATAAATCTGCACTAGCTATTAACCGTTCCGCTCTCGTTTGAATGGCAGCTCGGTGAAGGAAAGTACACCGGAAGGGTAATTTGAAGGAGTAAATTTAGATATACATCGGTATTGACTGATGCCCTCCGCGATTGGCAATACCTGTTCGCTGCATTGGGCACCACAAGGTACAACTACTCGTTGTTAATATGATAGATCAAATGATTGGCTAGCATATATGAACTTAAACAAGATAAAAGGCAATATGATCACGCCGGTACGCTGGGGACAGCTGGAGTCCAAAGAAATCACCGTGTCGGCCTTATAAACAAGTGATTAAGT"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -199,8 +203,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the <code>paste()</code> method in code to collapse it from a list down to a single string. I also added another line, using set.seed(215) to initialize a random number generator with the seed 215. And once again, the <code>paste()</code> function was used to collapse the list down to one single string.</p>
 </section>
-<section id="challenge-4" class="level1">
-<h1>Challenge 4</h1>
+<section id="challenge-4" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-4">Challenge 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 4</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -214,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Here, I used <code>set.seed(215)</code> to generate a random genome (<code>randGenome</code>) consisting of 100 nucleotides, collapsed down to a single string with the <code>paste()</code> function. I counted the frequency of Adenine (A) in the resulting “genome” above and got 23.</p>
-<section id="for-loops" class="level2">
-<h2 class="anchored" data-anchor-id="for-loops"><strong><code>for</code></strong> Loops</h2>
+<section id="for-loops" class="level3">
+<h3 class="anchored" data-anchor-id="for-loops"><strong><code>for</code></strong> Loops</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mySum <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -239,8 +243,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Before starting Challenge 5, I began learning different ways to run a new programming technique called the <code>for</code> loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.</p>
 </section>
 </section>
-<section id="challenge-5" class="level1">
-<h1>Challenge 5</h1>
+<section id="challenge-5" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-5">Challenge 5</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 5 </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -269,8 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>In Challenge 5, I wrote and executed my own for loop in order to analyze a genome.</p>
 </section>
-<section id="challenge-6" class="level1">
-<h1>Challenge 6</h1>
+<section id="challenge-6" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-6">Challenge 6</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Challenge 6</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -300,13 +304,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [1] "T"</code></pre>
 </div>
 </div>
-<section id="flow-control" class="level2">
-<h2 class="anchored" data-anchor-id="flow-control">Flow Control</h2>
+<section id="flow-control" class="level3">
+<h3 class="anchored" data-anchor-id="flow-control">Flow Control</h3>
 <p>Challenge 6 involved generating a random genome substring consisting of 10 nucleotides and using the <code>paste()</code> method to collapse the genome to a single string rather than a list. Next, I wrote a <code>for</code> loop to print out each individual nucleotide instead of the entire thing. Next, I added the <code>1:nchar()</code> function to run the for loop through all nucleotides in the string. The <code>str_sub()</code> function was used to extract individual nucleotides. By using <code>str_sub()</code> and using <code>j</code> as both the start and end for subsetting, I was able to have the for loop extract each individual nucleotide.</p>
 </section>
 </section>
-<section id="challenge-7" class="level1">
-<h1>Challenge 7</h1>
+<section id="challenge-7" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-7">Challenge 7</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>nucleotides <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"T"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>genomeLength <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -347,8 +351,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>In Challenge 7, I created a genome 10 nucleotides long using the (<code>randGenome</code>) function. I then adapted the for loop in order to count the number of Adenine (A) in randGenome. Using these functions, I was able to determine that there were 3 Adenine.</p>
 </section>
-<section id="challenge-8" class="level1">
-<h1>Challenge 8</h1>
+<section id="challenge-8" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-8">Challenge 8</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>countG <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(randGenome)){</span>
@@ -389,16 +393,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [1] 3</code></pre>
 </div>
 </div>
-<section id="vibrio-cholerae-chromosome-dna" class="level2">
-<h2 class="anchored" data-anchor-id="vibrio-cholerae-chromosome-dna">Vibrio Cholerae Chromosome DNA</h2>
+<section id="vibrio-cholerae-chromosome-dna" class="level3">
+<h3 class="anchored" data-anchor-id="vibrio-cholerae-chromosome-dna">Vibrio Cholerae Chromosome DNA</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>vib_c <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"VibrioCholerae.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Challenge 8 was similar to Challenge 7 in that I created a randome nucleotide and used the for loop to count the frequencies of each of the four individual nucleotides. I then was able to perform these functions on a real genome from the <em>Vibrio Cholerae</em> chromosome DNA, consisting of 1,108,250 nucleotides. I read this large genome into R with the scan() function.</p>
 </section>
 </section>
-<section id="challenge-9" class="level1">
-<h1>Challenge 9</h1>
+<section id="challenge-9" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-9">Challenge 9</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>countA <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(vib_c)){</span>
@@ -453,8 +457,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>In Challenge 9, I was able to use the code from Challenge 8 to count the frequency of each nucleotide in the <em>Vibrio Cholerae</em> chromosome. After doing this, the frequency of adenine was 293942, Guanine was 256024, Cytosine was 263573, and Thymine was 294711.</p>
 </section>
-<section id="challenge-10" class="level1">
-<h1>Challenge 10</h1>
+<section id="challenge-10" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-10">Challenge 10</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>rosalinddata <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"rosalind_dna.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -512,8 +516,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>In Challenge 10, I used code once again to scan in another genome from the rosalind website (similar to what I did in the previous challenge with the Vibrio Cholerae genome). I then used the code from Challenge 9 in order to calculate the frequency of each nucleotide in the genome string. I determined the frequency of Adenine in the Rosalind DNA genome to be 223, Guanine was 202, Cytosine was 233, and Thymine was 201. I got the Rosalind Challenge correct!</p>
 </section>
-<section id="summary" class="level1">
-<h1>Summary</h1>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>In all, I learned a lot throughout this notebook. Including:</p>
 <ul>
 <li><p>Created a list of <code>nucleotides</code></p></li>
@@ -525,6 +529,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Constructed a <code>for</code> loop and used <code>if</code> statements to count the frequency of each of the four nucleotides in a genome string.</p></li>
 <li><p>Solved a bioinformatics problem on the <em>rosalind</em> platform!</p></li>
 </ul>
+</section>
 </section>
 <section id="finding-the-replication-origin-part-1" class="level1">
 <h1>Finding the Replication Origin, Part 1</h1>
@@ -673,9 +678,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] 31</code></pre>
 </div>
 </div>
-</section>
-<section id="rosalind-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="rosalind-challenge">Rosalind Challenge</h2>
+<section id="rosalind-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="rosalind-challenge">Rosalind Challenge</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>rosalind_string <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"rosalind_string.txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -700,6 +704,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>rosalind_string <span class="ot">&lt;-</span> <span class="st">"GGTGGCCATAAGTGGCCATAGTGGCCAGTGGCCATAAAAGTGGCCAGCGGTGGCCAAGCCGTGGCCAGCGTGGCCATTAAAGGGTGGCCACGTGAGTGGCCAGTGGCCAGTGGCCATTTTGTGGCCAGGTGTGGCCATAGTGGCCAGGTGGCCAGACGTGGCCAGGTGGCCACCTGGCTGTGGCCACGTGGCCAAGTGGCCAGGTGGCCAGTGGCCACGAGTGGCCAATAGTGGCCAGAGTGGCCATACCGTGGCCAGGTGGCCAACGTGGCCAGAAGTGGCCAGTGGCCAGTGGCCAAATGTGGCCAGTGGCCATGTGGCCAGGTGGCCACGGACAAGGTGGCCAGTGGCCAGCGGGTGGCCAGTGTGGCCAAGTGGCCAAGTGTGGCCAGTGGCCACTTATGGTGGCCAGTGGCCAAGTGGCCACCTATGTGGCCATATGGTGGCCATGTGGCCAAGTGGCCATGGTGGCCACGTGGCCAAGTGGCCACCTTAGGTTGGTGGCCAGCGGTGGCCAGTGGCCACAATCAATGTGGCCACGGTGGCCATTAAGTGGCCATATTGATGAGGCCCGGTGGCCAGGTGGCCAGTGGCCAAAGGGGTGGTGGCCATACGGTGGCCATTGTGGCCATTCGTGGCCAGGGTGTGGCCACCCGTGGCCAATGAGGTGGCCACGTGGCCAAAGATGTGGCCAACTGGAGTGGCCAATGTGGCCAAGTGGCCACCTCCACGTGGCCACTAGCGTGGCCATCACCGACCTGGTGGCCAGTGGCCAATGGTGGCCAGTGGCCAGTGGCCAGTGGCCAATACTGGGTGGCCAGTGGCCAGCGACGTGGCCATGTGGCCAGTGGCCACCTGTGGCCACGTGGCCACCAGTGGCCAGTGGCCAGTGGCCACAAAGTGGCCAGTGGCCAAGGTGGCCAATGCTGTGGCCATTCGAGTGGCCA"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this last Challenge, I wrote a new function called <code>count_pattern()</code> that counts occurrences of a particular <code>pattern</code> within a larger <code>genomeString</code>. My function took two arguments, <code>genomeString</code> and the <code>pattern</code> I want to count occurrences of. My function returned the count of occurrences of the <code>pattern</code> within the <code>genomeString</code>. My function accomplished what I intended it to. It counted 22 patterns of “CTG” in my randome genome string that was 2000 nucleotides long. I then used this function to count the number of occurrences of the pattern in the genome string and submit the result to Rosalind. I solved the Rosalind Challenge! There were 22 patterns of GTGGCCAGT in the Rosalind DNA string.</p>
+</section>
 </section>
 </section>
 <section id="finding-the-replication-origin-part-ii" class="level1">
@@ -938,7 +943,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="challenge-2-3">Challenge 2</h2>
 <p>Adding functionality, or optimize!</p>
 <p>This challenge involves finding all 9-mers corresponding to (500, 3)-clumps in the <em>E. Coli</em> genome. However, we modified it during class so that we did not utilize the E.Coli genome. In order to call this a function, it must pass a window length, t-value, and k-value. We scanned in the E.Coli genome and tried to run and test our code in class, but then realized it takes too long. The <code>clump_finding</code> function works on smaller genomes, but was too slow to run through E.Coli’s 4.6 million nucleotide genome. This suggests that the code needs to be further optimized in order to run this genome.</p>
-<p>In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the <code>set.seed()</code> function to set a seed for random number generation to ensure consistent results. I also used code to make <code>for</code> loops, and <code>if/else</code> statements to make sure the code is only ran when specific criteria are met. After many trial and errors, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the <code>clump_finding()</code> algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!</p>
+<p>In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the <code>set.seed()</code> function to set a seed for random number generation to ensure consistent results. I enjoyed using the <code>count_pattern()</code> function count occurrences of a particular <code>pattern</code> within a larger <code>genomeString</code>. I also used code to make <code>for</code> loops, and <code>if/else</code> statements to make sure the code is only ran when specific criteria are met. Two functions created in notebook 4 were <code>generate_k_mers()</code>, which will generate all strings of <code>k</code> consecutive nucleotides within a genome, and <code>count_patterns()</code> which will count the number of occurrences of a particular <code>pattern</code> within a <code>genome.</code> I was able to search a genome for frequent "near"-k-mers and their reverse-complements. Throughout notebookes I, II, and III, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. After many trial and errors, I got them all correct! This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the <code>clump_finding()</code> algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!</p>
 </section>
 </section>
 

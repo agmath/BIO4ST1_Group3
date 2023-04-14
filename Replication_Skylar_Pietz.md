@@ -10,15 +10,21 @@ execute:
 
 
 
-## Getting Started
+# Intro to R for Bioinformatics Notebook
 
-You've used Quarto Notebooks a few times already, so you're starting to get the hang of this. Start by editing the Notebook `title:` and make sure you credit yourself as the `author:`. As a reminder, R-code appears in grey chunks throughout your notebook. Anything within these grey blocks must be executable R code. When you are outside of an R chunk, in a section of the notebook with a white background, you can type freely as if you were in a typical Word document.
+In this intro notebook, I will gain familiarity with the folowing:
 
-You'll quickly see the value of including text to explain your code chunks, and motivate your analysis. Trying to get help from a notebook that doesn't effectively use these discussions will be quite difficult. Additionally, future *you* will be very thankful to present-day *you* if you document your analyses well, and will be quick to curse present-day *you* when you do not.
+-   Using the arrow (`<-`) operator to store objects in variables
 
-Now, remove this *Getting Started* text and you'll be ready to start sciencing.
+-   Using R\'s `sample()` function to create a random \"genome\" for the purpose of testing functions
 
-# Challenge 1
+-   Building functions to process and analyze genetic data, learning about `for` loops and implementing them when necessary.
+
+-   Reading in a real bacterial genome from a text file.
+
+-   Analyzing the genome using the ideas and tools developed in the first part of the notebook.
+
+## Challenge 1 
 
 
 ::: {.cell}
@@ -38,9 +44,9 @@ nucleotides
 :::
 
 
-Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the c() function.
+Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the `c()` function.
 
-# Challenge 2
+## Challenge 2 
 
 
 ::: {.cell}
@@ -55,7 +61,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "T" "G" "T" "A" "C" "G" "C" "A" "G" "G" "C" "C" "A" "T" "C"
+ [1] "G" "C" "C" "A" "G" "C" "C" "G" "C" "A" "G" "T" "C" "T" "A"
 ```
 :::
 :::
@@ -69,15 +75,15 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "TGTACGCAGGCCATC"
+[1] "GCCAGCCGCAGTCTA"
 ```
 :::
 :::
 
 
-In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The `paste()` method was used to collapse the genome of nucleotides down to a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
+In Challenge 2 I used `sample()` to create a random string of 15 nucleotides, called randGenome. The `paste()` method was used to collapse the genome of nucleotides down to a single string, so it's easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.
 
-# Challenge 3
+## Challenge 3
 
 
 ::: {.cell}
@@ -93,7 +99,7 @@ randGenome
 
 ::: {.cell-output .cell-output-stdout}
 ```
-[1] "AACAAATTTACTTTCCTAACAGAGGGAGCTGAGGGGAGCAGTTGTTCCTTTCCCGAGAGATTCTTGGCTGGCTGTATACAGTAAGACGTCTATACTAGAGGCTCACACTCGGGCTACCGATACGTGATTACTTGAAAACAAGCTTGGACAGTAGCTGTCGGAAGATCCCGATCTGCGTCGTCTTAGTGTGAATAGCTGCTGAGGAGCTTAGAATGACTCAAAATCTTAAGTGAGACACCCGAATCGCTCGACAGGCAAGTACCAGCCTCGTGAGGGAAAATTATCTACACACGAAAAGCAAGCAATGTGAGTGAAGGGTACTTATCATCATCCCTCTCGGACGCAGGGGACGATCCACCGCAATATTTGTTAACTATGGGCAAATAAGCATCAAGTGCAAGGCGCGACGAAGAATGACACATTATATAGAGCAACTAGCCAAGGGACCAAGCTTTACTGGTCGCCTCCCAGGAACGCCACTGACGCGACTACTAACATACGGTCCTTTACTAAAGACACTAGGCCCACTAGTGACGCTCCTTTACCTGCCCGCTAGTGTAACGAGTCAGCACAAGGCAGCGTAAGTTACGGTTTCAACGTGCGAGCCCAGGTCGGATAAGACTTCGGGTTGTCAGCTCCCGCCAGTGTTTTGAGGCCAAGCTTCATGAAAAATAACAATGGCATAGTGGCAGGTCCTAGGTGCCCGCTGCGTGGTTCGCAGCAGGCATCGTCGGGCATCACGCGTAACGCTATTACATAACCTTGAATTTCGCCAGGCCCAGCACAGAATAGTTAAAAGCACTTTTTCTTTACACCAGACGCAGAATACATACAGTATGTTGATACCAATTCTTGTCAATTAGTCACTTCGGCCCCGTACGCTGACTCCAACGACGATTCAGACTGTTTATTGATTACCGTGCAGCTGGTTGGCTGTAATAATGACGCCGTGTACTAGGCTCCCTTTCCCCGTAGCACAGCAGCAGAAGTCGAACGCGCATACCCAACCAGGAATGCCTTAAGTAGACGCACGGCTTTTCGTGATGCTCCCGACGAATGCCTTCACCCGCGATCTAATGTATCCCCGGATGCCGCAGACCCTGGCTTAGCTGATCTAACCGAATATAAAGTCAGACTGCGCTTAAGCGGCGTAGTGGGTCGACCAGCTAAGAAGGGCGTTGGTGCCCGAGAAATGCCGCATTTCAAAAATGCAAGACCTAACGTTAGCAGCTCTACCAACTGGCTGTCACTACTATATTCCTTACCCGCTTGGAACGCCCTGATCGGAAGCGCCAGTGCGATTCGACATCAAGAGCTCAGTGTATACTACTCACACAGGTCGAAAATAACCCGTATGGTGCATGGTCAGATACGCAAACGTTAGTTAATTCCGCCGTGACAGCATAGGGCCAGGGTCAGAACTAGCCCCGAGACAGATTATTTCGACAAAACTGGTCTGCCACGTGCGGATAGAACCGGGTACCAATTAAATCCTCCCTG"
+[1] "TTGAAGGCCCCATTGAACCGCCTTCTCGCCCCTTAAGAGAGGGCAGATTTCACATAGTCCCCCACCCCTCGCGGTTCTAATTTGACGCGTCACTATGACGGGGTCGCGCTCGACTCAGCGAATGCGATTGATCTGACCCGTGGTACCACCTCCAGAAGCCTCTATTGAGGTGGAGACCCTACTCTCTTAGGGGACATTTCAAAAACTCATGACGGTGAAACAAAAGGCCGCAGTCTGGTCGAACGCGTGACGCCCGTCCAGAGAGGCAGTGATTAGAGTGCTAGCAGTCACCTTTGGCAGTCTCCTCCTGAAATTTATGATATATGAGATCGAAGACTATTATACAAGACCACTTTCACGTATGGGAGCCGAACTCGGTATACCAGTACAGCTCTTCCTAGCCCTGCCCTAGTATCTGATTATACTAATTTGTCAAGCGTGCTTGAAGGAACTAGGTCCGTACAGCAATGTTGGAGCTGATAATAGCTTCTACGACCACGCGCTGTACCGAGTCACTGGGCCTAAGTTTGGATGACTCTATCCCACTTCCTTAACCTTACTCGTCACATTTGGCAAACTGTTCATACAAATGATCTCCTTGGTCCTGGAATTATTCCCGTACCACTCTCTTTCTGGCCTTGATGGACGAAATCAACGGTACGCATTATGTTATTATACCGCGTGTAAGTCGTACCCCAGCTGGTTGGGTTGCTCCCCTGGATCGCACAATTTCATGCTATAGTATGACCACACGGCGTACAGAGTTCAAACGCTACTAGTCGTTTATGAACAGTGTCGCCCAAGGAATGAAGGCAGACAACGGGCCGCTCGTGTTATAAAAAACCGAGTTTCTCACGGGCGAGAATTCTAAACGGGATAGCAATTGTATTACGCTCTTATTCGCTAGGTAACACGAAACCGAACTAACATCACACCGTGCAGATAGTAATCGGCCGTAAAGGAGGTCCAAATCTGGATAGGATAGTTCTTTCCACAAGCCTTAGGCCTACAATTCCTGACTTCCCCTTCCCTTTACTTTCCGATATCCTGCTCGTCGTACCTACATTTAGGAGACCTAACTTTGACTGTGCTAAATACGTACCGGAACCTGGGGGAGGTACAAAGAAGCGATGGATCGGCTTGGTCCAGATCCTCTTTACTAGATCAAACGCCTTACACATAAATCTGCACTAGCTATTAACCGTTCCGCTCTCGTTTGAATGGCAGCTCGGTGAAGGAAAGTACACCGGAAGGGTAATTTGAAGGAGTAAATTTAGATATACATCGGTATTGACTGATGCCCTCCGCGATTGGCAATACCTGTTCGCTGCATTGGGCACCACAAGGTACAACTACTCGTTGTTAATATGATAGATCAAATGATTGGCTAGCATATATGAACTTAAACAAGATAAAAGGCAATATGATCACGCCGGTACGCTGGGGACAGCTGGAGTCCAAAGAAATCACCGTGTCGGCCTTATAAACAAGTGATTAAGT"
 ```
 :::
 :::
@@ -122,7 +128,7 @@ randGenome
 
 Challenge 3 consisted of using code to generate a random genome of 1500 nucleotides long. Once again, I used the `paste()` method in code to collapse it from a list down to a single string. I also added another line, using set.seed(215) to initialize a random number generator with the seed 215. And once again, the `paste()` function was used to collapse the list down to one single string.
 
-# Challenge 4
+## Challenge 4
 
 
 ::: {.cell}
@@ -147,7 +153,7 @@ randGenome
 
 Here, I used `set.seed(215)` to generate a random genome (`randGenome`) consisting of 100 nucleotides, collapsed down to a single string with the `paste()` function. I counted the frequency of Adenine (A) in the resulting "genome" above and got 23.
 
-## **`for`** Loops
+### **`for`** Loops
 
 
 ::: {.cell}
@@ -180,7 +186,7 @@ for(i in 1:10){
 
 Before starting Challenge 5, I began learning different ways to run a new programming technique called the `for` loop. In programming, a for loop allows us to run a set of instructions over and over for some predetermined number of iterations. Doing so will help me create loops to analyze genomes.
 
-# Challenge 5
+## Challenge 5
 
 
 ::: {.cell}
@@ -219,7 +225,7 @@ for(j in 1:15){
 
 In Challenge 5, I wrote and executed my own for loop in order to analyze a genome.
 
-# Challenge 6
+## Challenge 6
 
 
 ::: {.cell}
@@ -266,11 +272,11 @@ for(j in 1:nchar(randGenome)){
 :::
 
 
-## Flow Control
+### Flow Control
 
 Challenge 6 involved generating a random genome substring consisting of 10 nucleotides and using the `paste()` method to collapse the genome to a single string rather than a list. Next, I wrote a `for` loop to print out each individual nucleotide instead of the entire thing. Next, I added the `1:nchar()` function to run the for loop through all nucleotides in the string. The `str_sub()` function was used to extract individual nucleotides. By using `str_sub()` and using `j` as both the start and end for subsetting, I was able to have the for loop extract each individual nucleotide.
 
-# Challenge 7
+## Challenge 7
 
 
 ::: {.cell}
@@ -335,7 +341,7 @@ for(i in 1:nchar(randGenome)){
 
 In Challenge 7, I created a genome 10 nucleotides long using the (`randGenome`) function. I then adapted the for loop in order to count the number of Adenine (A) in randGenome. Using these functions, I was able to determine that there were 3 Adenine.
 
-# Challenge 8
+## Challenge 8
 
 
 ::: {.cell}
@@ -400,7 +406,7 @@ for(i in 1:nchar(randGenome)){
 :::
 
 
-## Vibrio Cholerae Chromosome DNA
+### Vibrio Cholerae Chromosome DNA
 
 
 ::: {.cell}
@@ -413,7 +419,7 @@ vib_c <- scan("VibrioCholerae.txt", what = "character", sep = NULL)
 
 Challenge 8 was similar to Challenge 7 in that I created a randome nucleotide and used the for loop to count the frequencies of each of the four individual nucleotides. I then was able to perform these functions on a real genome from the *Vibrio Cholerae* chromosome DNA, consisting of 1,108,250 nucleotides. I read this large genome into R with the scan() function.
 
-# Challenge 9
+## Challenge 9
 
 
 ::: {.cell}
@@ -499,7 +505,7 @@ print(countT)
 
 In Challenge 9, I was able to use the code from Challenge 8 to count the frequency of each nucleotide in the *Vibrio Cholerae* chromosome. After doing this, the frequency of adenine was 293942, Guanine was 256024, Cytosine was 263573, and Thymine was 294711.
 
-# Challenge 10
+## Challenge 10
 
 
 ::: {.cell}
@@ -592,7 +598,7 @@ print(countT)
 
 In Challenge 10, I used code once again to scan in another genome from the rosalind website (similar to what I did in the previous challenge with the Vibrio Cholerae genome). I then used the code from Challenge 9 in order to calculate the frequency of each nucleotide in the genome string. I determined the frequency of Adenine in the Rosalind DNA genome to be 223, Guanine was 202, Cytosine was 233, and Thymine was 201. I got the Rosalind Challenge correct!
 
-# Summary
+## Summary
 
 In all, I learned a lot throughout this notebook. Including:
 
@@ -841,7 +847,7 @@ count_patterns(rand_Genome(2000), "CTG")
 :::
 
 
-## Rosalind Challenge
+### Rosalind Challenge
 
 
 ::: {.cell}
@@ -1228,4 +1234,4 @@ Adding functionality, or optimize!
 
 This challenge involves finding all 9-mers corresponding to (500, 3)-clumps in the *E. Coli* genome. However, we modified it during class so that we did not utilize the E.Coli genome. In order to call this a function, it must pass a window length, t-value, and k-value. We scanned in the E.Coli genome and tried to run and test our code in class, but then realized it takes too long. The `clump_finding` function works on smaller genomes, but was too slow to run through E.Coli's 4.6 million nucleotide genome. This suggests that the code needs to be further optimized in order to run this genome.
 
-In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the `set.seed()` function to set a seed for random number generation to ensure consistent results. I also used code to make `for` loops, and `if/else` statements to make sure the code is only ran when specific criteria are met. After many trial and errors, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the `clump_finding()` algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!
+In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the `set.seed()` function to set a seed for random number generation to ensure consistent results. I enjoyed using the `count_pattern()` function count occurrences of a particular `pattern` within a larger `genomeString`. I also used code to make `for` loops, and `if/else` statements to make sure the code is only ran when specific criteria are met. Two functions created in notebook 4 were `generate_k_mers()`, which will generate all strings of `k` consecutive nucleotides within a genome, and `count_patterns()` which will count the number of occurrences of a particular `pattern` within a `genome.` I was able to search a genome for frequent \"near\"-k-mers and their reverse-complements. Throughout notebookes I, II, and III, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. After many trial and errors, I got them all correct! This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the `clump_finding()` algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!
