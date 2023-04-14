@@ -458,17 +458,17 @@ In Challenge 4, I created an updated version of the `generate_3_mers()` function
 ## Challenge 5
 
 ```{r}
-nt_patterns <- function(string, pattern) {
-  nt_matches <- 0
+count_patterns <- function(string, pattern) {
+  count <- 0
   
-  for(i in seq(1, nchar(string))){
+  for(i in 1: nchar(string)){
     if(str_sub(string, i, i + str_length(pattern)-1) == pattern){
-      nt_matches = nt_matches + 1
+      count = count + 1
+    }
+    }
+  return(count)
   }
-  }
-  return(nt_matches)
-}
-nt_patterns(rand_Genome(2000), "CTG")
+count_patterns(rand_Genome(2000), "CTG")
 ```
 
 ## Rosalind Challenge
@@ -480,8 +480,9 @@ rosalind_string <- scan("rosalind_string.txt", what = "character", sep = NULL)
 ```{r}
 count_pattern <- function(myString, pattern){
   count <- 0
+  k <- nchar(pattern)
   for(i in 1:nchar(myString)){
-    if(str_sub(myString, start = i, end = i+8) == pattern){
+    if(str_sub(myString, start = i, end = i+k - 1) == pattern){
       count = count + 1
     }
   }
@@ -499,4 +500,238 @@ In this last Challenge, I wrote a new function called `count_pattern()` that cou
 
 # **Finding the Replication Origin, Part II**
 
+In this notebook, I will continue using code to determine the replication origin in a genome. DNA replication begins at a certain position in the genome called the origin. The origin consists of a specific set of DNA sequences that signal to the cell's machinery the correct position to start replication. In bacteria, one of the proteins that helps with replication is called *DnaA*. This protein binds to sequences in the genome called *DnaA boxes*, which are strings of 9 nucleotides that are repeated more frequently around the origin of replication.
+
+I am challenged to combine my `generate_k_mers()` and `count_patterns()` functions into a new function called `generate_frequent_k_mers()`. This should then build a list of the most frequent `k`-mers. My function should take two parameters, `genomeString` and `k`.
+
 ## Challenge 1
+
+```{r}
+generate_k_mers <- function(genome_String, k=3) {
+  list_codon <- c()
+
+  for(i in seq(1, nchar(genome_String) - k+ 1, by = k)) {
+  list_codon <- list_codon %>%
+  append(str_sub(genome_String, start = i, end = i + k-1))
+    }
+  return(list_codon)
+}
+generate_k_mers("ACACAGACATCCCACCCC")
+
+```
+
+Challenge 1 involves finding the most frequent words in a string. I began by practicing with a small genome and used the `generate_k_mers` function to count the 3-mers in that sequence. I notice that that 3-mer "ACA" is repeated. Next in this challenge, I figured out how to combine my `generate_k_mers` function with my `count_ pattern` function so that it will count and report the most frequently occurring `k`-mers. I considered what's needed in this new function, called `generate_frequent_kmers` , by asking things like...
+
+-   How can I use my existing `generate_k_mers` function to generate a list of `k`-mers of length `k` from a `genomeString`?
+
+-   How can I use my `count_pattern` function to count this list of `k`-mers that I generated? This may involve a `for` loop!
+
+-   How will I tell my function to return only the most frequent patterns?
+
+```{r}
+find_frequent_kmers <- function(genome_String, k) {
+  kmers <- generate_k_mers(genome_String, k)
+  kmers <- unique(kmers)
+  kmer_counts <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_counts[i] <- count_pattern(genome_String, kmers[i])
+  }
+    max_freq <- max(kmer_counts)
+    freq_kmers <- kmers[kmer_counts == max_freq]
+    return(freq_kmers)
+}
+
+find_frequent_kmers("ACACAGACATCCCACCCC",3)
+  
+```
+
+I read in the sample sequence from the Notebook guide and called it genomeString. I instructed R to report the 3-mers in the sequence. It reported the 3-mers without counting the repeated ACA twice. But it should just report "ACA" since this 3-mer is the most frequent.
+
+```{r}
+generate_k_mers <- function(genome_String, k) {
+  list_k_mers <- c()
+
+  for(i in 1:(nchar(genome_String) - (k-1))){
+  list_k_mers <- list_k_mers %>%
+  append(str_sub(genome_String, start = i, end = i + k-1))
+    }
+  return(list_k_mers)
+}
+generate_k_mers("ACACAGACATCCCACCCC", k=3)
+```
+
+### Rosalind Word Problem
+
+I will now test the ability of my function to try and solve the Rosalind Frequent Words Problem. Before downloading the whole data set, I will test my code on a sample data set first. I read in the Rosalind sequence and called it genome. I then used the find_frequent_kmers function to count the 4-mers.
+
+#### SAMPLE PROBLEM
+
+```{r}
+genome <- "ACGTTGCATGTCGCATGATGCATGAGAGCT"
+```
+
+```{r}
+find_frequent_kmers <- function(genome, k) {
+  #Get the Kmers
+  kmers <- generate_k_mers(genome, k)
+  kmers <- unique(kmers)
+  #Count occurences 
+  kmer_counts <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_counts[i] <- count_pattern(genome, kmers[i])
+  }
+  max_freq <- max(kmer_counts)
+  freq_kmers <- kmers[kmer_counts==max_freq]
+  return(freq_kmers)
+  
+}
+
+find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT", k = 4)
+```
+
+#### CHALLENGE PROBLEM
+
+Here is the Rosalind sequence that I read in from the word problem. I called it rosalindGenome.
+
+```{r}
+rosalindGenome <- "TCTCTCATAATAAGGAAGTGCTAAGAATAAGGAAAATAAGGAATCTCTCATGTGCTAAGGGGTCCTCTTCTCTCATAATAAGGAAAATAAGGAAAATAAGGAAAATAAGGAATCTCTCATTCTCTCATGGGTCCTCTTAGGCAGGGGGGTCCTCTAATAAGGAATAGGCAGGGGTGCTAAGGGGTCCTCTTCTCTCATAATAAGGAATAGGCAGGGGTGCTAAGGGGTCCTCTGTGCTAAGTAGGCAGGGGGGTCCTCTGTGCTAAGTCTCTCATGGGTCCTCTAATAAGGAATCTCTCATAATAAGGAAAATAAGGAATCTCTCATTCTCTCATGGGTCCTCTGGGTCCTCTTCTCTCATTAGGCAGGGTCTCTCATTAGGCAGGGGTGCTAAGGGGTCCTCTAATAAGGAAGGGTCCTCTAATAAGGAATAGGCAGGGAATAAGGAAGTGCTAAGTAGGCAGGGGGGTCCTCTTAGGCAGGGTCTCTCATGGGTCCTCTTCTCTCATGTGCTAAGAATAAGGAATAGGCAGGGAATAAGGAATCTCTCATAATAAGGAAAATAAGGAAGTGCTAAGTCTCTCATGGGTCCTCTGGGTCCTCTAATAAGGAAGTGCTAAGGGGTCCTCTGTGCTAAGTCTCTCATTAGGCAGGGTAGGCAGGGGGGTCCTCTTCTCTCATGGGTCCTCTGGGTCCTCTTAGGCAGGGTAGGCAGGGAATAAGGAATAGGCAGGGGTGCTAAGTCTCTCATAATAAGGAATAGGCAGGGTAGGCAGGGGGGTCCTCTGGGTCCTCTTAGGCAGGGAATAAGGAAGTGCTAAGGTGCTAAGGGGTCCTCTGTGCTAAGTAGGCAGGGGGGTCCTCTGTGCTAAGGGGTCCTCTGTGCTAAGGGGTCCTCTGGGTCCTCT"
+```
+
+```{r}
+find_frequent_kmers <- function(rosalindGenome, k) {
+  #Get the k mers
+  kmers <- generate_k_mers(rosalindGenome, k)
+  kmers <- unique(kmers)
+  #Count occurences 
+  kmer_counts <- rep(0, length(kmers))
+  for(i in 1: length(kmers)) {
+    kmer_counts[i] <- count_pattern(rosalindGenome, kmers[i])
+  }
+  max_freq <- max(kmer_counts)
+  freq_kmers <- kmers[kmer_counts==max_freq]
+  return(freq_kmers)
+  
+}
+
+find_frequent_kmers(rosalindGenome, k = 12)
+
+```
+
+As seen above, I used my `find_frequent_kmers` function to run through the entire sequence, pulling k-mers from `rosalindGenome`. The code stores the list of the most frequently occurring k-mers as `frequent_kmers`. The kmer length listed by Rosalind that I must find is 12, so I set the `k` value to equal 12.
+
+```{r}
+frequent_kmers<- find_frequent_kmers(rosalindGenome, k=12)
+noquote(frequent_kmers)
+```
+
+I used `noquote(frequent_kmers)` to print the k-mers out in a single line with no quotations so I can copy and paste it in the submussion box using the correct format. I got the Rosalind Word Problem correct! This confirms that my code is working properly.
+
+## Challenge 2
+
+While undergoing DNA replication, DNA polymerase can make mistakes while it replicates the genome. Unfortunately the nucleotides in these DnaA boxes we're searching for, don't appear the way we need them to. Additionally, the replication signal we are looking for may appear as both the k-mer signaling that replication should begin, or as its reverse complement. Because of this, we need to create a code to count reverse complements as well as near k-mers.
+
+A and T are complementary base pairs, as well as G and C. This means that in double-stranded DNA, we should see across from each Adenine (A) a Thymine (T), across from each Cytosine (C) a Guanine (G), and vice-versa. This means that if we look across from a segment of DNA, we can see the reverse complement of that segment. The "reverse" refers to the fact that the complementary sequence is also anti-parallel, meaning 5' and 3' ends are oriented in opposite directions on each side of the double strand. Thus, we read the complementary sequence in reverse order.
+
+Challenge 2 involves solving the Reverse-Complement Problem. I must do this by inputting a pattern of nucleotides called `genomeSubString`and hopefully get an output of the reverse-complement of `genomeSubString.` I created the `reverse_complement` function to run through the whole sequence from the input, and output the reverse complement of the sequence. The code will return the complementary nucleotide each time it loops past a nucleotide, using `if` statements to tell the code to run only if the target nucleotide is present. Meaning, every time the code encounters an Adenine, the `reverse_complement` function will return Thymine, and vice versa. This is also applied for Cytosine and Guanine, using `if` statements as well.
+
+```{r}
+reverse_complement <- function(substring){
+  #reverse the substring
+  substring_list <- str_split(substring,"")[[1]]
+  rev_substring <- rev(substring_list)
+  #Get complimentary Base-Pairs
+  rev_complement <- c()
+  for(i in 1:length(rev_substring)){
+    if(rev_substring[i]=="A"){
+      rev_complement <- append(rev_complement, "T")
+    }
+    if(rev_substring[i]=="T"){
+      rev_complement <- append(rev_complement, "A")
+    }
+    if(rev_substring[i]=="G"){
+      rev_complement <- append(rev_complement, "C")
+    }
+    if(rev_substring[i]=="C"){
+      rev_complement <- append(rev_complement, "G")
+    }
+    }
+  rev_complement <- paste(rev_complement, collapse = "")
+  return(rev_complement)
+}
+reverse_complement("AAAACCCGGT")
+```
+
+In the code above I tested my code with the sample data set from the Rosalind reverse complement problem. This confirmed my code is working so I will now apply it with the challenge data set below. I first downloaded and saved the data sequence to my laptop, then read the data into R. Lastly, I input the data to the `reverse_complement` function.
+
+```{r}
+revcompGenome <- scan("rosalind_ba1c (3).txt", what = "character", sep = NULL)
+```
+
+```{r}
+reverse_complement(revcompGenome)
+```
+
+I found the reverse complement of a string and got the Rosalind Complement Problem correct!
+
+# **Finding the Replication Origin, Part III**
+
+## Challenge 1
+
+The first challenge in Replication Origin Notebook, Part III involves implementing a clump-finding algorithm. I first created a dictionary of all possible `k`-mers and initialized it with counts of 0 at the beginning of my function.
+
+```{r}
+initialize_k_mer_dict <- function(k){
+  nucleotides <- c("A", "C", "G", "T")
+
+  k_mers_dict <- expand.grid(rep(list(nucleotides), k)) %>%
+    unite("k_mers", everything(), remove = TRUE, sep = "") %>%
+    unique() %>%
+    mutate(count = 0)
+  
+  return(k_mers_dict)
+}
+
+k_mers_dict <- initialize_k_mer_dict(9)
+```
+
+I then implemented `clump_finding()` on a small example. This function pulls from a sequence called `genomeString` and takes parameters `L`, `t`, and `k`. `L` indicates the size of the window we are observing and instructs the code to look in a specific area of the genome. `T` counts the frequency of occurrences, while `k` indicates the integer length of k-mers to be returned. If working correctly, this code should result in a set of `k`-mers forming (`L`, `t`)-clumps within `genomeString.`
+
+```{r}
+clump_finding <- function(genomeString, L, t, k){
+  initial_window <- str_sub(genomeString, i, L)
+  my_kmer_dict <- intialize_kmer_dict (k)
+  for(i in 1: L-k+1){
+    curr_kmer<- str_sub(initial_window, i, i+k-1)
+    curr_count<- count_pattern(initial_window, curr_kmer)
+    curr_row<- which(my_kmer_dict$kmer==curr_kmer)
+    my_kmer_dict$count[curr_row]<-curr_count
+  }
+  candidates<- my_kmer_dict%>%
+    filter(count>=t)%>%
+    pull(k_mer)
+  for(j in 2:(ng -(L-2))){
+    rem_pattern <- str_sub(genome, j -1, j-1+ (k-1))
+    add_pattern <- str_sub(genome, j + (L-2)-(k-1), j+ (L-2))
+    
+    rem_row <- which(kmer_dict$k_mers == rem_pattern)
+    add_row <- which(kmer_dict$k_mers == add_pattern)
+    
+    kmer_dict$count[rem_row] <- kmer_dict$count [rem_row] - 1
+    kmer_dict$count [add_row] <- kmer_dict$count [add_row] +1
+    
+    if(kmer_dict$count[add_row] >= t){
+      candidates <- append(candidates, add_pattern)
+      candidates <- unique(candidates)
+    }
+  }
+  return(candidates) 
+}
+```
+
+## Challenge 2
+
+Adding functionality, or optimize!
+
+This challenge involves finding all 9-mers corresponding to (500, 3)-clumps in the *E. Coli* genome. However, we modified it during class so that we did not utilize the E.Coli genome. In order to call this a function, it must pass a window length, t-value, and k-value. We scanned in the E.Coli genome and tried to run and test our code in class, but then realized it takes too long. The `clump_finding` function works on smaller genomes, but was too slow to run through E.Coli's 4.6 million nucleotide genome. This suggests that the code needs to be further optimized in order to run this genome.
+
+In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the `set.seed()` function to set a seed for random number generation to ensure consistent results. I also used code to make `for` loops, and `if/else` statements to make sure the code is only ran when specific criteria are met. After many trial and errors, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the `clump_finding()` algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!

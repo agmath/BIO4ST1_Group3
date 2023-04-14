@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -158,14 +158,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">sample</span>(nucleotides, <span class="at">size =</span> Genome, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "T" "C" "A" "T" "A" "A" "A" "C" "A" "A" "C" "C" "A" "G" "C"</code></pre>
+<pre><code> [1] "T" "G" "T" "A" "C" "G" "C" "A" "G" "G" "C" "C" "A" "T" "C"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "TCATAAACAACCAGC"</code></pre>
+<pre><code>[1] "TGTACGCAGGCCATC"</code></pre>
 </div>
 </div>
 <p>In Challenge 2 I used code to create a random string of 15 nucleotides, titled randGenome. The <code>paste()</code> method was used to collapse the genome of nucleotides down to a single string, so it’s easier to read. When I compared my collapsed genome with a classmate, I noticed that we generated very different genomes.</p>
@@ -180,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>randGenome <span class="ot">&lt;-</span> <span class="fu">paste</span>(randGenome, <span class="at">collapse =</span> <span class="st">""</span> )</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>randGenome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "CTAATCCGTCGCCTACGCGCAGCAGTAGAGTCATCTCGTTGAAAAGTCCGAGACACCTAGGATCGTATCTGGGCAGTAACCGATACCAACAGACTCTCCTGACTCTTAAGCCCCTATTGTCGAGACACTGTCAAGCATGTGTCAACAAATACCAGGTGACTGACTCACAGTCATCACCTTTTCATAAGATCGACAAAGTTACGTCAGATCATGATTCCCTACGCGACGAAGCGGTCTTACTCCGGGTCAGTAATCGCGCTCCCTCTGTAGGATGCGAGTGCTACTTATGTGGCGTACCGGGGCACGAGCACTGGTAGGTGGAACAATAGCCCGCTAGTGAGCCCATATACGCCAAAAGTATCAAATCCTCCCATTAGAGTACGCAAATTTGAAGGAGGACTTTGCGTTCACTTTCGAGTTACACAGAACCCAACGGTAAGATAGTGTAGCATGTTTCCATCTTGATTCGTGTGGTACTGACCCTTTGCGTAGTAGCCCCTCGAGTCGGTGTTCCAGACTTGGGTACCACTGGTCACCACAAGAGTTCTGAATGCACTTCCCTATGGTAAGGTCACCAATTCAATGGTTAGCTTGACCCTAATCTGGATTTAGCAGTATCCGCTGCTCCGATACCATGCGTCACTCACGAAGGAAGTAATTACTGGGGTGCCTACTTATGAATCGCAACACAAATTTTATATTCCTATTTACCTCTCTCGGACACCCAACGGATGCCTGGTTACGTATAGGACTACAAGCTCCAGAACAATGGGATAAGCCAGCAAGCAAACTATTTGGACAAGAGCCTGATCTGCGCTTTTAAGGTGCATGCTTACTAACCGTTGATAACCTCAAAAGGCCATAGTGTTTCGTTCGTCCGTATACCTCAAACCAGCGTTGCAAGTGGGACTTGATGGAGCGGTCTAGGGCTATCTCGCAAGTGATATGTTGTTACAGAACTGTGGTGCACTATCAACGTAGAGCCTTAATTCTTGCCCTGTTGCGCGGCATCGATGCACGGATCGCCGAGAAATCACTCGAGTACCCCCCGGTCGCGGACCTCAGGGGCGATAGACTGAGGTGGGTACAGTGTTTGGCTTCTATAAATCGTTTCGGTCGGCCCATCATGATTTAGTGTGCGCGACATTTCCCCACAATTCCCAGTCGTATTCACATTCGAAGTGCTAACATACCTCGGGTTTCTATCTCGGTGGCCGGCGTAAGGGGCCCTAGAAGACTGCCCTGTTATATGCTTAAATTCGGGGAGCAGTGAAACCCATGGATGAACAGCGGATTCTTGCTTTATTACTCCTTGGACGTGCAACTCGCTTGGTTCAAAGGCTGCTAAGTACCCGAAACAGACCTCTCCAGGGATCAACATCAAATGATGGTTGTAGATACAAGTCACCGTGATACATATTAATAAAATGGGATTGCACAAAATGGCTCTGTCATTCAGCGTCGGCGCTAAAACCTGTCACCTTGTTAGAATTATGTTAT"</code></pre>
+<pre><code>[1] "AACAAATTTACTTTCCTAACAGAGGGAGCTGAGGGGAGCAGTTGTTCCTTTCCCGAGAGATTCTTGGCTGGCTGTATACAGTAAGACGTCTATACTAGAGGCTCACACTCGGGCTACCGATACGTGATTACTTGAAAACAAGCTTGGACAGTAGCTGTCGGAAGATCCCGATCTGCGTCGTCTTAGTGTGAATAGCTGCTGAGGAGCTTAGAATGACTCAAAATCTTAAGTGAGACACCCGAATCGCTCGACAGGCAAGTACCAGCCTCGTGAGGGAAAATTATCTACACACGAAAAGCAAGCAATGTGAGTGAAGGGTACTTATCATCATCCCTCTCGGACGCAGGGGACGATCCACCGCAATATTTGTTAACTATGGGCAAATAAGCATCAAGTGCAAGGCGCGACGAAGAATGACACATTATATAGAGCAACTAGCCAAGGGACCAAGCTTTACTGGTCGCCTCCCAGGAACGCCACTGACGCGACTACTAACATACGGTCCTTTACTAAAGACACTAGGCCCACTAGTGACGCTCCTTTACCTGCCCGCTAGTGTAACGAGTCAGCACAAGGCAGCGTAAGTTACGGTTTCAACGTGCGAGCCCAGGTCGGATAAGACTTCGGGTTGTCAGCTCCCGCCAGTGTTTTGAGGCCAAGCTTCATGAAAAATAACAATGGCATAGTGGCAGGTCCTAGGTGCCCGCTGCGTGGTTCGCAGCAGGCATCGTCGGGCATCACGCGTAACGCTATTACATAACCTTGAATTTCGCCAGGCCCAGCACAGAATAGTTAAAAGCACTTTTTCTTTACACCAGACGCAGAATACATACAGTATGTTGATACCAATTCTTGTCAATTAGTCACTTCGGCCCCGTACGCTGACTCCAACGACGATTCAGACTGTTTATTGATTACCGTGCAGCTGGTTGGCTGTAATAATGACGCCGTGTACTAGGCTCCCTTTCCCCGTAGCACAGCAGCAGAAGTCGAACGCGCATACCCAACCAGGAATGCCTTAAGTAGACGCACGGCTTTTCGTGATGCTCCCGACGAATGCCTTCACCCGCGATCTAATGTATCCCCGGATGCCGCAGACCCTGGCTTAGCTGATCTAACCGAATATAAAGTCAGACTGCGCTTAAGCGGCGTAGTGGGTCGACCAGCTAAGAAGGGCGTTGGTGCCCGAGAAATGCCGCATTTCAAAAATGCAAGACCTAACGTTAGCAGCTCTACCAACTGGCTGTCACTACTATATTCCTTACCCGCTTGGAACGCCCTGATCGGAAGCGCCAGTGCGATTCGACATCAAGAGCTCAGTGTATACTACTCACACAGGTCGAAAATAACCCGTATGGTGCATGGTCAGATACGCAAACGTTAGTTAATTCCGCCGTGACAGCATAGGGCCAGGGTCAGAACTAGCCCCGAGACAGATTATTTCGACAAAACTGGTCTGCCACGTGCGGATAGAACCGGGTACCAATTAAATCCTCCCTG"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -658,17 +658,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="challenge-5-1" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-5-1">Challenge 5</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>nt_patterns <span class="ot">&lt;-</span> <span class="cf">function</span>(string, pattern) {</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  nt_matches <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>count_patterns <span class="ot">&lt;-</span> <span class="cf">function</span>(string, pattern) {</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">nchar</span>(string))){</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> <span class="fu">nchar</span>(string)){</span>
 <span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(string, i, i <span class="sc">+</span> <span class="fu">str_length</span>(pattern)<span class="sc">-</span><span class="dv">1</span>) <span class="sc">==</span> pattern){</span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>      nt_matches <span class="ot">=</span> nt_matches <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(nt_matches)</span>
-<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nt_patterns</span>(<span class="fu">rand_Genome</span>(<span class="dv">2000</span>), <span class="st">"CTG"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="fu">count_patterns</span>(<span class="fu">rand_Genome</span>(<span class="dv">2000</span>), <span class="st">"CTG"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 31</code></pre>
 </div>
@@ -682,15 +682,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>count_pattern <span class="ot">&lt;-</span> <span class="cf">function</span>(myString, pattern){</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(myString)){</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(myString, <span class="at">start =</span> i, <span class="at">end =</span> i<span class="sc">+</span><span class="dv">8</span>) <span class="sc">==</span> pattern){</span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="fu">count_pattern</span> (rosalind_string, <span class="st">"GTGGCCAGT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">nchar</span>(pattern)</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(myString)){</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">str_sub</span>(myString, <span class="at">start =</span> i, <span class="at">end =</span> i<span class="sc">+</span>k <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">==</span> pattern){</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>      count <span class="ot">=</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count)</span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a><span class="fu">count_pattern</span> (rosalind_string, <span class="st">"GTGGCCAGT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22</code></pre>
 </div>
@@ -703,8 +704,241 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="finding-the-replication-origin-part-ii" class="level1">
 <h1><strong>Finding the Replication Origin, Part II</strong></h1>
+<p>In this notebook, I will continue using code to determine the replication origin in a genome. DNA replication begins at a certain position in the genome called the origin. The origin consists of a specific set of DNA sequences that signal to the cell’s machinery the correct position to start replication. In bacteria, one of the proteins that helps with replication is called <em>DnaA</em>. This protein binds to sequences in the genome called <em>DnaA boxes</em>, which are strings of 9 nucleotides that are repeated more frequently around the origin of replication.</p>
+<p>I am challenged to combine my <code>generate_k_mers()</code> and <code>count_patterns()</code> functions into a new function called <code>generate_frequent_k_mers()</code>. This should then build a list of the most frequent <code>k</code>-mers. My function should take two parameters, <code>genomeString</code> and <code>k</code>.</p>
 <section id="challenge-1-2" class="level2">
 <h2 class="anchored" data-anchor-id="challenge-1-2">Challenge 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>generate_k_mers <span class="ot">&lt;-</span> <span class="cf">function</span>(genome_String, <span class="at">k=</span><span class="dv">3</span>) {</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  list_codon <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">nchar</span>(genome_String) <span class="sc">-</span> k<span class="sc">+</span> <span class="dv">1</span>, <span class="at">by =</span> k)) {</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>  list_codon <span class="ot">&lt;-</span> list_codon <span class="sc">%&gt;%</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">append</span>(<span class="fu">str_sub</span>(genome_String, <span class="at">start =</span> i, <span class="at">end =</span> i <span class="sc">+</span> k<span class="dv">-1</span>))</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_codon)</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_k_mers</span>(<span class="st">"ACACAGACATCCCACCCC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ACA" "CAG" "ACA" "TCC" "CAC" "CCC"</code></pre>
+</div>
+</div>
+<p>Challenge 1 involves finding the most frequent words in a string. I began by practicing with a small genome and used the <code>generate_k_mers</code> function to count the 3-mers in that sequence. I notice that that 3-mer “ACA” is repeated. Next in this challenge, I figured out how to combine my <code>generate_k_mers</code> function with my <code>count_ pattern</code> function so that it will count and report the most frequently occurring <code>k</code>-mers. I considered what’s needed in this new function, called <code>generate_frequent_kmers</code> , by asking things like…</p>
+<ul>
+<li><p>How can I use my existing <code>generate_k_mers</code> function to generate a list of <code>k</code>-mers of length <code>k</code> from a <code>genomeString</code>?</p></li>
+<li><p>How can I use my <code>count_pattern</code> function to count this list of <code>k</code>-mers that I generated? This may involve a <code>for</code> loop!</p></li>
+<li><p>How will I tell my function to return only the most frequent patterns?</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>find_frequent_kmers <span class="ot">&lt;-</span> <span class="cf">function</span>(genome_String, k) {</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">generate_k_mers</span>(genome_String, k)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">unique</span>(kmers)</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  kmer_counts <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(kmers))</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> <span class="fu">length</span>(kmers)) {</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>    kmer_counts[i] <span class="ot">&lt;-</span> <span class="fu">count_pattern</span>(genome_String, kmers[i])</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>    max_freq <span class="ot">&lt;-</span> <span class="fu">max</span>(kmer_counts)</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>    freq_kmers <span class="ot">&lt;-</span> kmers[kmer_counts <span class="sc">==</span> max_freq]</span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(freq_kmers)</span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a><span class="fu">find_frequent_kmers</span>(<span class="st">"ACACAGACATCCCACCCC"</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ACA" "CCC"</code></pre>
+</div>
+</div>
+<p>I read in the sample sequence from the Notebook guide and called it genomeString. I instructed R to report the 3-mers in the sequence. It reported the 3-mers without counting the repeated ACA twice. But it should just report “ACA” since this 3-mer is the most frequent.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>generate_k_mers <span class="ot">&lt;-</span> <span class="cf">function</span>(genome_String, k) {</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  list_k_mers <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nchar</span>(genome_String) <span class="sc">-</span> (k<span class="dv">-1</span>))){</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  list_k_mers <span class="ot">&lt;-</span> list_k_mers <span class="sc">%&gt;%</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">append</span>(<span class="fu">str_sub</span>(genome_String, <span class="at">start =</span> i, <span class="at">end =</span> i <span class="sc">+</span> k<span class="dv">-1</span>))</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(list_k_mers)</span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_k_mers</span>(<span class="st">"ACACAGACATCCCACCCC"</span>, <span class="at">k=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "ACA" "CAC" "ACA" "CAG" "AGA" "GAC" "ACA" "CAT" "ATC" "TCC" "CCC" "CCA"
+[13] "CAC" "ACC" "CCC" "CCC"</code></pre>
+</div>
+</div>
+<section id="rosalind-word-problem" class="level3">
+<h3 class="anchored" data-anchor-id="rosalind-word-problem">Rosalind Word Problem</h3>
+<p>I will now test the ability of my function to try and solve the Rosalind Frequent Words Problem. Before downloading the whole data set, I will test my code on a sample data set first. I read in the Rosalind sequence and called it genome. I then used the find_frequent_kmers function to count the 4-mers.</p>
+<section id="sample-problem" class="level4">
+<h4 class="anchored" data-anchor-id="sample-problem">SAMPLE PROBLEM</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>genome <span class="ot">&lt;-</span> <span class="st">"ACGTTGCATGTCGCATGATGCATGAGAGCT"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>find_frequent_kmers <span class="ot">&lt;-</span> <span class="cf">function</span>(genome, k) {</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Get the Kmers</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">generate_k_mers</span>(genome, k)</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">unique</span>(kmers)</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Count occurences </span></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  kmer_counts <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(kmers))</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> <span class="fu">length</span>(kmers)) {</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>    kmer_counts[i] <span class="ot">&lt;-</span> <span class="fu">count_pattern</span>(genome, kmers[i])</span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>  max_freq <span class="ot">&lt;-</span> <span class="fu">max</span>(kmer_counts)</span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>  freq_kmers <span class="ot">&lt;-</span> kmers[kmer_counts<span class="sc">==</span>max_freq]</span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(freq_kmers)</span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a><span class="fu">find_frequent_kmers</span>(<span class="st">"ACGTTGCATGTCGCATGATGCATGAGAGCT"</span>, <span class="at">k =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GCAT" "CATG"</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-problem" class="level4">
+<h4 class="anchored" data-anchor-id="challenge-problem">CHALLENGE PROBLEM</h4>
+<p>Here is the Rosalind sequence that I read in from the word problem. I called it rosalindGenome.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>rosalindGenome <span class="ot">&lt;-</span> <span class="st">"TCTCTCATAATAAGGAAGTGCTAAGAATAAGGAAAATAAGGAATCTCTCATGTGCTAAGGGGTCCTCTTCTCTCATAATAAGGAAAATAAGGAAAATAAGGAAAATAAGGAATCTCTCATTCTCTCATGGGTCCTCTTAGGCAGGGGGGTCCTCTAATAAGGAATAGGCAGGGGTGCTAAGGGGTCCTCTTCTCTCATAATAAGGAATAGGCAGGGGTGCTAAGGGGTCCTCTGTGCTAAGTAGGCAGGGGGGTCCTCTGTGCTAAGTCTCTCATGGGTCCTCTAATAAGGAATCTCTCATAATAAGGAAAATAAGGAATCTCTCATTCTCTCATGGGTCCTCTGGGTCCTCTTCTCTCATTAGGCAGGGTCTCTCATTAGGCAGGGGTGCTAAGGGGTCCTCTAATAAGGAAGGGTCCTCTAATAAGGAATAGGCAGGGAATAAGGAAGTGCTAAGTAGGCAGGGGGGTCCTCTTAGGCAGGGTCTCTCATGGGTCCTCTTCTCTCATGTGCTAAGAATAAGGAATAGGCAGGGAATAAGGAATCTCTCATAATAAGGAAAATAAGGAAGTGCTAAGTCTCTCATGGGTCCTCTGGGTCCTCTAATAAGGAAGTGCTAAGGGGTCCTCTGTGCTAAGTCTCTCATTAGGCAGGGTAGGCAGGGGGGTCCTCTTCTCTCATGGGTCCTCTGGGTCCTCTTAGGCAGGGTAGGCAGGGAATAAGGAATAGGCAGGGGTGCTAAGTCTCTCATAATAAGGAATAGGCAGGGTAGGCAGGGGGGTCCTCTGGGTCCTCTTAGGCAGGGAATAAGGAAGTGCTAAGGTGCTAAGGGGTCCTCTGTGCTAAGTAGGCAGGGGGGTCCTCTGTGCTAAGGGGTCCTCTGTGCTAAGGGGTCCTCTGGGTCCTCT"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>find_frequent_kmers <span class="ot">&lt;-</span> <span class="cf">function</span>(rosalindGenome, k) {</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Get the k mers</span></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">generate_k_mers</span>(rosalindGenome, k)</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>  kmers <span class="ot">&lt;-</span> <span class="fu">unique</span>(kmers)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Count occurences </span></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  kmer_counts <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(kmers))</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> <span class="fu">length</span>(kmers)) {</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>    kmer_counts[i] <span class="ot">&lt;-</span> <span class="fu">count_pattern</span>(rosalindGenome, kmers[i])</span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>  max_freq <span class="ot">&lt;-</span> <span class="fu">max</span>(kmer_counts)</span>
+<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>  freq_kmers <span class="ot">&lt;-</span> kmers[kmer_counts<span class="sc">==</span>max_freq]</span>
+<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(freq_kmers)</span>
+<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb84-15"><a href="#cb84-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-16"><a href="#cb84-16" aria-hidden="true" tabindex="-1"></a><span class="fu">find_frequent_kmers</span>(rosalindGenome, <span class="at">k =</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GTGCTAAGGGGT" "TGCTAAGGGGTC" "GCTAAGGGGTCC" "CTAAGGGGTCCT" "TAAGGGGTCCTC"
+[6] "AAGGGGTCCTCT"</code></pre>
+</div>
+</div>
+<p>As seen above, I used my <code>find_frequent_kmers</code> function to run through the entire sequence, pulling k-mers from <code>rosalindGenome</code>. The code stores the list of the most frequently occurring k-mers as <code>frequent_kmers</code>. The kmer length listed by Rosalind that I must find is 12, so I set the <code>k</code> value to equal 12.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>frequent_kmers<span class="ot">&lt;-</span> <span class="fu">find_frequent_kmers</span>(rosalindGenome, <span class="at">k=</span><span class="dv">12</span>)</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">noquote</span>(frequent_kmers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] GTGCTAAGGGGT TGCTAAGGGGTC GCTAAGGGGTCC CTAAGGGGTCCT TAAGGGGTCCTC
+[6] AAGGGGTCCTCT</code></pre>
+</div>
+</div>
+<p>I used <code>noquote(frequent_kmers)</code> to print the k-mers out in a single line with no quotations so I can copy and paste it in the submussion box using the correct format. I got the Rosalind Word Problem correct! This confirms that my code is working properly.</p>
+</section>
+</section>
+</section>
+<section id="challenge-2-2" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-2-2">Challenge 2</h2>
+<p>While undergoing DNA replication, DNA polymerase can make mistakes while it replicates the genome. Unfortunately the nucleotides in these DnaA boxes we’re searching for, don’t appear the way we need them to. Additionally, the replication signal we are looking for may appear as both the k-mer signaling that replication should begin, or as its reverse complement. Because of this, we need to create a code to count reverse complements as well as near k-mers.</p>
+<p>A and T are complementary base pairs, as well as G and C. This means that in double-stranded DNA, we should see across from each Adenine (A) a Thymine (T), across from each Cytosine (C) a Guanine (G), and vice-versa. This means that if we look across from a segment of DNA, we can see the reverse complement of that segment. The “reverse” refers to the fact that the complementary sequence is also anti-parallel, meaning 5’ and 3’ ends are oriented in opposite directions on each side of the double strand. Thus, we read the complementary sequence in reverse order.</p>
+<p>Challenge 2 involves solving the Reverse-Complement Problem. I must do this by inputting a pattern of nucleotides called <code>genomeSubString</code>and hopefully get an output of the reverse-complement of <code>genomeSubString.</code> I created the <code>reverse_complement</code> function to run through the whole sequence from the input, and output the reverse complement of the sequence. The code will return the complementary nucleotide each time it loops past a nucleotide, using <code>if</code> statements to tell the code to run only if the target nucleotide is present. Meaning, every time the code encounters an Adenine, the <code>reverse_complement</code> function will return Thymine, and vice versa. This is also applied for Cytosine and Guanine, using <code>if</code> statements as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>reverse_complement <span class="ot">&lt;-</span> <span class="cf">function</span>(substring){</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#reverse the substring</span></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  substring_list <span class="ot">&lt;-</span> <span class="fu">str_split</span>(substring,<span class="st">""</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  rev_substring <span class="ot">&lt;-</span> <span class="fu">rev</span>(substring_list)</span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Get complimentary Base-Pairs</span></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  rev_complement <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rev_substring)){</span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(rev_substring[i]<span class="sc">==</span><span class="st">"A"</span>){</span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>      rev_complement <span class="ot">&lt;-</span> <span class="fu">append</span>(rev_complement, <span class="st">"T"</span>)</span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(rev_substring[i]<span class="sc">==</span><span class="st">"T"</span>){</span>
+<span id="cb88-12"><a href="#cb88-12" aria-hidden="true" tabindex="-1"></a>      rev_complement <span class="ot">&lt;-</span> <span class="fu">append</span>(rev_complement, <span class="st">"A"</span>)</span>
+<span id="cb88-13"><a href="#cb88-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb88-14"><a href="#cb88-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(rev_substring[i]<span class="sc">==</span><span class="st">"G"</span>){</span>
+<span id="cb88-15"><a href="#cb88-15" aria-hidden="true" tabindex="-1"></a>      rev_complement <span class="ot">&lt;-</span> <span class="fu">append</span>(rev_complement, <span class="st">"C"</span>)</span>
+<span id="cb88-16"><a href="#cb88-16" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb88-17"><a href="#cb88-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(rev_substring[i]<span class="sc">==</span><span class="st">"C"</span>){</span>
+<span id="cb88-18"><a href="#cb88-18" aria-hidden="true" tabindex="-1"></a>      rev_complement <span class="ot">&lt;-</span> <span class="fu">append</span>(rev_complement, <span class="st">"G"</span>)</span>
+<span id="cb88-19"><a href="#cb88-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb88-20"><a href="#cb88-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb88-21"><a href="#cb88-21" aria-hidden="true" tabindex="-1"></a>  rev_complement <span class="ot">&lt;-</span> <span class="fu">paste</span>(rev_complement, <span class="at">collapse =</span> <span class="st">""</span>)</span>
+<span id="cb88-22"><a href="#cb88-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rev_complement)</span>
+<span id="cb88-23"><a href="#cb88-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb88-24"><a href="#cb88-24" aria-hidden="true" tabindex="-1"></a><span class="fu">reverse_complement</span>(<span class="st">"AAAACCCGGT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ACCGGGTTTT"</code></pre>
+</div>
+</div>
+<p>In the code above I tested my code with the sample data set from the Rosalind reverse complement problem. This confirmed my code is working so I will now apply it with the challenge data set below. I first downloaded and saved the data sequence to my laptop, then read the data into R. Lastly, I input the data to the <code>reverse_complement</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>revcompGenome <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"rosalind_ba1c (3).txt"</span>, <span class="at">what =</span> <span class="st">"character"</span>, <span class="at">sep =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reverse_complement</span>(revcompGenome)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "CCGAAAGACTCGAATATCTCTACGATCGTACTTAGAAGGTGTTCATGTCAATCAAGCCGTGCACATGGACTGCGGCCAACGTATATCAAAGCATCCGCGGGTTTGGAGATGGGCAGTATTAATGGCCGCCTTCCATGGTCTCCTCGACGAGGCAGTTAGACGAGGCTGTCTTACTGTAGGTGCGAGTCCCAAGATTGTGTACCAAGGTTGCCGTTTAGAACACCGGGCCCGTTGCACATATTCGGAGAGTCCCGAAGGTGGCTGGCTCATTCGGAGCTTATGGAAGTATTATCTTGCAATACCAAGGGCTGGACAATGGGGTCAGAAGCACCGCTACAAAGAACGTACAGCTTCCCAATTTCGGCCAAGGAGAGCTTTACGAATTGGAAGCTACTACCTATTCTGTAGGGGACATATAGACCCGCATGGGGACACTCTATCACCTGCGGTAGCCTCAAGCACGCCGAAGCGCCTTACTCCTACCCGTCAAGATACGGTTGGTCGATTTGAAGTCTTCCACTGCGGGTTCAGTCGAACCTCGGTGTTGGGCTTGAAGGTAACACTCCTCTCTAGAGTCGTCTGGGCCAAGCGGCTCCTGCATCGCGCTTGCTTATTGGATATTCACATTCCCGGCTGGACAGCAAGGGACCGCAACTAGCTAGAGGACCTGGGCTGTCGCCAGTTCAGTAATGACCAGAAAAACCCAGGCTTCGGACTCCCACTGACATCCTGTGGAGGTCAGATCGCATCATACACGATTCGGTCCAAAGTAGGCGCACGCCATTACAGGCGACGTTCAGTAACAACCAATACCCCCGAACTACACCGCCATAGTCACCCTGCGACCATCAACTTAATCATCTAGTACGAGAGCCCCACGGATGAGACTCAGGCAAATTTTCGATGTTTTTCAGAACCCCAAGTTGGCTCATCAGTCAGCCCTACAAATGACGCTTGATCATAGTGATGATTGGAGTTTCCGAGTATAGAGCACTCCTACCGATTGCGGCATCCTTGCCCGGATCGCAGTAGAGTACGCTGCATTTCACAGCACGATATAGTTGGAGTCAACGTCGCCGGCTATTGAGTTGGATTGCAATTACGTTAGAAGACCGAACGTTCCCTTGCTTAGGTCTACTCCAAGGAGTACTTGGGACGGTACACAATCCGATTACGACTCCCGCCGCAAAATTCCAAGTTGATAAGCACGCGTAAATTTTGACCTATCGTCACTCCAGCGCCGTGCATTACGACGCGACTAACAATCTCTGATCTATAGACCTAGCTAGAAAGCGGTGTTGGGGCACCGAGACCCACGTATCCGCGTGGGGCTCATCATGTTCACTGACGGATGTGGGCGGATAGGGATAGCCAATTCGAAAATGAGTCCCAACTGAGATTATCGTCTCCGGGTAGAATTCCCTAATGACTAAACACGTCCGTTTGATTCTGCTTATGCCCTCAGAACCGTGAGAAGAAACTCGCAAACACGTAATGGAGAGTGGCTACAATCCCTGACTGAGGCAGATAGACTGAATCAGATTGACACCACGCAGTACTGTTTACGCTGACTAATATAAACGACATCCTGTTTTTACGACGCGACGTCTCGACGCCTAACGCACCGTACGATGATAAACTATCCAAGGAGCTCTCCAGCATATTCGACAAGTACTCGGTAGAGGAAGCGCTAAGCTAAAGTCGGAAGTCTGTATATGATTGTTCGAGTTGTAATTCAGAAATGAATGGCTTTAATCGTTGCGGAATCCCTTCTTGCGTGTGCGCTACGGCCAAGTGGACGAAGCTCAGTTAAGCGCGTGCAGACTCAAGTCACGCTCCGAAGGATTCGCTGGGACAGTCCCTTCTTACTTTTACGATTCCCCCATTGCCGCAGCCTCTTCATATTAAAATTCGAAGGGAGCGAAATTTCACCTCATGGAAGTACCTACTCTGGTCAACGCCGGATGGCATGACGGTCTATGCGCATTCTATGCCAATCGACCTATGTGGCGCAGTTGACGTACTAGAGTTTACGATTTAGCAGTGGTTGGTAAAATAGCGAGCGGGCGGCTTTTCCGGGTGACCCGTAGCAGGACTGACACCTAAGACAGATTTTAGGATACCTACAAAGGCTGTCCGGCAATTAACATATTTTGGCGTCCGACTGTAAAGCATGCCGTGGTTCGCTGCGTGGTGGGAGACCGCCCTCGTAGACGCCAAAATTCACGCCACAGTGAGCGGGGATAGCTGTTCCCATCGGGCTGAAAATGAGACACATAGCGTACCCACCCGAGGCATCGTCCCTTGATGTTGCATATAGTGTTGACGGCTCCGACGAAGAACGGATAAAGCGGCCTCTTCTTTTCTCAAGCGGCCATTGCTTGAGCTCACGGGTGGTTCTGCTATCCTTACGAATTAGAACAAGGCACGTCCTGTAGCATGAAACGCTGGCGCAAGATCTGCGGTGTAATTATTGAATTGCTGTCTTCTAACGCCGAGCCGCATGAGACCCGCGTCTGGTGTTGTCGCATGTGTCTAAACGCATGTGGCTACTCAATTCCATCCTCTGGCGCGCGCCACATCACTATCAATCAGGTTACTGCTCAATCTGTAGATACGCACACTGAGGATAACAGGCTTGTTTCGTCGCCTTTGTGCATTGAGCCGGTCCTCCGATTAAAGAATCGATTAGTACTGGGGCAATACAGCTTCTATTCAATACACGGGGGCCCAAATGGCGCGCGGTCGTTTTTTACCGTCGTTGCTTTATCTACGAACCAAGCTGCTGCGATCTTGCTGGGTAGTTAGTGTATATGTCTTATCTCAGCGAGTAGGGTTCTCAGGCACGTAGTCAATCTCTTCAGCTTATTCCCTGTTATCGGCATTATTATAAAACTGAACACCACGCCACTCGGCGCTCCAATAAAGGTAAGGAGCGCATCAAGAGAGAAATAGACCCTTTGCGCCCCTCGCGCGAAAATGGCGGTTAGATCAAATGAAATCTCGTGACAACCGCGGACGGTATAGGTGCGGCTTCCCGAATGGGGGGCAATGCAACTCATCTAAACTACACTGTGCAGTTCTGCGATGTGTTGAAGGCGAAAACACCAAACCCAATCTCATGCCTCCAGATGTCCGGTGTGCTACCCCGTGACGACAGGGCACGGAACACTCACGCCCCGACTCGCGATAAGCTAGAAAGCGGCCCCTCGGCTGTCGGACCGAGCGTCCACGGGCCGCTTACCAGAGACCAGCTGCTGTCATGCCGATGCATGTGGTCCAAAACAGGGGAGGATTACTGCCGATACGTCCTCCATCCAAGCCCGACCGAAGTTACGCTGTCCGCGGAACTCTGACCCTGGGAGCGGCCCCGACCAGCTTTAGGTCGACCGTCGAAACCGATAGCCCCATCGTAATATCGACGGTTGAGTTCTGTATTCGTGACGCGGTTCACACAGTCTAGGGTTGGGACTTGCATTAAGCTCTTCAGTGAGAGAGGATCTGCGACCGCTCCGGATCAGTGTTTCATCTCGCTGTAGAAGGAGGGGTTGTGGAAACCAACGGCAAGCTCCCTGCATTTCTCAGCAGTCGACTTCGCATTATGACTCCATTTAAGAGATTGACTAGCAAGAATTTCGTGAAACCAATTGTTAGCAGAGTCAGTAACTTAATGGTATAAGACTCAAGGGACTGAGGTATTGAAACTTAGTGACCGCTACGCATTTATGCTGCGGCGCCTAAGTCTAGCGCGGGTATCTCTCCAACGGGAACGAGATAGAGTGTCCGCGCCTTCATATGGTCTGGGGCGGGCTCTTTGGTGTACCTTTTAGTGCCATTCCTTCTATGTCCCCTGGAGCCCGGACCGGCGTGCGCGGTCTGGAGCGGCCTATCCGGTGCCGAATGAGTAACCACCCGCTAACATACCGCACAGACCAATTATAATTCATTGTCTCTCAATCTCTCATACGCTCTACACCGGTTTGATCATGCACCAGCATTGTGTCCAGTAGCTTACGCCGTAGTAAGTAGAGTGTTAGCATATTTTATTGGCTACCACATCTGTATCAACATTTCCCGCCATACGTACTCTGGTGGTCGTGGAATATATCACAGTTGATTATAATAGCGGCGAATGGTCACTATCAATACCATGAAGCCAGCGCTCCTGAGGGGATTATCAACATTAGTGGATCATACAGTTCAAGTACTCCGACCAATCCATGTGTTTCTAAATGCATAAAATGACTTTCGTCAAATGAATGAGACCATACTTGATCATATAAACACACGCGAACCCTAAATTCCACCGTATCAACTCCTAGCAAATGCCTGTAGCGAAAGATCAATCTACTATAGACCGTGATGAGTCTGGTGGGTTCAGCCCCGAGCGCTTCCCTCGCCCGAGATGAACGCCAGATGGGTCTCGTAGGACTTCAAGTCTCCCGGTATGGTAATCAACCAACATCTCCGGGAATGCGTTCAAGAGCTAGACGGCTTAAGACTTCACATAGCAAGACTCGGATTAGGTGGCCCGTATGCTGTCAGTTTGGGTGCCGAACACCTTCATTTAAGGCTAGTGTTCGTCCAGCCGCCGTACCCTTTTCACTGGCGGTGTGTTATGACTCATCACTTTTCATATATGGACTCCTGTTCAATCCTAAGCCATATATTAGCATAACACAACAACTATTGATCGTATAGTAGTTTAAAAGATAGAGGGACTTCAATGTAGCTACGTAAACATGGTCTGAATCTAATCGCAACGCTAAAGCATAGACCCAGCGAGGAACTACGAAGACGATTGTAGGTTCGAGTACAAGCGCAGGACAAATACACACTTAGTTTTCGGATCAATCGGGATCGGGAGCATGACAGCGCCACGGTATAGTCCCTTCTTTTGTGAAAACGCTCGCAAGAGTACTTGCAGAATGTCAACATGCTCTGAACCGAACAACCAGACCGGCAAGTACCTGCCTTCTGATATATACGTCCCTCAACGGGTCTGCGCAGGCAGGAGAAAACTGTCAAACGTGTTAGCGCGTCAAGCGCGCCGGACTCGGTACAGCTGCTAGCCGCCCCGGGCACTGACGAACTCTATTCATAATCGCCTGGTCGCTTCCACGGGAGCATGAGATGCAAAACAAAAACGCCAAACATGAGGGCGGTACATTTGCTCGCAAAGCAATTGTAATACCGATGGCGTAAGGCGAAATGTCTACCGCCCCAGTGGTCGTAAACTACCGATTGTATGGTTTTAGCTGTGTGAAGTGTCACGTATAACTACAGTTGGCTTATTGAGGGCGAATGCGAGCAACCCCGTAATCGTCACGAGTCTTATATGCACGAGGCCGTAATTATACGTGCGAATCTTCTATAGCCTCCACGGCGTATAGCGCTTCGAGCGAATAAATTATATCAAAATTTCGCACCCAGTCGCTTCGGGAGTTCCCTTGCAAAAAAACTGATACGTTGTTCTTTTATGCTAGCCAAAGTCATGTGTAAGGCTTTGGTGTGTCAGGGATACTACATATCGCGCTAAATAATTCGTATCCCCGACATCTCTCCCAGTCAAGGTCGTTAGTGCATATCTCGCATCCGGGCGCGCGAATCAGGATTACGTTACATCGCCAGTGCTCATGGTCCGGTATTGCGCTTTGTAACGTTCATTTGACGGCCTCACTCATCGCCGAGTACACTACCCATTTGTATAGAAACGAAGGACCTCAACCTCAAGGTGATTATCCTCTAAAAGAAGCGTCTAGATACTACCTCCCCTATGCCGTTGTCTTCGAATTCCCGATACACGCAAGGAGGTTGTCGGTTGGCGGCGCGTTCGTAGTAGAGTATTGCGAGACATGAAGCTACCGGACCTTCTTGCGACGATATATCTCAAGTAACAGCATGAAGCATGTCTCCCCCCCAGTCAGGAGATGCCTAGCTTAATCCACATGCACCAACCATCAGTTATTATCATCAACGAGTTACCCCGATCCAGGCCGCTCGATATACACTAGAACAAACACGGCGTACGACCCAATTATATTCGCTTGGTTTGCCGACAACGTCCGTCCGCTTGGCGGATTAAAAATACTTGACGCTGGCAGAAAAGGCCCCTTTAACGCTCGCAGGAGCACCTGGGGTAGGGGATCCCGCTCAGATCCGGCACACAGTAGGCGCTTACCGCAAAAGGAGTCTTACAAAGTTGTAATACGCTGTCTAAATAGGGGTCGCATCGAAGTCCACCTTTAGACGATTTCAGAACCGCAACGCGTGTCGCTCCACGAAAGCTACGAAGTATCCATCGCACAAGCCGCACGCTAAATATGTGTTTTTCACCAGAGCCTCTGACCAGCTAATTACCCTGGCTCCTCCAGTATTCAACTGGCAGGATCCATAATGCGGACTCGCTCCATGCACTAGAACCTGCGTCCCAAGGAAGGTTGCCAACTCTCGGCAAGAACTGGAATACATGCGGAGTCCAAGAACAGATCACAGCAACGGAAAGAGCTATGGGGCTAGAAGTCGGGCTGGCAACATCGTGGGACATACCCACGCGGCTTCCTCATGAAGAAGCTGTTGGTAGGAGTGTGTCCCGCCGTTCGGCTCCTCGAAACCTGACGAATTTCCCTACCCGGCCACCGGGGGTTGCGGTTTTAGATGCCCCGATCCCTCACTATCATGAACGAGTTTACGCAGATGCTTAAGAGTGATCGTAAATGGCCAGAACGGTACAAGACCTTGAGATTCACAGAAGTTCATACGCGTCGGTCCACGACGGTATTCATGTCATGTCACCCTAGACTAGAAACTCATCATTCCAAGGTCGTGCGCTTTCTCTATGAGTGTTAAATGTGGGTTGATTTGTTGAGGACCCTTTGATGTCGAGGGAGAATTATACACCTTCCATGATCAGCTCAATGTGCCAGTCTGAGACTTAGGAGCTGCAAGATTTGCCTTAGGGGGTGACAATACGTCACGGCGATATGCACAAAGTGTCGCATGAGGATGTCGTGCCCCCGGAATTCAATCTCAAACGGTAAGTAGGCATAACTCACTTTGTTTCATTCTGGAACAATATGTGCGCACATCGGCCACGTAACGCAACTACATTCTCATGGGGGGTAGGTAATGGTCAGTAGGGCGCGGTATAGTCGAGCCTGGAGTGCGACCTGAATGCGTTCGTCCCGCGTAAGCAAGCTTGATGTGGAACTCGCTGATGAAATTCCACGCCTAATGAATGAGGGGTTTATGTCCTGTACCAGCTGCACTTATAATGGGAACCTGCCTGCTGAGGAATCGCAATACTGGAGTGCAACTCGGCGAATTTAGGTCGTAGTTAGTCGACCAGGCTGTATGGAGAAACCGCGCACAGAATTCGATGGGAAGAATGTTATTTTCTTAATCGAGGAAAAAGACAGGCGCCAAGATAATTTCATCCTGTCCCTCGGCACGTGATACGGTAGGGAATTAGCACAGGATGCCGTACAGATGTCGTTAGGCTAGAGATGACAATGGGTCCAAACGGTCGGGGATCAGTGTAGGTTATTTCATGTCCGCGCTCACCTCCAATCGGCCCAAGCAATAAGCGTTACTGCTCATTTTCTCCATCAGAGAGTACTAAAACTTATCGGAAGGGCCGCGACCCTCGGTCTGCTCCTCGGACCTGCAATCCATCGCTCTAATGAGTCTCCACTTTGAGGATAAAGAGAAGCGAGGTAGCTGGCACTCAGCTGCAACTTAGGAATGGGAGGACAAGAATAGCACCGCACACGGGGCTTTTGTTCGCTTATAGTAACCGTCCAAAGTACACCTATCAGGAGAGGAAGGCCCGGCCGGTACGCGGATGGGTGGGATGCGGGCTTAACGTCCCATCAAGTCAACTGACGTGTAAGTCGTTCAACTCGCCTGACCCCGGGTCAGGGGTGGCCTTACCCAACGGGATTGATTTGAAGTGTTCTACCTTTCTTTGAGAACAAAAAAATTCGACACAGACCCCCCTTATAGCCAGCACAGACCCCACCGCAGCCCGCCCCTCTCCCTGACACTAGGCCGTCTAGGGGTAGCGGAATACGTAGTGAGCCTGCAGGCCGTCTAGATCAATCGCGTTCCCTCAGGGCAAAGAGCGAGAGCGCCCCGATTCATGCGCATAGACTCATTTTCGGGCCGCTATGTTGGTGAAGCGCTAAGCTAGAGTGCTTCTTGCGTGCTTGGGAACACGCGTATGCTACAGATAGAATTTACCTAGGCATAGTGCCGCTCAGCTCTGTGGGCAATAGGCGAGGGATTTATCGGCGTCGCAGGCGAGACGTGGGTGACGTCCGGTTGATATAATTTCCTATAGGCTGCAGTCCCCGTGCGATGCGGTCAGAACCGATTCCGTTCCAGCCATCGCAACACGTCTGACTGTGCCTGAGCAATCAGAATGTTAAGGGATCTATGGGCGACCCCACGGTGGATTTCCGAACCGTCTTTGTGAAACGCAGGCATTGATCAGGAGCCGGAAAACAAAAGCCTTCTCCCCGTGTACAATGTTGCTGCTCTAGCGGTATACCGCCACGCCGCTACCACAGTGAGAGAATGGCAGCAGGCTAGTGGATGATTCTGTTGGAAGTAGGTATTTCTAGAACAATACACGACTCAGCCAGGATGATATGTCGTCATTTTAGGCTAGCGCTAACAAGGACTCTTCCCGGCCAGCTCCAGTTACAGTGTTACAGACATATTCGGTGTTGGAGGAAGAAAGCGTAGTTAGGCCCGGTGAAACGTCTTACGCGACGCCAAGTATCGCTCCCGTAAGCACACAGTACACCAC"</code></pre>
+</div>
+</div>
+<p>I found the reverse complement of a string and got the Rosalind Complement Problem correct!</p>
+</section>
+</section>
+<section id="finding-the-replication-origin-part-iii" class="level1">
+<h1><strong>Finding the Replication Origin, Part III</strong></h1>
+<section id="challenge-1-3" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-1-3">Challenge 1</h2>
+<p>The first challenge in Replication Origin Notebook, Part III involves implementing a clump-finding algorithm. I first created a dictionary of all possible <code>k</code>-mers and initialized it with counts of 0 at the beginning of my function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>initialize_k_mer_dict <span class="ot">&lt;-</span> <span class="cf">function</span>(k){</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>  nucleotides <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"T"</span>)</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>  k_mers_dict <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="fu">rep</span>(<span class="fu">list</span>(nucleotides), k)) <span class="sc">%&gt;%</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unite</span>(<span class="st">"k_mers"</span>, <span class="fu">everything</span>(), <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">count =</span> <span class="dv">0</span>)</span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(k_mers_dict)</span>
+<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>k_mers_dict <span class="ot">&lt;-</span> <span class="fu">initialize_k_mer_dict</span>(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I then implemented <code>clump_finding()</code> on a small example. This function pulls from a sequence called <code>genomeString</code> and takes parameters <code>L</code>, <code>t</code>, and <code>k</code>. <code>L</code> indicates the size of the window we are observing and instructs the code to look in a specific area of the genome. <code>T</code> counts the frequency of occurrences, while <code>k</code> indicates the integer length of k-mers to be returned. If working correctly, this code should result in a set of <code>k</code>-mers forming (<code>L</code>, <code>t</code>)-clumps within <code>genomeString.</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>clump_finding <span class="ot">&lt;-</span> <span class="cf">function</span>(genomeString, L, t, k){</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  initial_window <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(genomeString, i, L)</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  my_kmer_dict <span class="ot">&lt;-</span> <span class="fu">intialize_kmer_dict</span> (k)</span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> L<span class="sc">-</span>k<span class="sc">+</span><span class="dv">1</span>){</span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>    curr_kmer<span class="ot">&lt;-</span> <span class="fu">str_sub</span>(initial_window, i, i<span class="sc">+</span>k<span class="dv">-1</span>)</span>
+<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>    curr_count<span class="ot">&lt;-</span> <span class="fu">count_pattern</span>(initial_window, curr_kmer)</span>
+<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>    curr_row<span class="ot">&lt;-</span> <span class="fu">which</span>(my_kmer_dict<span class="sc">$</span>kmer<span class="sc">==</span>curr_kmer)</span>
+<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>    my_kmer_dict<span class="sc">$</span>count[curr_row]<span class="ot">&lt;-</span>curr_count</span>
+<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a>  candidates<span class="ot">&lt;-</span> my_kmer_dict<span class="sc">%&gt;%</span></span>
+<span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(count<span class="sc">&gt;=</span>t)<span class="sc">%&gt;%</span></span>
+<span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(k_mer)</span>
+<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>(ng <span class="sc">-</span>(L<span class="dv">-2</span>))){</span>
+<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>    rem_pattern <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(genome, j <span class="sc">-</span><span class="dv">1</span>, j<span class="dv">-1</span><span class="sc">+</span> (k<span class="dv">-1</span>))</span>
+<span id="cb94-15"><a href="#cb94-15" aria-hidden="true" tabindex="-1"></a>    add_pattern <span class="ot">&lt;-</span> <span class="fu">str_sub</span>(genome, j <span class="sc">+</span> (L<span class="dv">-2</span>)<span class="sc">-</span>(k<span class="dv">-1</span>), j<span class="sc">+</span> (L<span class="dv">-2</span>))</span>
+<span id="cb94-16"><a href="#cb94-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb94-17"><a href="#cb94-17" aria-hidden="true" tabindex="-1"></a>    rem_row <span class="ot">&lt;-</span> <span class="fu">which</span>(kmer_dict<span class="sc">$</span>k_mers <span class="sc">==</span> rem_pattern)</span>
+<span id="cb94-18"><a href="#cb94-18" aria-hidden="true" tabindex="-1"></a>    add_row <span class="ot">&lt;-</span> <span class="fu">which</span>(kmer_dict<span class="sc">$</span>k_mers <span class="sc">==</span> add_pattern)</span>
+<span id="cb94-19"><a href="#cb94-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb94-20"><a href="#cb94-20" aria-hidden="true" tabindex="-1"></a>    kmer_dict<span class="sc">$</span>count[rem_row] <span class="ot">&lt;-</span> kmer_dict<span class="sc">$</span>count [rem_row] <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb94-21"><a href="#cb94-21" aria-hidden="true" tabindex="-1"></a>    kmer_dict<span class="sc">$</span>count [add_row] <span class="ot">&lt;-</span> kmer_dict<span class="sc">$</span>count [add_row] <span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb94-22"><a href="#cb94-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb94-23"><a href="#cb94-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(kmer_dict<span class="sc">$</span>count[add_row] <span class="sc">&gt;=</span> t){</span>
+<span id="cb94-24"><a href="#cb94-24" aria-hidden="true" tabindex="-1"></a>      candidates <span class="ot">&lt;-</span> <span class="fu">append</span>(candidates, add_pattern)</span>
+<span id="cb94-25"><a href="#cb94-25" aria-hidden="true" tabindex="-1"></a>      candidates <span class="ot">&lt;-</span> <span class="fu">unique</span>(candidates)</span>
+<span id="cb94-26"><a href="#cb94-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb94-27"><a href="#cb94-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb94-28"><a href="#cb94-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(candidates) </span>
+<span id="cb94-29"><a href="#cb94-29" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="challenge-2-3" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-2-3">Challenge 2</h2>
+<p>Adding functionality, or optimize!</p>
+<p>This challenge involves finding all 9-mers corresponding to (500, 3)-clumps in the <em>E. Coli</em> genome. However, we modified it during class so that we did not utilize the E.Coli genome. In order to call this a function, it must pass a window length, t-value, and k-value. We scanned in the E.Coli genome and tried to run and test our code in class, but then realized it takes too long. The <code>clump_finding</code> function works on smaller genomes, but was too slow to run through E.Coli’s 4.6 million nucleotide genome. This suggests that the code needs to be further optimized in order to run this genome.</p>
+<p>In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the <code>set.seed()</code> function to set a seed for random number generation to ensure consistent results. I also used code to make <code>for</code> loops, and <code>if/else</code> statements to make sure the code is only ran when specific criteria are met. After many trial and errors, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the <code>clump_finding()</code> algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!</p>
 </section>
 </section>
 
