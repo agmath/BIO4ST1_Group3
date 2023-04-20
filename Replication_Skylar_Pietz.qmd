@@ -1,5 +1,5 @@
 ---
-title: "Starter Notebook"
+title: "Replication of Origin"
 author: "Skylar Pietz"
 format: html
 execute:
