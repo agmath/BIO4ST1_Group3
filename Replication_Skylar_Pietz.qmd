@@ -20,7 +20,7 @@ In this intro notebook, I will gain familiarity with the folowing:
 
 -   Using the arrow (`<-`) operator to store objects in variables
 
--   Using R\'s `sample()` function to create a random \"genome\" for the purpose of testing functions
+-   Using R's `sample()` function to create a random "genome" for the purpose of testing functions
 
 -   Building functions to process and analyze genetic data, learning about `for` loops and implementing them when necessary.
 
@@ -28,7 +28,7 @@ In this intro notebook, I will gain familiarity with the folowing:
 
 -   Analyzing the genome using the ideas and tools developed in the first part of the notebook.
 
-## Challenge 1 
+## Challenge 1
 
 ```{r}
 # Challenge 1
@@ -40,7 +40,7 @@ nucleotides
 
 Challenge 1 involved creating a list of the four nucleotides A, C, G, and T, using the `c()` function.
 
-## Challenge 2 
+## Challenge 2
 
 ```{r}
 # Challenge 2
@@ -679,11 +679,13 @@ reverse_complement(revcompGenome)
 
 I found the reverse complement of a string and got the Rosalind Complement Problem correct!
 
+In summary, this notebook helped me create a code that would search a genome for frequent "near" k-mers and their reverse-complements. These are the genetic substrings which will signal replication to the DNA polymerase, and therefore help us get closer to finding the origin of replication.
+
 # **Finding the Replication Origin, Part III**
 
 ## Challenge 1
 
-The first challenge in Replication Origin Notebook, Part III involves implementing a clump-finding algorithm. I first created a dictionary of all possible `k`-mers and initialized it with counts of 0 at the beginning of my function.
+The first challenge in Replication Origin Notebook Part III involves implementing a clump-finding algorithm. I first created a dictionary of all possible `k`-mers, called `k_mers_dict`, and initialized it with counts of 0 at the beginning of my function, called `initalize_k_mer_dict`.
 
 ```{r}
 initialize_k_mer_dict <- function(k){
@@ -734,10 +736,14 @@ clump_finding <- function(genomeString, L, t, k){
 }
 ```
 
+As previously stated, my `kmer_dict` function initializes the table of k-mers, and the `for` statement intructs the code to observe a certain window and thus sets up the initial window length. The `curr_kmer` function tells the code to float through the initial window and find a specific pattern. The `curr_count` function counts how many times that pattern shows up in the initial window, and the `curr_row` function shows where the k-mer appears in the k-mer dictionary `kmer_dict`.
+
 ## Challenge 2
 
 Adding functionality, or optimize!
 
 This challenge involves finding all 9-mers corresponding to (500, 3)-clumps in the *E. Coli* genome. However, we modified it during class so that we did not utilize the E.Coli genome. In order to call this a function, it must pass a window length, t-value, and k-value. We scanned in the E.Coli genome and tried to run and test our code in class, but then realized it takes too long. The `clump_finding` function works on smaller genomes, but was too slow to run through E.Coli's 4.6 million nucleotide genome. This suggests that the code needs to be further optimized in order to run this genome.
 
-In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the `set.seed()` function to set a seed for random number generation to ensure consistent results. I enjoyed using the `count_pattern()` function count occurrences of a particular `pattern` within a larger `genomeString`. I also used code to make `for` loops, and `if/else` statements to make sure the code is only ran when specific criteria are met. Two functions created in notebook 4 were `generate_k_mers()`, which will generate all strings of `k` consecutive nucleotides within a genome, and `count_patterns()` which will count the number of occurrences of a particular `pattern` within a `genome.` I was able to search a genome for frequent \"near\"-k-mers and their reverse-complements. Throughout notebookes I, II, and III, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. After many trial and errors, I got them all correct! This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the `clump_finding()` algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome!
+In Replication Origin Notebooks I, II, and III I learned many new coding methods and tools. These include creating lists and sample genomes, while also using the `set.seed()` function to set a seed for random number generation to ensure consistent results. I enjoyed using the `count_pattern()` function count occurrences of a particular `pattern` within a larger `genomeString`. I also used code to make `for` loops, and `if/else` statements to make sure the code is only ran when specific criteria are reached. Two functions created in notebook 4 were `generate_k_mers()`, which will generate all strings of `k` consecutive nucleotides within a genome, and `count_patterns()` which will count the number of occurrences of a particular `pattern` within a `genome.` I was able to search a genome for frequent "near"-k-mers and their reverse-complements.
+
+Throughout notebooks I, II, and III, I learned how to scan in downloaded datasets from my laptop into R in order to help me solve many different bioinformatics word problems and challenges on the Rosalind website. After many trial and errors, I got them all correct! This recent notebook was very interesting because it required combining some of the previously developed functions in order to build the `clump_finding()` algorithm. Even though future work is still required, I enjoyed gaining new knowledge around these tools and functions because it pushed me closer to discovering the replication origin of a genome! I thoroughly enjoyed this project because I was able to apply what I learned in my Biology and Genetics classes to a different platform! Although it was very challenging, I learned the importance of code and how it can help us solve big or small scale problems.
