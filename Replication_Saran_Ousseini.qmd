@@ -228,9 +228,7 @@ nucleotide_frequency <- function(genomeString, nucleotide = "A"){
 nucleotide_frequency("ACTTGCGGGTATCGAG", "G")
 ```
 
-
 ## Challenge 1: In this challenge we will use sample () function in conjunction with the paste (..., collapse ="") to generate a random genome the of at least 2000 .
-
 
 ## Then we used the nucleotide_frequency() function to count the frequency of Cytosine in the random genome you constructed.
 
@@ -250,11 +248,9 @@ randGenome
 nucleotide_frequency(randGenome, "C")
 ```
 
-
 ## Challenge 2:
 
 In this challenge, we will be build a function called rand_genome, which will take a single paramter k, then denote number of nucleotide in the genome that will be generated. When this is done, our function may return a single genome string of length called k
-
 
 ```{r}
 randGenome <- function(k){
@@ -295,7 +291,6 @@ generate_2_mers(randGenome(10))
 
 The goal of this challenge is to build a function called generate_3\_mers(), which will generate all of the susbtring of 3 nucleotides, this nucleotides will be name 3-mers in the genome string. The function will accept a single genomeString, and return a lost which contains 3_mers. After this is done, we will use rand_genome() function to build a random genome
 
-
 ```{r}
 generate_3_mers <- function(myString) {
   list_3_mers <- c()
@@ -309,7 +304,6 @@ generate_3_mers <- function(myString) {
 
 generate_3_mers(randGenome(10))
 ```
-
 
 ## Challenge 4:
 
@@ -343,11 +337,9 @@ myString <- c("OUSSEINI")
 count_pattern(myString, "OU")
 ```
 
-
 ## Challenge 5:
 
 Here, we will write a new function known as count_pattern() withing another larger genomeString. This function should take genomstring and the patter we want to count. The function should give back the count of occurrences of patter within genomeString
-
 
 ```{r}
 nt_patterns <- function(string, pattern) {
@@ -364,7 +356,6 @@ nt_patterns(randGenome(2000), "AGG")
 ```
 
 # Part II:
-
 
 ## Challenge 1: Here, we will find the most frequent words in a string
 
@@ -412,11 +403,9 @@ find_frequent_kmers <- function(genome, k){
 find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT", k = 4)
 ```
 
-
 ## Challenge 2:
 
 ## The Reverse-Complement Problem
-
 
 ```{r}
 reverse_complement <- function(substring) {
@@ -472,7 +461,6 @@ reverse_complement("ACGTTGCATGTCGCATGATGCATGAGAGCT")
 
 In part 2: we were searched frequent genome k-mers, as well as its reverse complements.
 
-
 # Part III: Finding the Replication Origin
 
 ## Challenge 1 goals:
@@ -497,7 +485,6 @@ initialize_k_mer_dict <- function(k){
 k_mers_dict <- initialize_k_mer_dict(9)
 k_mers_dict 
 ```
-
 
 The second code block we will generate the clump_finding function, which will generate clump_finding functions
 
@@ -584,11 +571,62 @@ clump_finding <- function(genome, L, t , k ) {
 
 ## Summary:
 
-Through out this notebook, we started by The introduction. In the introduction, we had 10 challenges. Through this 10 challenges, we were able to create list of nucleotide, we used function such as **sample()** which helped create randome genome from the characters in the nucleotide list. We also use function **paste()** as well as **collapse = ""** to collapse the random genome into one string of nucleotide. In the introduction we learned how to use the function **set.seed()** which help set a seed of a random number generator, this made our result reproducible. We were also introduced to for loop to repeat set of simple instruction.
+Through out this notebook, we started by the introduction. In the introduction, we had 10 challenges. Through this 10 challenges, we were able to create list of nucleotide, we used function such as **sample()** which helped create random genome from the characters in the nucleotide list. We also use function **paste()** as well as **collapse = ""** to collapse the random genome into one string of nucleotide. In the introduction we learned how to use the function **set.seed()** which help set a seed of a random number generator, this made our result reproducible. We were also introduced to for loop to repeat set of simple instruction.
 
-Next, we started Part I. Part 1 had 5 challenges, during this chalLenges, we learned to write reusable code using functions. In addition, we developed skills in working with genomes, such as identifying patterns of a specific length and counting their occurrences within a genome. These two tasks were important in identifying the Replication Origin. Followeing Part 1, we talked Part 2, which consisted of 2 challenges. This challenges gave us the capability to scan a genome and identify frequent "**near" k-mers,** as well as their reverse-complements, which can be defined as genetic substrings that serve as signals for DNA polymerase replication.
+Next, we started Part I. Part 1 had 5 challenges, during this challenges, we learned to write reusable code using functions. In addition, we developed skills in working with genomes, such as identifying patterns of a specific length and counting their occurrences within a genome. These two tasks were important in identifying the Replication Origin. Following Part 1, we talked Part 2, which consisted of 2 challenges. This challenges gave us the capability to scan a genome and identify frequent "**near" k-mers,** as well as their reverse-complements, which can be defined as genetic substrings that serve as signals for DNA polymerase replication.
 
-Lastly, we tackled Part III. The coding in this part was way harder compared to the introduction, Part 1, or Part 2. This part was like a combination of all the other codes we worked on, and function we created, to finally be able to great the functions **clump_finding()** .
+Lastly, we tackled Part III. The coding in this part was way harder compared to the introduction, Part 1, or Part 2. This part was like a combination of all the other codes we worked on, and function we created, to finally be able to create the functions **clump_finding()** .
+
+# Challenge IV
+
+```{r}
+SKEW <- function(genome) {
+  skew <- rep(0, length(genome)+1)  
+  for (i in 1:length(genome)) 
+    if (genome[i] == "G") 
+      skew[i+1] <- skew[i] + 1
+   (genome[i] == "C") 
+      skew[i+1] <- skew[i] - 1
+ 
+      skew[i+1] <- skew[i]
+   
+  
+  return(skew)
+}
+
+```
+
+Yes, My function works
+
+Challenge 2
+
+```{r}
+SKEW_min <- function(genome) {
+  skew <- SKEW(genome)  
+  min_skew <- min(skew)  
+  
+   return(min_skew)
+}
+
+```
+
+```{r}
+SKEW_min <- function(genome) {
+  skew <- SKEW(genome)  
+  min_skew <- min(skew)  
+  
+  
+  
+  
+  return(min_skew)
+  
+}
+
+sample_genome <- "CCTATCGGTGGATTAGCATGTCCCTGTACGTTTCGCCGCGAACTAGTTCACACGGCTTGATGGCAAATGGTTTTTCCGGCGACCGTAATCGTCCACCGAG"
+min_skew<- SKEW_min(sample_genome)
+print(min_skew)
 
 
+```
 
+# 

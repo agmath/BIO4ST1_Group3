@@ -48,7 +48,7 @@ rand_genome
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] "A" "G" "A" "G" "G" "C" "T" "C" "G" "C" "G" "T" "T" "A" "G"
+ [1] "C" "C" "C" "G" "A" "T" "G" "G" "C" "A" "A" "A" "T" "G" "T"
 ```
 :::
 :::
@@ -432,7 +432,9 @@ nucleotide_frequency(randGenome, "C")
 :::
 
 
-## Challenge 2: 
+## Challenge 2:
+
+In this challenge, we will be build a function called rand_genome, which will take a single paramter k, then denote number of nucleotide in the genome that will be generated. When this is done, our function may return a single genome string of length called k
 
 
 ::: {.cell}
@@ -498,7 +500,9 @@ generate_2_mers(randGenome(10))
 :::
 
 
-## Challenge 3
+## Challenge 3:
+
+The goal of this challenge is to build a function called generate_3\_mers(), which will generate all of the susbtring of 3 nucleotides, this nucleotides will be name 3-mers in the genome string. The function will accept a single genomeString, and return a lost which contains 3_mers. After this is done, we will use rand_genome() function to build a random genome
 
 
 ::: {.cell}
@@ -525,7 +529,9 @@ generate_3_mers(randGenome(10))
 :::
 
 
-## Challenge 4
+## Challenge 4:
+
+In this challenge, we will be creating another generate_3\_mers() function, which will generate k-mers of our desired length.
 
 
 ::: {.cell}
@@ -575,7 +581,9 @@ count_pattern(myString, "OU")
 :::
 
 
-## Challenge 5
+## Challenge 5:
+
+Here, we will write a new function known as count_pattern() withing another larger genomeString. This function should take genomstring and the patter we want to count. The function should give back the count of occurrences of patter within genomeString
 
 
 ::: {.cell}
@@ -604,7 +612,7 @@ nt_patterns(randGenome(2000), "AGG")
 
 # Part II:
 
-## Challenge 1: Find the most frequent words in a string
+## Challenge 1: Here, we will find the most frequent words in a string
 
 
 ::: {.cell}
@@ -679,7 +687,9 @@ find_frequent_kmers("ACGTTGCATGTCGCATGATGCATGAGAGCT", k = 4)
 :::
 
 
-## Challenge 2: The Reverse-Complement Problem
+## Challenge 2:
+
+## The Reverse-Complement Problem
 
 
 ::: {.cell}
@@ -752,6 +762,8 @@ reverse_complement("ACGTTGCATGTCGCATGATGCATGAGAGCT")
 :::
 :::
 
+
+In part 2: we were searched frequent genome k-mers, as well as its reverse complements.
 
 # Part III: Finding the Replication Origin
 
@@ -50788,23 +50800,168 @@ k_mers_dict
 :::
 :::
 
+
+The second code block we will generate the clump_finding function, which will generate clump_finding functions
+
+
 ::: {.cell}
 
 ```{.r .cell-code}
-clump_finding <- function(genomeString , L, t , k ) {
-  initial_window <-  str_sub(genome, i, L)
-  my_kmer_dict <- initialize_k_mer_dict(k)
-  for (i in 1: L-k + 1) {
-    curr_kmer <- str_sub(initial_window, i, i + k - 1)
+clump_finding <- function(genome, L, t , k ) {
+  kmer_dict <- initialize_k_mer_dict(k)
+  ng <- nchar (genome)
+  
+  initial_window <-  str_sub(genome, 1, L)
+  for (i in 1: L-(k + 1)) {
+    curr_kmer <- str_sub(initial_window, i, i + (k - 1))
     curr_count <- count_pattern(initial_window, curr_kmer)
     curr_row <- which(my_kmer_dict$kmers == curr_kmer)
-    my_kmer_dict$count[curr_row] <- curr_count
+    kmer_dict$count[curr_row] <- curr_count
   }
   candidates <- my_kmer_dict %>%
     filter(count >= t) %>%
-  for (j  in 2:10) {#need to change 10
-    
-  }
+    pull(k_mers)
+  
+    for (j  in 2:(ng - (l-2))) {
+      rem_pattern <- str_sub(genome, j - 1, j - 1 + (k-1))
+      add_pattern <- str_sub(genome, j +(L-2) - (k-1), j + (L - 2))
+      
+      rem_row <- which(kmer_dict$k_mers == rem_pattern)
+      add_row <- which(kmers_dict$k_mers == add_pattern)
+      
+      kmer_dict$count[rem_row] <- kmer_dict$count[rem_row] - 1
+      kmer_dict$count[add_row] <- kmer_dict$count[add_row] + 1
+      
+      if( kmer_dcit$count[add_row] >= t){
+        candidates <- append(candidates, add_pattern)
+        candidates <- unique(candidates)
+      }
+    }
+  return(candidates)
 }
 ```
 :::
+
+
+## Challenge 2: Find all 9-mers corresponding to (500, 3)-clumps in the E. Coli genome
+
+Adding functionality, or optimize the code
+
+I did not run this on the e.coli function, but it was confirmed that it works after it was run by our professor
+
+
+::: {.cell}
+
+```{.r .cell-code}
+clump_finding <- function(genome, L, t , k ) {
+  kmer_dict <- initialize_k_mer_dict(k)
+  ng <- nchar (genome)
+  
+  initial_window <-  str_sub(genome, 1, L)
+  for (i in 1: L-(k + 1)) {
+    curr_kmer <- str_sub(initial_window, i, i + (k - 1))
+    curr_count <- count_pattern(initial_window, curr_kmer)
+    curr_row <- which(my_kmer_dict$kmers == curr_kmer)
+    kmer_dict$count[curr_row] <- curr_count
+  }
+  candidates <- my_kmer_dict %>%
+    filter(count >= t) %>%
+    pull(k_mers)
+  
+    for (j  in 2:(ng - (l-2))) {
+      rem_pattern <- str_sub(genome, j - 1, j - 1 + (k-1))
+      add_pattern <- str_sub(genome, j +(L-2) - (k-1), j + (L - 2))
+      
+      rem_row <- which(kmer_dict$k_mers == rem_pattern)
+      add_row <- which(kmers_dict$k_mers == add_pattern)
+      
+      kmer_dict$count[rem_row] <- kmer_dict$count[rem_row] - 1
+      kmer_dict$count[add_row] <- kmer_dict$count[add_row] + 1
+      
+      if( kmer_dcit$count[add_row] >= t){
+        candidates <- append(candidates, add_pattern)
+        candidates <- unique(candidates)
+      }
+    }
+  return(candidates)
+}
+```
+:::
+
+
+## Summary:
+
+Through out this notebook, we started by the introduction. In the introduction, we had 10 challenges. Through this 10 challenges, we were able to create list of nucleotide, we used function such as **sample()** which helped create random genome from the characters in the nucleotide list. We also use function **paste()** as well as **collapse = ""** to collapse the random genome into one string of nucleotide. In the introduction we learned how to use the function **set.seed()** which help set a seed of a random number generator, this made our result reproducible. We were also introduced to for loop to repeat set of simple instruction.
+
+Next, we started Part I. Part 1 had 5 challenges, during this challenges, we learned to write reusable code using functions. In addition, we developed skills in working with genomes, such as identifying patterns of a specific length and counting their occurrences within a genome. These two tasks were important in identifying the Replication Origin. Following Part 1, we talked Part 2, which consisted of 2 challenges. This challenges gave us the capability to scan a genome and identify frequent "**near" k-mers,** as well as their reverse-complements, which can be defined as genetic substrings that serve as signals for DNA polymerase replication.
+
+Lastly, we tackled Part III. The coding in this part was way harder compared to the introduction, Part 1, or Part 2. This part was like a combination of all the other codes we worked on, and function we created, to finally be able to create the functions **clump_finding()** .
+
+# Challenge IV
+
+
+::: {.cell}
+
+```{.r .cell-code}
+SKEW <- function(genome) {
+  skew <- rep(0, length(genome)+1)  
+  for (i in 1:length(genome)) 
+    if (genome[i] == "G") 
+      skew[i+1] <- skew[i] + 1
+   (genome[i] == "C") 
+      skew[i+1] <- skew[i] - 1
+ 
+      skew[i+1] <- skew[i]
+   
+  
+  return(skew)
+}
+```
+:::
+
+
+Yes, My function works
+
+Challenge 2
+
+
+::: {.cell}
+
+```{.r .cell-code}
+SKEW_min <- function(genome) {
+  skew <- SKEW(genome)  
+  min_skew <- min(skew)  
+  
+   return(min_skew)
+}
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+SKEW_min <- function(genome) {
+  skew <- SKEW(genome)  
+  min_skew <- min(skew)  
+  
+  
+  
+  
+  return(min_skew)
+  
+}
+
+sample_genome <- "CCTATCGGTGGATTAGCATGTCCCTGTACGTTTCGCCGCGAACTAGTTCACACGGCTTGATGGCAAATGGTTTTTCCGGCGACCGTAATCGTCCACCGAG"
+min_skew<- SKEW_min(sample_genome)
+print(min_skew)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+[1] 0
+```
+:::
+:::
+
+
+# 
